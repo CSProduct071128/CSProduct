@@ -9,6 +9,13 @@
 #import <XCTest/XCTest.h>
 #import "CSBaseService.h"
 #import "CSWebRequest.h"
+#define WAIT do {\
+[self expectationForNotification:@"CSNOTIFYTEST" object:nil handler:nil];\
+[self waitForExpectationsWithTimeout:30 handler:nil];\
+} while (0);
+
+#define NOTIFY \
+[[NSNotificationCenter defaultCenter]postNotificationName:@"CSNOTIFYTEST" object:nil];
 
 @interface CSProductTests : XCTestCase
 
@@ -31,11 +38,14 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     
     [CSBaseService postJsonDataRequestWithDetailRul:@"adat/sk/101110101.html" param:nil header:nil cls:[NSDictionary class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+        NOTIFY
+        XCTAssertNotNil(logicDicData, @"出错了");
+
         NSLog(@"正确：%@",logicDicData);
     } failure:^(CSBaseRequest *request, NSString *errorMsg) {
         NSLog(@"错误：%@",errorMsg);
     }];
-
+    WAIT
 }
 
 - (void)testPerformanceExample {
