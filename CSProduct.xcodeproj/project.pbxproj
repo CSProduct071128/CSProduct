@@ -10,6 +10,10 @@
 		4780BD49E56D12652C6D25AB /* libPods-CSProduct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6262DA7B6F97480A881C855C /* libPods-CSProduct.a */; };
 		721A9E061FCAD47A0056435F /* NSDictionary+null.m in Sources */ = {isa = PBXBuildFile; fileRef = 721A9E051FCAD47A0056435F /* NSDictionary+null.m */; };
 		721C810F1FCD4C7900AF6E9D /* UIView+ZRToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C810D1FCD4C7900AF6E9D /* UIView+ZRToast.m */; };
+		721C811A1FCD57BD00AF6E9D /* CSZiroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C81191FCD57BD00AF6E9D /* CSZiroomViewController.m */; };
+		721C81251FCD583700AF6E9D /* CSAddressBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C81241FCD583700AF6E9D /* CSAddressBookViewController.m */; };
+		721C81281FCD584B00AF6E9D /* CSMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C81271FCD584B00AF6E9D /* CSMeViewController.m */; };
+		721C812B1FCD666200AF6E9D /* rootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C812A1FCD666200AF6E9D /* rootTabBarController.m */; };
 		7247F54F1FCA8A2A00B0DEAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F54E1FCA8A2A00B0DEAE /* AppDelegate.m */; };
 		7247F5521FCA8A2B00B0DEAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F5511FCA8A2B00B0DEAE /* ViewController.m */; };
 		7247F5551FCA8A2B00B0DEAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7247F5531FCA8A2B00B0DEAE /* Main.storyboard */; };
@@ -30,6 +34,9 @@
 		7247F5A01FCAA33100B0DEAE /* CSNetworkLogModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F59F1FCAA33100B0DEAE /* CSNetworkLogModel.m */; };
 		7247F5AA1FCACEBC00B0DEAE /* CSBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F5A91FCACEBC00B0DEAE /* CSBaseService.m */; };
 		7247F5AD1FCACFEE00B0DEAE /* CSWebRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F5AC1FCACFEE00B0DEAE /* CSWebRequest.m */; };
+		728D20B41FCD67A300057177 /* CSMeNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728D20B31FCD67A300057177 /* CSMeNavController.m */; };
+		728D20B71FCD67C300057177 /* CSAddressBookNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728D20B61FCD67C300057177 /* CSAddressBookNavController.m */; };
+		728D20BA1FCD67D600057177 /* CSZiroomNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728D20B91FCD67D600057177 /* CSZiroomNavController.m */; };
 		E32940EE09A6211C87E8B308 /* libPods-CSProductTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +65,14 @@
 		721A9E051FCAD47A0056435F /* NSDictionary+null.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+null.m"; sourceTree = "<group>"; };
 		721C810D1FCD4C7900AF6E9D /* UIView+ZRToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZRToast.m"; sourceTree = "<group>"; };
 		721C810E1FCD4C7900AF6E9D /* UIView+ZRToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZRToast.h"; sourceTree = "<group>"; };
+		721C81181FCD57BD00AF6E9D /* CSZiroomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSZiroomViewController.h; sourceTree = "<group>"; };
+		721C81191FCD57BD00AF6E9D /* CSZiroomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSZiroomViewController.m; sourceTree = "<group>"; };
+		721C81231FCD583700AF6E9D /* CSAddressBookViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAddressBookViewController.h; sourceTree = "<group>"; };
+		721C81241FCD583700AF6E9D /* CSAddressBookViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAddressBookViewController.m; sourceTree = "<group>"; };
+		721C81261FCD584B00AF6E9D /* CSMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMeViewController.h; sourceTree = "<group>"; };
+		721C81271FCD584B00AF6E9D /* CSMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMeViewController.m; sourceTree = "<group>"; };
+		721C81291FCD666200AF6E9D /* rootTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rootTabBarController.h; sourceTree = "<group>"; };
+		721C812A1FCD666200AF6E9D /* rootTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rootTabBarController.m; sourceTree = "<group>"; };
 		7247F54A1FCA8A2A00B0DEAE /* CSProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7247F54D1FCA8A2A00B0DEAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7247F54E1FCA8A2A00B0DEAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -100,6 +115,12 @@
 		7247F5A91FCACEBC00B0DEAE /* CSBaseService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSBaseService.m; sourceTree = "<group>"; };
 		7247F5AB1FCACFEE00B0DEAE /* CSWebRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSWebRequest.h; sourceTree = "<group>"; };
 		7247F5AC1FCACFEE00B0DEAE /* CSWebRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSWebRequest.m; sourceTree = "<group>"; };
+		728D20B21FCD67A300057177 /* CSMeNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMeNavController.h; sourceTree = "<group>"; };
+		728D20B31FCD67A300057177 /* CSMeNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMeNavController.m; sourceTree = "<group>"; };
+		728D20B51FCD67C300057177 /* CSAddressBookNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAddressBookNavController.h; sourceTree = "<group>"; };
+		728D20B61FCD67C300057177 /* CSAddressBookNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAddressBookNavController.m; sourceTree = "<group>"; };
+		728D20B81FCD67D600057177 /* CSZiroomNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSZiroomNavController.h; sourceTree = "<group>"; };
+		728D20B91FCD67D600057177 /* CSZiroomNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSZiroomNavController.m; sourceTree = "<group>"; };
 		90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CSProductTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D014FAA323BAF380E61379B5 /* Pods-CSProductTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProductTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSProductTests/Pods-CSProductTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0F2EA4EF2AF7AC2194DF696 /* Pods-CSProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProduct.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSProduct/Pods-CSProduct.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +168,135 @@
 				721C810D1FCD4C7900AF6E9D /* UIView+ZRToast.m */,
 			);
 			path = CSToast;
+			sourceTree = "<group>";
+		};
+		721C81111FCD56F300AF6E9D /* ZiroomPart */ = {
+			isa = PBXGroup;
+			children = (
+				721C81171FCD578C00AF6E9D /* Manage */,
+				721C81161FCD577A00AF6E9D /* ViewModel */,
+				721C81151FCD576800AF6E9D /* Views */,
+				721C81141FCD575600AF6E9D /* Controller */,
+			);
+			path = ZiroomPart;
+			sourceTree = "<group>";
+		};
+		721C81121FCD570B00AF6E9D /* AddressBookPart */ = {
+			isa = PBXGroup;
+			children = (
+				721C811E1FCD57C900AF6E9D /* Manage */,
+				721C811D1FCD57C700AF6E9D /* ViewModel */,
+				721C811C1FCD57C500AF6E9D /* Views */,
+				721C811B1FCD57C300AF6E9D /* Controller */,
+			);
+			path = AddressBookPart;
+			sourceTree = "<group>";
+		};
+		721C81131FCD574100AF6E9D /* MePart */ = {
+			isa = PBXGroup;
+			children = (
+				721C81221FCD57D200AF6E9D /* Manage */,
+				721C81211FCD57D000AF6E9D /* ViewModel */,
+				721C81201FCD57CE00AF6E9D /* Views */,
+				721C811F1FCD57CC00AF6E9D /* Controller */,
+			);
+			path = MePart;
+			sourceTree = "<group>";
+		};
+		721C81141FCD575600AF6E9D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				721C81181FCD57BD00AF6E9D /* CSZiroomViewController.h */,
+				721C81191FCD57BD00AF6E9D /* CSZiroomViewController.m */,
+				728D20B81FCD67D600057177 /* CSZiroomNavController.h */,
+				728D20B91FCD67D600057177 /* CSZiroomNavController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		721C81151FCD576800AF6E9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		721C81161FCD577A00AF6E9D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		721C81171FCD578C00AF6E9D /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manage;
+			sourceTree = "<group>";
+		};
+		721C811B1FCD57C300AF6E9D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				721C81231FCD583700AF6E9D /* CSAddressBookViewController.h */,
+				721C81241FCD583700AF6E9D /* CSAddressBookViewController.m */,
+				728D20B51FCD67C300057177 /* CSAddressBookNavController.h */,
+				728D20B61FCD67C300057177 /* CSAddressBookNavController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		721C811C1FCD57C500AF6E9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		721C811D1FCD57C700AF6E9D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		721C811E1FCD57C900AF6E9D /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manage;
+			sourceTree = "<group>";
+		};
+		721C811F1FCD57CC00AF6E9D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				721C81261FCD584B00AF6E9D /* CSMeViewController.h */,
+				721C81271FCD584B00AF6E9D /* CSMeViewController.m */,
+				728D20B21FCD67A300057177 /* CSMeNavController.h */,
+				728D20B31FCD67A300057177 /* CSMeNavController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		721C81201FCD57CE00AF6E9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		721C81211FCD57D000AF6E9D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		721C81221FCD57D200AF6E9D /* Manage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manage;
 			sourceTree = "<group>";
 		};
 		7247F5411FCA8A2A00B0DEAE = {
@@ -208,6 +358,8 @@
 				7247F54E1FCA8A2A00B0DEAE /* AppDelegate.m */,
 				7247F5501FCA8A2B00B0DEAE /* ViewController.h */,
 				7247F5511FCA8A2B00B0DEAE /* ViewController.m */,
+				721C81291FCD666200AF6E9D /* rootTabBarController.h */,
+				721C812A1FCD666200AF6E9D /* rootTabBarController.m */,
 				7247F5A51FCABD2700B0DEAE /* CSProduct.pch */,
 				7247F5531FCA8A2B00B0DEAE /* Main.storyboard */,
 				7247F5561FCA8A2B00B0DEAE /* Assets.xcassets */,
@@ -274,6 +426,9 @@
 		7247F5A61FCACE3000B0DEAE /* CSModules */ = {
 			isa = PBXGroup;
 			children = (
+				721C81131FCD574100AF6E9D /* MePart */,
+				721C81121FCD570B00AF6E9D /* AddressBookPart */,
+				721C81111FCD56F300AF6E9D /* ZiroomPart */,
 				7247F5A71FCACE5A00B0DEAE /* CSWebService */,
 			);
 			path = CSModules;
@@ -567,16 +722,23 @@
 				7247F59B1FCAA0E000B0DEAE /* AFHTTPRequestOperationManager+Add.m in Sources */,
 				7247F59A1FCAA0E000B0DEAE /* CSNetworkPrivate.m in Sources */,
 				7247F5971FCAA0E000B0DEAE /* CSBaseRequest.m in Sources */,
+				728D20B41FCD67A300057177 /* CSMeNavController.m in Sources */,
 				7247F5991FCAA0E000B0DEAE /* CSNetManger.m in Sources */,
+				721C811A1FCD57BD00AF6E9D /* CSZiroomViewController.m in Sources */,
 				7247F5A01FCAA33100B0DEAE /* CSNetworkLogModel.m in Sources */,
 				7247F5941FCAA0E000B0DEAE /* CSUrlArgumentsFilter.m in Sources */,
 				7247F55D1FCA8A2B00B0DEAE /* main.m in Sources */,
 				7247F54F1FCA8A2A00B0DEAE /* AppDelegate.m in Sources */,
 				7247F5951FCAA0E000B0DEAE /* CSNetWorkConfig.m in Sources */,
+				721C81251FCD583700AF6E9D /* CSAddressBookViewController.m in Sources */,
 				721A9E061FCAD47A0056435F /* NSDictionary+null.m in Sources */,
+				721C81281FCD584B00AF6E9D /* CSMeViewController.m in Sources */,
 				721C810F1FCD4C7900AF6E9D /* UIView+ZRToast.m in Sources */,
+				728D20BA1FCD67D600057177 /* CSZiroomNavController.m in Sources */,
 				7247F5AD1FCACFEE00B0DEAE /* CSWebRequest.m in Sources */,
+				728D20B71FCD67C300057177 /* CSAddressBookNavController.m in Sources */,
 				7247F5981FCAA0E000B0DEAE /* CSHttpClient.m in Sources */,
+				721C812B1FCD666200AF6E9D /* rootTabBarController.m in Sources */,
 				7247F5931FCAA0E000B0DEAE /* CSRequest.m in Sources */,
 				7247F5AA1FCACEBC00B0DEAE /* CSBaseService.m in Sources */,
 			);

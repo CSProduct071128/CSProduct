@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
-
-#import "CSBaseService.h"
+#import "CSZiroomViewController.h"
+#import "CSAddressBookViewController.h"
+#import "CSMeViewController.h"
 
 @interface ViewController ()
 
@@ -18,14 +19,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    CSZiroomViewController *ziroomVC = [[CSZiroomViewController alloc] init];
+    UINavigationController *navZiroom = [[UINavigationController alloc] initWithRootViewController:ziroomVC];
+
+    CSAddressBookViewController *addRessBookVC = [[CSAddressBookViewController alloc] init];
+    UINavigationController *navAddRessBook = [[UINavigationController alloc] initWithRootViewController:addRessBookVC];
+
+    CSMeViewController *meVC = [[CSMeViewController alloc] init];
+    UINavigationController *navMe = [[UINavigationController alloc] initWithRootViewController:meVC];
     
-    [CSBaseService postJsonDataRequestWithDetailRul:@"adat/sk/101110101.html" param:nil header:nil cls:[NSDictionary class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
-        NSLog(@"正确：%@",logicDicData);
-    } failure:^(CSBaseRequest *request, NSString *errorMsg) {
-        NSLog(@"错误：%@",errorMsg);
-    }];
+    //    [CSBaseService postJsonDataRequestWithDetailRul:@"adat/sk/101110101.html" param:nil header:nil cls:[NSDictionary class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+//        NSLog(@"正确：%@",logicDicData);
+//    } failure:^(CSBaseRequest *request, NSString *errorMsg) {
+//        NSLog(@"错误：%@",errorMsg);
+//    }];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    NSLog(@"controller Show");
 }
 
 - (void)didReceiveMemoryWarning {
