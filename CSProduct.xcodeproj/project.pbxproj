@@ -135,10 +135,18 @@
 		721C810C1FCD4C4E00AF6E9D /* CSCommonControls */ = {
 			isa = PBXGroup;
 			children = (
+				721C81101FCD51AC00AF6E9D /* CSToast */,
+			);
+			path = CSCommonControls;
+			sourceTree = "<group>";
+		};
+		721C81101FCD51AC00AF6E9D /* CSToast */ = {
+			isa = PBXGroup;
+			children = (
 				721C810E1FCD4C7900AF6E9D /* UIView+ZRToast.h */,
 				721C810D1FCD4C7900AF6E9D /* UIView+ZRToast.m */,
 			);
-			path = CSCommonControls;
+			path = CSToast;
 			sourceTree = "<group>";
 		};
 		7247F5411FCA8A2A00B0DEAE = {
