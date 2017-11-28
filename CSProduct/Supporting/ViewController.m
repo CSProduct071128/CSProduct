@@ -25,6 +25,7 @@
     } failure:^(CSBaseRequest *request, NSString *errorMsg) {
         NSLog(@"错误：%@",errorMsg);
     }];
+    
 }
 
 - (void)didReceiveMemoryWarning {

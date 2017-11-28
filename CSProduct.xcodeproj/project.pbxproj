@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4780BD49E56D12652C6D25AB /* libPods-CSProduct.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6262DA7B6F97480A881C855C /* libPods-CSProduct.a */; };
 		721A9E061FCAD47A0056435F /* NSDictionary+null.m in Sources */ = {isa = PBXBuildFile; fileRef = 721A9E051FCAD47A0056435F /* NSDictionary+null.m */; };
+		721C810F1FCD4C7900AF6E9D /* UIView+ZRToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C810D1FCD4C7900AF6E9D /* UIView+ZRToast.m */; };
 		7247F54F1FCA8A2A00B0DEAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F54E1FCA8A2A00B0DEAE /* AppDelegate.m */; };
 		7247F5521FCA8A2B00B0DEAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F5511FCA8A2B00B0DEAE /* ViewController.m */; };
 		7247F5551FCA8A2B00B0DEAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7247F5531FCA8A2B00B0DEAE /* Main.storyboard */; };
@@ -55,6 +56,8 @@
 		6262DA7B6F97480A881C855C /* libPods-CSProduct.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CSProduct.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		721A9E041FCAD47A0056435F /* NSDictionary+null.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+null.h"; sourceTree = "<group>"; };
 		721A9E051FCAD47A0056435F /* NSDictionary+null.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+null.m"; sourceTree = "<group>"; };
+		721C810D1FCD4C7900AF6E9D /* UIView+ZRToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZRToast.m"; sourceTree = "<group>"; };
+		721C810E1FCD4C7900AF6E9D /* UIView+ZRToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZRToast.h"; sourceTree = "<group>"; };
 		7247F54A1FCA8A2A00B0DEAE /* CSProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7247F54D1FCA8A2A00B0DEAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7247F54E1FCA8A2A00B0DEAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -129,6 +132,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		721C810C1FCD4C4E00AF6E9D /* CSCommonControls */ = {
+			isa = PBXGroup;
+			children = (
+				721C810E1FCD4C7900AF6E9D /* UIView+ZRToast.h */,
+				721C810D1FCD4C7900AF6E9D /* UIView+ZRToast.m */,
+			);
+			path = CSCommonControls;
+			sourceTree = "<group>";
+		};
 		7247F5411FCA8A2A00B0DEAE = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +168,7 @@
 			children = (
 				7247F5A61FCACE3000B0DEAE /* CSModules */,
 				7247F59C1FCAA2B300B0DEAE /* CSUtility */,
+				721C810C1FCD4C4E00AF6E9D /* CSCommonControls */,
 				7247F5801FCAA09500B0DEAE /* CSWebservice */,
 				7247F57F1FCAA07100B0DEAE /* Supporting */,
 			);
@@ -553,6 +566,7 @@
 				7247F54F1FCA8A2A00B0DEAE /* AppDelegate.m in Sources */,
 				7247F5951FCAA0E000B0DEAE /* CSNetWorkConfig.m in Sources */,
 				721A9E061FCAD47A0056435F /* NSDictionary+null.m in Sources */,
+				721C810F1FCD4C7900AF6E9D /* UIView+ZRToast.m in Sources */,
 				7247F5AD1FCACFEE00B0DEAE /* CSWebRequest.m in Sources */,
 				7247F5981FCAA0E000B0DEAE /* CSHttpClient.m in Sources */,
 				7247F5931FCAA0E000B0DEAE /* CSRequest.m in Sources */,
@@ -724,7 +738,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45U4W25HXY;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CSProduct/Supporting/CSProduct.pch";
 				INFOPLIST_FILE = CSProduct/Supporting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -741,7 +755,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 45U4W25HXY;
-				GCC_PREFIX_HEADER = "";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/CSProduct/Supporting/CSProduct.pch";
 				INFOPLIST_FILE = CSProduct/Supporting/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
