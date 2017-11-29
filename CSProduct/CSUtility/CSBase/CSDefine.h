@@ -136,7 +136,6 @@
 #pragma mark - Color
 //通过三色值获取颜色对象
 #define rgb(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
-
 //字体深灰色
 #define kColorDarkGrayColor rgb(153, 153, 153, 1.0)
 //背景浅灰色
@@ -147,7 +146,6 @@
 #define kColorButtonSelectColor rgb(228, 70, 65, 1.0)
 //白色
 #define kColorWhiteColor rgb(255, 255, 255, 1.0)
-
 //蓝色
 #define kColorBlueColor rgb(42, 130, 255, 1.0)
 //绿色
@@ -155,49 +153,65 @@
 //无颜色
 #define kColorCleanColor [UIColor clearColor]
 
-
-
 //标题颜色(黑色)
 #define kColorTitleColor UIColorFromRGB(0x444444)
-
 //详情颜色(灰色)
 #define kColorDetailColor UIColorFromRGB(0x999999)
 
 
 /**_________________字体设置_________________________*/
+#define kPingFangSCRegularFontOfSize(a) [UIFont fontWithName:@"PingFangSC-Regular" size:(a)]
+#define kPingFangSCMediumFontOfSize(a) [UIFont fontWithName:@"PingFangSC-Medium" size:(a)]
+#define kPingFangSCLightFontOfSize(a) [UIFont fontWithName:@"PingFangSC-Light" size:(a)]
+#define kPingFangSCSemiboldFontOfSize(a) [UIFont fontWithName:@"PingFangSC-Semibold" size:(a)]
 
-//字体
-#pragma mark - font
-
-#define kFontSizeTwentyTwo [UIFont systemFontOfSize:22]
-
-#define kFontSizeTwenty [UIFont systemFontOfSize:20]
-
-#define kFontSizeEighteen [UIFont systemFontOfSize:18]
-
-#define kFontSizeSixteen [UIFont systemFontOfSize:16]
-
-#define kFontSizeFifteen [UIFont systemFontOfSize:15]
-
-#define kFontSizeFourteen [UIFont systemFontOfSize:14]
-
-#define kFontSizeThirteen [UIFont systemFontOfSize:13]
-
-#define kFontSizeTwelve [UIFont systemFontOfSize:12]
-
-#define kFontSizeEleven [UIFont systemFontOfSize:11]
-
-#define kFontSizeten [UIFont systemFontOfSize:10]
-
-#define kFontSizeNine [UIFont systemFontOfSize:9]
-
-#define kFontSizeeEight [UIFont systemFontOfSize:8]
-
-
+/**
+ 字体
+ */
 #define kCommonRegularFontOfSize(a) kPingFangSCRegularFontOfSize(a)?:[UIFont systemFontOfSize:(a)]
 #define kCommonMediumFontOfSize(a) kPingFangSCMediumFontOfSize(a)?:[UIFont systemFontOfSize:(a)]
 #define kCommonLightFontOfSize(a) kPingFangSCLightFontOfSize(a)?:[UIFont systemFontOfSize:(a)]
 #define kCommonBoldFontOfSize(a) kPingFangSCSemiboldFontOfSize(a)?:[UIFont systemFontOfSize:(a)]
+
+/**
+     颜色
+ */
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+#define UIColorFromRGBA(rgbValue,a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
+
+
+#ifndef weakify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define weakify(object) autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) autoreleasepool{} __block __typeof__(object) block##_##object = object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define weakify(object) try{} @finally{} {} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) try{} @finally{} {} __block __typeof__(object) block##_##object = object;
+#endif
+#endif
+#endif
+
+#ifndef strongify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define strongify(object) autoreleasepool{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) autoreleasepool{} __typeof__(object) object = block##_##object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define strongify(object) try{} @finally{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) try{} @finally{} __typeof__(object) object = block##_##object;
+#endif
+#endif
+#endif
 
 
 #endif

@@ -18,6 +18,7 @@
     CSMeHeadView *headView;
 }
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) NSArray *tableViewDataArray;
 
 @end
 
@@ -26,6 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableViewDataArray = [NSArray array];
     [self tableView];
     [self footViewShow];
     [self headViewShow];
@@ -39,17 +41,23 @@
 
 #pragma mark - data Loading
 - (void)dataLoading{
+    
     busnissManage  = [CSMeBusnissManage sharedInstance];
+    @weakify(self);
     [self.view showHUD];
-    [busnissManage getMeViewShowDataWithBlock:^(NSArray *cellDataSets, NSArray *headDataArray, NSString *errorStr) {
-//        [self.view hideHUD];
+    [busnissManage getMeViewShowDataWithBlock:^(NSArray *cellDataArray, NSArray *headDataArray, NSString *errorStr) {
+        @strongify(self);
+        [self.view hideHUD];
         if (errorStr.length) {
             [self.view makeToast:errorStr];
         }
         if (headDataArray.count) {
             headView;
         }
-        [self.tableView reloadData];
+        if (cellDataArray) {
+            self.tableViewDataArray = cellDataArray;
+            [self.tableView reloadData];
+        }
     }];
 }
 
@@ -93,10 +101,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    NSDictionary * dictModel = [self.dataArray objectAtIndex:indexPath.section];
-        CSMeCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSMeCell_ID];
-    
-        return cell;
+    //    NSDictionary * dictModel = [self.dataArray objectAtIndex:indexPath.section];
+    CSMeCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSMeCell_ID];
+    [cell setTitleWithStr:self.tableViewDataArray[indexPath.row]];
+    return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -113,13 +121,13 @@
 
 #pragma mark - headViewShow
 - (void)headViewShow{
-    headView = [[CSMeHeadView alloc] init];
-    [self.tableView setTableFooterView:headView];
+    headView = [[CSMeHeadView alloc] initWithFrame:CGRectMake(0, 0, CSScreenWidth, CSScreenWidth*2/3.0)];
+    [self.tableView setTableHeaderView:headView];
 }
 
 #pragma mark - footViewShow
 - (void)footViewShow{
-    CSMeFootView *footView = [[CSMeFootView alloc] init];
+    CSMeFootView *footView = [[CSMeFootView alloc] initWithFrame:CGRectMake(0, 0, CSScreenWidth, 100.f)];
     [self.tableView setTableFooterView:footView];
 }
 

@@ -11,4 +11,6 @@
 
 @interface CSMeCell : UITableViewCell
 
+- (void)setTitleWithStr:(NSString *)title;
+
 @end
