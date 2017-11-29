@@ -11,3 +11,11 @@
 @interface BaseViewController : UIViewController
 
 @end
+
+@interface UIScrollView (FixXcodeNine)
+
+@end
+
+@interface UITableView (FixXcodeNine)
+
+@end

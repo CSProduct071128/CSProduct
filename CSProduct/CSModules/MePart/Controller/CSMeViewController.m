@@ -107,7 +107,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     //    NSDictionary * dictModel = [self.dataArray objectAtIndex:indexPath.section];
     CSMeCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSMeCell_ID];
-    [cell setTitleWithStr:self.tableViewDataArray[indexPath.row]];
+    if (self.tableViewDataArray.count) {
+        [cell setTitleWithStr:self.tableViewDataArray[indexPath.row]];
+    }
     return cell;
 }
 
