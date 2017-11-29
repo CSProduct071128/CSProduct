@@ -9,6 +9,7 @@
 typedef void(^completionBlock)(BOOL isFinish,NSString *errorMessage);
 
 #import "CSMeBusnissManage.h"
+#import "CSBaseService.h"
 static CSMeBusnissManage *sharedInstance = nil;
 @interface CSMeBusnissManage ()
 
@@ -59,6 +60,10 @@ static CSMeBusnissManage *sharedInstance = nil;
  */
 - (void)tableViewHeadViewDataWithCompletion:(completionBlock)completion{
     self.tableViewShowArray = @[@"我的基本信息",@"我的公告",@"我的申请"];
-    completion(YES,@"数据请求错误！");
+    [CSBaseService postJsonDataRequestWithDetailRul:@"adat/sk/101110101.html" param:nil header:nil cls:[NSDictionary class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+        completion(YES,@"正确！");
+    } failure:^(CSBaseRequest *request, NSString *errorMsg) {
+        completion(NO,@"数据请求错误！");
+    }];
 }
 @end
