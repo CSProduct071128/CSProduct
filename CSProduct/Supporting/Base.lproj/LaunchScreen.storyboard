@@ -20,12 +20,26 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welComeImage" translatesAutoresizingMaskIntoConstraints="NO" id="JLq-qw-hG7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="v6i-lI-Iiq" firstAttribute="top" secondItem="JLq-qw-hG7" secondAttribute="bottom" id="JxB-O7-flC"/>
+                            <constraint firstItem="JLq-qw-hG7" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="X6a-PR-TbK"/>
+                            <constraint firstAttribute="trailing" secondItem="JLq-qw-hG7" secondAttribute="trailing" id="aII-Ab-6qN"/>
+                            <constraint firstItem="JLq-qw-hG7" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="zpE-iC-Cqd"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="welComeImage" width="400" height="600"/>
+    </resources>
 </document>

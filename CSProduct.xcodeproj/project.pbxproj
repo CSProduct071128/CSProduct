@@ -37,6 +37,7 @@
 		728D20B41FCD67A300057177 /* CSMeNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728D20B31FCD67A300057177 /* CSMeNavController.m */; };
 		728D20B71FCD67C300057177 /* CSAddressBookNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728D20B61FCD67C300057177 /* CSAddressBookNavController.m */; };
 		728D20BA1FCD67D600057177 /* CSZiroomNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728D20B91FCD67D600057177 /* CSZiroomNavController.m */; };
+		72F12A7F1FCE516F00120EC8 /* WelComeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A7E1FCE516F00120EC8 /* WelComeView.m */; };
 		E32940EE09A6211C87E8B308 /* libPods-CSProductTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +122,8 @@
 		728D20B61FCD67C300057177 /* CSAddressBookNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAddressBookNavController.m; sourceTree = "<group>"; };
 		728D20B81FCD67D600057177 /* CSZiroomNavController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSZiroomNavController.h; sourceTree = "<group>"; };
 		728D20B91FCD67D600057177 /* CSZiroomNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSZiroomNavController.m; sourceTree = "<group>"; };
+		72F12A7D1FCE516F00120EC8 /* WelComeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelComeView.h; sourceTree = "<group>"; };
+		72F12A7E1FCE516F00120EC8 /* WelComeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelComeView.m; sourceTree = "<group>"; };
 		90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CSProductTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D014FAA323BAF380E61379B5 /* Pods-CSProductTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProductTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSProductTests/Pods-CSProductTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0F2EA4EF2AF7AC2194DF696 /* Pods-CSProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProduct.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSProduct/Pods-CSProduct.release.xcconfig"; sourceTree = "<group>"; };
@@ -174,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				721C81171FCD578C00AF6E9D /* Manage */,
-				721C81161FCD577A00AF6E9D /* ViewModel */,
 				721C81151FCD576800AF6E9D /* Views */,
 				721C81141FCD575600AF6E9D /* Controller */,
 			);
@@ -185,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				721C811E1FCD57C900AF6E9D /* Manage */,
-				721C811D1FCD57C700AF6E9D /* ViewModel */,
 				721C811C1FCD57C500AF6E9D /* Views */,
 				721C811B1FCD57C300AF6E9D /* Controller */,
 			);
@@ -196,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				721C81221FCD57D200AF6E9D /* Manage */,
-				721C81211FCD57D000AF6E9D /* ViewModel */,
 				721C81201FCD57CE00AF6E9D /* Views */,
 				721C811F1FCD57CC00AF6E9D /* Controller */,
 			);
@@ -219,13 +219,6 @@
 			children = (
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		721C81161FCD577A00AF6E9D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		721C81171FCD578C00AF6E9D /* Manage */ = {
@@ -253,13 +246,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		721C811D1FCD57C700AF6E9D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		721C811E1FCD57C900AF6E9D /* Manage */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,13 +269,6 @@
 			children = (
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		721C81211FCD57D000AF6E9D /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		721C81221FCD57D200AF6E9D /* Manage */ = {
@@ -360,6 +339,8 @@
 				7247F5511FCA8A2B00B0DEAE /* ViewController.m */,
 				721C81291FCD666200AF6E9D /* rootTabBarController.h */,
 				721C812A1FCD666200AF6E9D /* rootTabBarController.m */,
+				72F12A7D1FCE516F00120EC8 /* WelComeView.h */,
+				72F12A7E1FCE516F00120EC8 /* WelComeView.m */,
 				7247F5A51FCABD2700B0DEAE /* CSProduct.pch */,
 				7247F5531FCA8A2B00B0DEAE /* Main.storyboard */,
 				7247F5561FCA8A2B00B0DEAE /* Assets.xcassets */,
@@ -721,6 +702,7 @@
 				7247F5521FCA8A2B00B0DEAE /* ViewController.m in Sources */,
 				7247F59B1FCAA0E000B0DEAE /* AFHTTPRequestOperationManager+Add.m in Sources */,
 				7247F59A1FCAA0E000B0DEAE /* CSNetworkPrivate.m in Sources */,
+				72F12A7F1FCE516F00120EC8 /* WelComeView.m in Sources */,
 				7247F5971FCAA0E000B0DEAE /* CSBaseRequest.m in Sources */,
 				728D20B41FCD67A300057177 /* CSMeNavController.m in Sources */,
 				7247F5991FCAA0E000B0DEAE /* CSNetManger.m in Sources */,
