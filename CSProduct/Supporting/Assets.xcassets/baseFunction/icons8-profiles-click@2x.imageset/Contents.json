@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icons8-video-chat-no_click.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "icons8-profiles-click.png",
       "scale" : "2x"
     },
     {

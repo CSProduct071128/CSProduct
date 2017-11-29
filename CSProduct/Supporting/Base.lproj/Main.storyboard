@@ -13,7 +13,7 @@
         <scene sceneID="6rA-Dk-PZY">
             <objects>
                 <navigationController id="F7v-p3-9Z0" customClass="CSZiroomNavController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="自如" id="a4a-Kx-EwL">
+                    <tabBarItem key="tabBarItem" title="自如" image="icons8-3d-house-no_click@2x" selectedImage="icons8-3d-house-click@2x" id="a4a-Kx-EwL">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -30,7 +30,7 @@
         <scene sceneID="ihR-J6-ue7">
             <objects>
                 <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BI3-sZ-2ds" customClass="CSAddressBookNavController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="通讯录" id="3DA-lR-tqE">
+                    <tabBarItem key="tabBarItem" title="通讯录" image="icons8-profiles-no_click@2x" selectedImage="icons8-profiles-click@2x" id="3DA-lR-tqE">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -47,7 +47,7 @@
         <scene sceneID="xiX-Qe-BMA">
             <objects>
                 <navigationController useStoryboardIdentifierAsRestorationIdentifier="YES" id="qpZ-l0-6Ie" customClass="CSMeNavController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="我的" id="XpO-a8-gkZ">
+                    <tabBarItem key="tabBarItem" title="我的" image="icons8-video-chat-no_click@2x" selectedImage="icons8-video-chat-click@2x" id="XpO-a8-gkZ">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-3"/>
                     </tabBarItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -68,7 +68,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <color key="selectedImageTintColor" red="0.26666666666666666" green="0.26666666666666666" blue="0.26666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="F7v-p3-9Z0" kind="relationship" relationship="viewControllers" id="GVy-WG-RAz"/>
@@ -81,4 +80,12 @@
             <point key="canvasLocation" x="-438" y="-320"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-3d-house-click@2x" width="24" height="24"/>
+        <image name="icons8-3d-house-no_click@2x" width="24" height="24"/>
+        <image name="icons8-profiles-click@2x" width="24" height="24"/>
+        <image name="icons8-profiles-no_click@2x" width="24" height="24"/>
+        <image name="icons8-video-chat-click@2x" width="24" height="24"/>
+        <image name="icons8-video-chat-no_click@2x" width="24" height="24"/>
+    </resources>
 </document>
