@@ -20,7 +20,7 @@
 
 #import "BaseViewController.h"
 
-#import "MBProgressHUD.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 #import "UIView+ZRToast.h"
 
