@@ -16,6 +16,7 @@ pod 'MJRefresh', '3.1.14'
 pod 'MJExtension', '2.5.16'
 pod 'Masonry', '0.6.4'
 pod 'JSONModel', '1.1.2'
+pod 'MBProgressHUD', '0.9.2'
 
 end
 
@@ -35,4 +36,6 @@ pod 'MJRefresh', '3.1.14'
 pod 'MJExtension', '2.5.16'
 pod 'Masonry', '0.6.4'
 pod 'JSONModel', '1.1.2'
+pod 'MBProgressHUD', '0.9.2'
+
 end

@@ -1,23 +1,23 @@
 //
-//  rootTabBarController.m
+//  BaseViewController.m
 //  CSProduct
 //
-//  Created by zhiwei jiang on 2017/11/28.
+//  Created by zhiwei jiang on 2017/11/29.
 //  Copyright © 2017年 zhiwei jiang. All rights reserved.
 //
 
-#import "rootTabBarController.h"
+#import "BaseViewController.h"
 
-@interface rootTabBarController ()
+@interface BaseViewController ()
 
 @end
 
-@implementation rootTabBarController
+@implementation BaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning {

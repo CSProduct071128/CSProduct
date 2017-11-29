@@ -10,6 +10,7 @@
 #import <Masonry.h>
 #import "CSZiroomViewMessageCell.h"
 #import "CSZiroomHomeHeadView.h"
+#import "LoginViewController.h"
 
 
 static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomViewMessageCellReuseIdentifier";

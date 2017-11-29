@@ -268,3 +268,90 @@ NSString * const ZRToastPositionBottom          = @"bottom";
     }
 }
 @end
+
+@implementation UIView (MBProgressHUD)
+
++ (MBProgressHUD *)showMBHUDInView:(UIView *)view{
+    MBProgressHUD *_hud = [[MBProgressHUD alloc] initWithView:view];
+    _hud.color = [UIColor whiteColor];
+    _hud.backgroundColor = [UIColor clearColor];
+    [view addSubview:_hud];
+    _hud.mode = MBProgressHUDModeDeterminate;
+//    NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"" withExtension:@"gif"];
+//    UIImageView *_gifView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+//    _gifView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+//    _gifView.image = [UIImage imageNamed:@""];
+//    _gifView.image = [UIImage sd_animatedGIFWithData:[NSData dataWithContentsOfURL:fileUrl]];
+//    _hud.customView = _gifView;
+    [_hud show:YES];
+    return _hud;
+}
+
++ (BOOL)hiddenMBHUDInView:(UIView *)view{
+    return [MBProgressHUD hideHUDForView:view animated:YES];
+}
+
++ (BOOL)hiddenAllMBHUDInView:(UIView *)view{
+    return [MBProgressHUD hideAllHUDsForView:view animated:YES];
+}
+
+- (void)showHUD
+{
+    self.tag=1;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        MBProgressHUD *_hud = [[MBProgressHUD alloc] initWithView:self];
+        _hud.color = [UIColor whiteColor];
+        _hud.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:.4];
+        [self addSubview:_hud];
+        _hud.mode = MBProgressHUDModeDeterminate;
+//        NSURL *fileUrl = [[NSBundle mainBundle] URLForResource:@"" withExtension:@"gif"];
+        //        SvGifView *_gifView = [[SvGifView alloc] initWithCenter:CGPointMake(50, 50) fileURL:fileUrl];
+        //        _gifView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+        //        _hud.customView = _gifView;
+        //        [_gifView startGif];
+        //        [_hud show:YES];
+//        UIImageView *_gifView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 80, 80)];
+//        _gifView.image = [UIImage sd_animatedGIFWithData:[NSData dataWithContentsOfURL:fileUrl]];
+//        _gifView.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
+//        _hud.customView = _gifView;
+        [_hud show:YES];
+    });
+    //    [NSTimer scheduledTimerWithTimeInterval:20 target:self selector:@selector(hide) userInfo:nil repeats:NO];
+}
+
+- (void)hide
+{
+    if (self.tag==110110110) {
+        return;
+    }
+    [self hideHUD];
+}
+
+//获取viewd的ViewController
+- (UIViewController*)superViewController
+{
+    for (UIView* next =self; next; next = next.superview)
+    {
+        UIResponder* nextResponder = [next nextResponder];
+        
+        if ([nextResponder isKindOfClass:[UIViewController class]])
+        {
+            return (UIViewController*)nextResponder;
+        }
+    }
+    
+    return nil;
+}
+
+
+- (void)hideHUD
+{
+    self.tag=110110110;
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [MBProgressHUD hideAllHUDsForView:self animated:YES];
+    });
+}
+
+
+@end
