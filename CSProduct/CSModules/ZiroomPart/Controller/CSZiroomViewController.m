@@ -7,6 +7,7 @@
 //
 
 #import "CSZiroomViewController.h"
+#import "LoginViewController.h"
 
 @interface CSZiroomViewController ()
 
@@ -18,7 +19,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor blueColor];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    /* 获取storyboard的InitialViewController 即根控制器*/
+    LoginViewController *VC= [storyboard instantiateViewControllerWithIdentifier:@"LoginViewCtl"];//(这个过程需要在StoryBoard中设置目标视图的Custom Class和StoryBoard ID)
 
+    [self presentViewController:VC animated:YES completion:^{
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

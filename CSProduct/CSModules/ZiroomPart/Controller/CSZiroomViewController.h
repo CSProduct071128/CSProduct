@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSZiroomViewController : UIViewController
+@interface CSZiroomViewController : BaseViewController
 
 @end

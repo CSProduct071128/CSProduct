@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSMeViewController : UIViewController
+@interface CSMeViewController : BaseViewController
 
 @end
