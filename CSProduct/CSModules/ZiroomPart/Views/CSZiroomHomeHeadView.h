@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDCycleScrollView.h"
 
 @interface CSZiroomHomeHeadView : UIView
+
+@property (nonatomic, strong) SDCycleScrollView *infiniteCarouselView;
+
+@property (nonatomic, strong) UIViewController *viewController;
 
 @end

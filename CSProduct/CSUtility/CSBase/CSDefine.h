@@ -13,6 +13,10 @@
 #import "MJRefresh.h"
 //控制键盘
 #import "IQKeyboardManager.h"
+//自动布局
+#import <Masonry.h>
+//视图属性扩展
+#import "UIView+ViewProperty.h"
 
 // 屏幕宽高
 #define CSScreenWidth  [UIScreen mainScreen].bounds.size.width
@@ -128,6 +132,7 @@
 #pragma mark - Color
 //通过三色值获取颜色对象
 #define rgb(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 //字体深灰色
 #define kColorDarkGrayColor rgb(153, 153, 153, 1.0)
