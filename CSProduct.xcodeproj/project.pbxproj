@@ -38,6 +38,11 @@
 		728D20B71FCD67C300057177 /* CSAddressBookNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728D20B61FCD67C300057177 /* CSAddressBookNavController.m */; };
 		728D20BA1FCD67D600057177 /* CSZiroomNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = 728D20B91FCD67D600057177 /* CSZiroomNavController.m */; };
 		72F12A7F1FCE516F00120EC8 /* WelComeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A7E1FCE516F00120EC8 /* WelComeView.m */; };
+		72F12A851FCE570400120EC8 /* CSZiroomHomeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A841FCE570400120EC8 /* CSZiroomHomeHeadView.m */; };
+		72F12A881FCE574000120EC8 /* CSZiroomViewFunctionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A871FCE574000120EC8 /* CSZiroomViewFunctionCell.m */; };
+		72F12A8B1FCE575400120EC8 /* CSZiroomViewMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A8A1FCE575400120EC8 /* CSZiroomViewMessageCell.m */; };
+		72F12A8E1FCE578000120EC8 /* CSZiroomBusnissManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A8D1FCE578000120EC8 /* CSZiroomBusnissManage.m */; };
+		72F12A911FCE57B300120EC8 /* CSZiroomHeadViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A901FCE57B300120EC8 /* CSZiroomHeadViewModel.m */; };
 		E32940EE09A6211C87E8B308 /* libPods-CSProductTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +129,16 @@
 		728D20B91FCD67D600057177 /* CSZiroomNavController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSZiroomNavController.m; sourceTree = "<group>"; };
 		72F12A7D1FCE516F00120EC8 /* WelComeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelComeView.h; sourceTree = "<group>"; };
 		72F12A7E1FCE516F00120EC8 /* WelComeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelComeView.m; sourceTree = "<group>"; };
+		72F12A831FCE570400120EC8 /* CSZiroomHomeHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSZiroomHomeHeadView.h; sourceTree = "<group>"; };
+		72F12A841FCE570400120EC8 /* CSZiroomHomeHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSZiroomHomeHeadView.m; sourceTree = "<group>"; };
+		72F12A861FCE574000120EC8 /* CSZiroomViewFunctionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSZiroomViewFunctionCell.h; sourceTree = "<group>"; };
+		72F12A871FCE574000120EC8 /* CSZiroomViewFunctionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSZiroomViewFunctionCell.m; sourceTree = "<group>"; };
+		72F12A891FCE575400120EC8 /* CSZiroomViewMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSZiroomViewMessageCell.h; sourceTree = "<group>"; };
+		72F12A8A1FCE575400120EC8 /* CSZiroomViewMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSZiroomViewMessageCell.m; sourceTree = "<group>"; };
+		72F12A8C1FCE578000120EC8 /* CSZiroomBusnissManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSZiroomBusnissManage.h; sourceTree = "<group>"; };
+		72F12A8D1FCE578000120EC8 /* CSZiroomBusnissManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSZiroomBusnissManage.m; sourceTree = "<group>"; };
+		72F12A8F1FCE57B300120EC8 /* CSZiroomHeadViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSZiroomHeadViewModel.h; sourceTree = "<group>"; };
+		72F12A901FCE57B300120EC8 /* CSZiroomHeadViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSZiroomHeadViewModel.m; sourceTree = "<group>"; };
 		90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CSProductTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D014FAA323BAF380E61379B5 /* Pods-CSProductTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProductTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSProductTests/Pods-CSProductTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0F2EA4EF2AF7AC2194DF696 /* Pods-CSProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProduct.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSProduct/Pods-CSProduct.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +191,7 @@
 		721C81111FCD56F300AF6E9D /* ZiroomPart */ = {
 			isa = PBXGroup;
 			children = (
+				72F12A821FCE561B00120EC8 /* Model */,
 				721C81171FCD578C00AF6E9D /* Manage */,
 				721C81151FCD576800AF6E9D /* Views */,
 				721C81141FCD575600AF6E9D /* Controller */,
@@ -186,6 +202,7 @@
 		721C81121FCD570B00AF6E9D /* AddressBookPart */ = {
 			isa = PBXGroup;
 			children = (
+				72F12A811FCE561300120EC8 /* Model */,
 				721C811E1FCD57C900AF6E9D /* Manage */,
 				721C811C1FCD57C500AF6E9D /* Views */,
 				721C811B1FCD57C300AF6E9D /* Controller */,
@@ -196,6 +213,7 @@
 		721C81131FCD574100AF6E9D /* MePart */ = {
 			isa = PBXGroup;
 			children = (
+				72F12A801FCE560B00120EC8 /* Model */,
 				721C81221FCD57D200AF6E9D /* Manage */,
 				721C81201FCD57CE00AF6E9D /* Views */,
 				721C811F1FCD57CC00AF6E9D /* Controller */,
@@ -217,6 +235,12 @@
 		721C81151FCD576800AF6E9D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				72F12A831FCE570400120EC8 /* CSZiroomHomeHeadView.h */,
+				72F12A841FCE570400120EC8 /* CSZiroomHomeHeadView.m */,
+				72F12A861FCE574000120EC8 /* CSZiroomViewFunctionCell.h */,
+				72F12A871FCE574000120EC8 /* CSZiroomViewFunctionCell.m */,
+				72F12A891FCE575400120EC8 /* CSZiroomViewMessageCell.h */,
+				72F12A8A1FCE575400120EC8 /* CSZiroomViewMessageCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +248,8 @@
 		721C81171FCD578C00AF6E9D /* Manage */ = {
 			isa = PBXGroup;
 			children = (
+				72F12A8C1FCE578000120EC8 /* CSZiroomBusnissManage.h */,
+				72F12A8D1FCE578000120EC8 /* CSZiroomBusnissManage.m */,
 			);
 			path = Manage;
 			sourceTree = "<group>";
@@ -424,6 +450,29 @@
 				7247F5AC1FCACFEE00B0DEAE /* CSWebRequest.m */,
 			);
 			path = CSWebService;
+			sourceTree = "<group>";
+		};
+		72F12A801FCE560B00120EC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72F12A811FCE561300120EC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72F12A821FCE561B00120EC8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				72F12A8F1FCE57B300120EC8 /* CSZiroomHeadViewModel.h */,
+				72F12A901FCE57B300120EC8 /* CSZiroomHeadViewModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B878F5C8F12475AA26F04A5A /* Frameworks */ = {
@@ -699,12 +748,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7247F5961FCAA0E000B0DEAE /* CSNetworkAgent.m in Sources */,
+				72F12A881FCE574000120EC8 /* CSZiroomViewFunctionCell.m in Sources */,
 				7247F5521FCA8A2B00B0DEAE /* ViewController.m in Sources */,
 				7247F59B1FCAA0E000B0DEAE /* AFHTTPRequestOperationManager+Add.m in Sources */,
 				7247F59A1FCAA0E000B0DEAE /* CSNetworkPrivate.m in Sources */,
 				72F12A7F1FCE516F00120EC8 /* WelComeView.m in Sources */,
 				7247F5971FCAA0E000B0DEAE /* CSBaseRequest.m in Sources */,
 				728D20B41FCD67A300057177 /* CSMeNavController.m in Sources */,
+				72F12A911FCE57B300120EC8 /* CSZiroomHeadViewModel.m in Sources */,
 				7247F5991FCAA0E000B0DEAE /* CSNetManger.m in Sources */,
 				721C811A1FCD57BD00AF6E9D /* CSZiroomViewController.m in Sources */,
 				7247F5A01FCAA33100B0DEAE /* CSNetworkLogModel.m in Sources */,
@@ -715,6 +766,8 @@
 				721C81251FCD583700AF6E9D /* CSAddressBookViewController.m in Sources */,
 				721A9E061FCAD47A0056435F /* NSDictionary+null.m in Sources */,
 				721C81281FCD584B00AF6E9D /* CSMeViewController.m in Sources */,
+				72F12A8E1FCE578000120EC8 /* CSZiroomBusnissManage.m in Sources */,
+				72F12A8B1FCE575400120EC8 /* CSZiroomViewMessageCell.m in Sources */,
 				721C810F1FCD4C7900AF6E9D /* UIView+ZRToast.m in Sources */,
 				728D20BA1FCD67D600057177 /* CSZiroomNavController.m in Sources */,
 				7247F5AD1FCACFEE00B0DEAE /* CSWebRequest.m in Sources */,
@@ -723,6 +776,7 @@
 				721C812B1FCD666200AF6E9D /* rootTabBarController.m in Sources */,
 				7247F5931FCAA0E000B0DEAE /* CSRequest.m in Sources */,
 				7247F5AA1FCACEBC00B0DEAE /* CSBaseService.m in Sources */,
+				72F12A851FCE570400120EC8 /* CSZiroomHomeHeadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
