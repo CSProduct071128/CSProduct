@@ -31,7 +31,7 @@
 #import <XCTest/XCTest.h>
 #import "CSBaseService.h"
 #import "CSWebRequest.h"
-#import "CSMeBusnissManage.h"
+#import "CSMeBusinessManage.h"
 #define WAIT do {\
 [self expectationForNotification:@"CSNOTIFYTEST" object:nil handler:nil];\
 [self waitForExpectationsWithTimeout:10 handler:nil];\
@@ -42,7 +42,7 @@
 
 @interface CSProductTests : XCTestCase
 {
-    CSMeBusnissManage *busnissManage;
+    CSMeBusinessManage *busnissManage;
 }
 
 @end
@@ -53,7 +53,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     // 在这里放设置代码。此方法在类中每个测试方法调用之前调用。
-    busnissManage = [CSMeBusnissManage sharedInstance];
+    busnissManage  = [[CSMeBusinessManage alloc] init];
 }
 
 - (void)tearDown {

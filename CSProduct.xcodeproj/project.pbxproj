@@ -43,6 +43,17 @@
 		72F12A8B1FCE575400120EC8 /* CSZiroomViewMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A8A1FCE575400120EC8 /* CSZiroomViewMessageCell.m */; };
 		72F12A8E1FCE578000120EC8 /* CSZiroomBusnissManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A8D1FCE578000120EC8 /* CSZiroomBusnissManage.m */; };
 		72F12A911FCE57B300120EC8 /* CSZiroomHeadViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A901FCE57B300120EC8 /* CSZiroomHeadViewModel.m */; };
+		72F12A941FCE5FEA00120EC8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A931FCE5FEA00120EC8 /* LoginViewController.m */; };
+		72F12A971FCE8F1500120EC8 /* CSMeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A961FCE8F1500120EC8 /* CSMeHeadView.m */; };
+		72F12A9A1FCE8F5A00120EC8 /* CSMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A991FCE8F5A00120EC8 /* CSMeCell.m */; };
+		72F12A9D1FCE8F7400120EC8 /* CSMeFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A9C1FCE8F7400120EC8 /* CSMeFootView.m */; };
+		72F12AA01FCE8FA800120EC8 /* CSMeBusinessManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A9F1FCE8FA800120EC8 /* CSMeBusinessManage.m */; };
+		72F12AA31FCE8FCA00120EC8 /* CSMeHeadViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12AA21FCE8FCA00120EC8 /* CSMeHeadViewModel.m */; };
+		72F12AA61FCE91DB00120EC8 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12AA51FCE91DB00120EC8 /* BaseViewController.m */; };
+		72F12AA91FCECCB900120EC8 /* CSPersonInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12AA81FCECCB900120EC8 /* CSPersonInfoViewController.m */; };
+		72F12AAC1FCECD6F00120EC8 /* CSPersonInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12AAB1FCECD6F00120EC8 /* CSPersonInfoCell.m */; };
+		72F12AAF1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12AAE1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.m */; };
+		72F12AB21FCED39400120EC8 /* baseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12AB11FCED39400120EC8 /* baseNavViewController.m */; };
 		B2B81E3E1FCEAEED00E59076 /* CSMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E3D1FCEAEED00E59076 /* CSMenuButton.m */; };
 		B2B81E411FCEB15500E59076 /* UIView+ViewProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E401FCEB15400E59076 /* UIView+ViewProperty.m */; };
 		B2B81E541FCEBE7500E59076 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E471FCEBE7500E59076 /* TAAbstractDotView.m */; };
@@ -52,13 +63,6 @@
 		B2B81E581FCEBE7600E59076 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E4F1FCEBE7500E59076 /* SDCollectionViewCell.m */; };
 		B2B81E591FCEBE7600E59076 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E511FCEBE7500E59076 /* SDCycleScrollView.m */; };
 		B2B81E5A1FCEBE7600E59076 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E531FCEBE7500E59076 /* UIView+SDExtension.m */; };
-		72F12A941FCE5FEA00120EC8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A931FCE5FEA00120EC8 /* LoginViewController.m */; };
-		72F12A971FCE8F1500120EC8 /* CSMeHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A961FCE8F1500120EC8 /* CSMeHeadView.m */; };
-		72F12A9A1FCE8F5A00120EC8 /* CSMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A991FCE8F5A00120EC8 /* CSMeCell.m */; };
-		72F12A9D1FCE8F7400120EC8 /* CSMeFootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A9C1FCE8F7400120EC8 /* CSMeFootView.m */; };
-		72F12AA01FCE8FA800120EC8 /* CSMeBusnissManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12A9F1FCE8FA800120EC8 /* CSMeBusnissManage.m */; };
-		72F12AA31FCE8FCA00120EC8 /* CSMeHeadViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12AA21FCE8FCA00120EC8 /* CSMeHeadViewModel.m */; };
-		72F12AA61FCE91DB00120EC8 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12AA51FCE91DB00120EC8 /* BaseViewController.m */; };
 		E32940EE09A6211C87E8B308 /* libPods-CSProductTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */; };
 /* End PBXBuildFile section */
 
@@ -163,12 +167,20 @@
 		72F12A991FCE8F5A00120EC8 /* CSMeCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMeCell.m; sourceTree = "<group>"; };
 		72F12A9B1FCE8F7400120EC8 /* CSMeFootView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMeFootView.h; sourceTree = "<group>"; };
 		72F12A9C1FCE8F7400120EC8 /* CSMeFootView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMeFootView.m; sourceTree = "<group>"; };
-		72F12A9E1FCE8FA800120EC8 /* CSMeBusnissManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMeBusnissManage.h; sourceTree = "<group>"; };
-		72F12A9F1FCE8FA800120EC8 /* CSMeBusnissManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMeBusnissManage.m; sourceTree = "<group>"; };
+		72F12A9E1FCE8FA800120EC8 /* CSMeBusinessManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMeBusinessManage.h; sourceTree = "<group>"; };
+		72F12A9F1FCE8FA800120EC8 /* CSMeBusinessManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMeBusinessManage.m; sourceTree = "<group>"; };
 		72F12AA11FCE8FCA00120EC8 /* CSMeHeadViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMeHeadViewModel.h; sourceTree = "<group>"; };
 		72F12AA21FCE8FCA00120EC8 /* CSMeHeadViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMeHeadViewModel.m; sourceTree = "<group>"; };
 		72F12AA41FCE91DB00120EC8 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		72F12AA51FCE91DB00120EC8 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		72F12AA71FCECCB900120EC8 /* CSPersonInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSPersonInfoViewController.h; sourceTree = "<group>"; };
+		72F12AA81FCECCB900120EC8 /* CSPersonInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSPersonInfoViewController.m; sourceTree = "<group>"; };
+		72F12AAA1FCECD6F00120EC8 /* CSPersonInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSPersonInfoCell.h; sourceTree = "<group>"; };
+		72F12AAB1FCECD6F00120EC8 /* CSPersonInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSPersonInfoCell.m; sourceTree = "<group>"; };
+		72F12AAD1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSPersonInfoBusinessManage.h; sourceTree = "<group>"; };
+		72F12AAE1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSPersonInfoBusinessManage.m; sourceTree = "<group>"; };
+		72F12AB01FCED39400120EC8 /* baseNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = baseNavViewController.h; sourceTree = "<group>"; };
+		72F12AB11FCED39400120EC8 /* baseNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = baseNavViewController.m; sourceTree = "<group>"; };
 		90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CSProductTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B81E3C1FCEAEED00E59076 /* CSMenuButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMenuButton.h; sourceTree = "<group>"; };
 		B2B81E3D1FCEAEED00E59076 /* CSMenuButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMenuButton.m; sourceTree = "<group>"; };
@@ -338,6 +350,8 @@
 				728D20B31FCD67A300057177 /* CSMeNavController.m */,
 				72F12A921FCE5FEA00120EC8 /* LoginViewController.h */,
 				72F12A931FCE5FEA00120EC8 /* LoginViewController.m */,
+				72F12AA71FCECCB900120EC8 /* CSPersonInfoViewController.h */,
+				72F12AA81FCECCB900120EC8 /* CSPersonInfoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -351,6 +365,8 @@
 				72F12A991FCE8F5A00120EC8 /* CSMeCell.m */,
 				72F12A9B1FCE8F7400120EC8 /* CSMeFootView.h */,
 				72F12A9C1FCE8F7400120EC8 /* CSMeFootView.m */,
+				72F12AAA1FCECD6F00120EC8 /* CSPersonInfoCell.h */,
+				72F12AAB1FCECD6F00120EC8 /* CSPersonInfoCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -358,8 +374,10 @@
 		721C81221FCD57D200AF6E9D /* Manage */ = {
 			isa = PBXGroup;
 			children = (
-				72F12A9E1FCE8FA800120EC8 /* CSMeBusnissManage.h */,
-				72F12A9F1FCE8FA800120EC8 /* CSMeBusnissManage.m */,
+				72F12A9E1FCE8FA800120EC8 /* CSMeBusinessManage.h */,
+				72F12A9F1FCE8FA800120EC8 /* CSMeBusinessManage.m */,
+				72F12AAD1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.h */,
+				72F12AAE1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.m */,
 			);
 			path = Manage;
 			sourceTree = "<group>";
@@ -430,6 +448,8 @@
 				72F12A7E1FCE516F00120EC8 /* WelComeView.m */,
 				72F12AA41FCE91DB00120EC8 /* BaseViewController.h */,
 				72F12AA51FCE91DB00120EC8 /* BaseViewController.m */,
+				72F12AB01FCED39400120EC8 /* baseNavViewController.h */,
+				72F12AB11FCED39400120EC8 /* baseNavViewController.m */,
 				7247F5A51FCABD2700B0DEAE /* CSProduct.pch */,
 				7247F5531FCA8A2B00B0DEAE /* Main.storyboard */,
 				7247F5561FCA8A2B00B0DEAE /* Assets.xcassets */,
@@ -856,6 +876,7 @@
 				7247F5521FCA8A2B00B0DEAE /* ViewController.m in Sources */,
 				7247F59B1FCAA0E000B0DEAE /* AFHTTPRequestOperationManager+Add.m in Sources */,
 				7247F59A1FCAA0E000B0DEAE /* CSNetworkPrivate.m in Sources */,
+				72F12AB21FCED39400120EC8 /* baseNavViewController.m in Sources */,
 				72F12A7F1FCE516F00120EC8 /* WelComeView.m in Sources */,
 				7247F5971FCAA0E000B0DEAE /* CSBaseRequest.m in Sources */,
 				B2B81E5A1FCEBE7600E59076 /* UIView+SDExtension.m in Sources */,
@@ -869,10 +890,12 @@
 				7247F5A01FCAA33100B0DEAE /* CSNetworkLogModel.m in Sources */,
 				72F12A9A1FCE8F5A00120EC8 /* CSMeCell.m in Sources */,
 				7247F5941FCAA0E000B0DEAE /* CSUrlArgumentsFilter.m in Sources */,
+				72F12AAF1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.m in Sources */,
 				7247F55D1FCA8A2B00B0DEAE /* main.m in Sources */,
 				7247F54F1FCA8A2A00B0DEAE /* AppDelegate.m in Sources */,
 				7247F5951FCAA0E000B0DEAE /* CSNetWorkConfig.m in Sources */,
 				721C81251FCD583700AF6E9D /* CSAddressBookViewController.m in Sources */,
+				72F12AAC1FCECD6F00120EC8 /* CSPersonInfoCell.m in Sources */,
 				B2B81E571FCEBE7600E59076 /* TAPageControl.m in Sources */,
 				721A9E061FCAD47A0056435F /* NSDictionary+null.m in Sources */,
 				721C81281FCD584B00AF6E9D /* CSMeViewController.m in Sources */,
@@ -883,7 +906,7 @@
 				72F12A9D1FCE8F7400120EC8 /* CSMeFootView.m in Sources */,
 				721C810F1FCD4C7900AF6E9D /* UIView+ZRToast.m in Sources */,
 				728D20BA1FCD67D600057177 /* CSZiroomNavController.m in Sources */,
-				72F12AA01FCE8FA800120EC8 /* CSMeBusnissManage.m in Sources */,
+				72F12AA01FCE8FA800120EC8 /* CSMeBusinessManage.m in Sources */,
 				7247F5AD1FCACFEE00B0DEAE /* CSWebRequest.m in Sources */,
 				B2B81E541FCEBE7500E59076 /* TAAbstractDotView.m in Sources */,
 				728D20B71FCD67C300057177 /* CSAddressBookNavController.m in Sources */,
@@ -895,6 +918,7 @@
 				7247F5AA1FCACEBC00B0DEAE /* CSBaseService.m in Sources */,
 				72F12A851FCE570400120EC8 /* CSZiroomHomeHeadView.m in Sources */,
 				B2B81E3E1FCEAEED00E59076 /* CSMenuButton.m in Sources */,
+				72F12AA91FCECCB900120EC8 /* CSPersonInfoViewController.m in Sources */,
 				72F12A971FCE8F1500120EC8 /* CSMeHeadView.m in Sources */,
 				72F12A941FCE5FEA00120EC8 /* LoginViewController.m in Sources */,
 			);

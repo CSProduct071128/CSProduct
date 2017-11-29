@@ -24,6 +24,12 @@
 
 #import "UIView+ZRToast.h"
 
+#import "SDImageCache.h"
+
+#import "UIButton+WebCache.h"
+#import "UIImageView+WebCache.h"
+
+
 // 屏幕宽高
 #define CSScreenWidth  [UIScreen mainScreen].bounds.size.width
 #define CSScreenHeight  [UIScreen mainScreen].bounds.size.height

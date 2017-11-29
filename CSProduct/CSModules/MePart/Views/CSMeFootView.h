@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^outLoginBtnClickBlock)(BOOL isClick);
+
 @interface CSMeFootView : UIView
+
+@property (nonatomic,copy) outLoginBtnClickBlock outLoginBlock;
 
 @end

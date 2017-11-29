@@ -1,5 +1,5 @@
 //
-//  CSMeBusnissManage.h
+//  CSMeBusinessManage.h
 //  CSProduct
 //
 //  Created by zhiwei jiang on 2017/11/29.
@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 typedef void(^getShowDataBlock)(NSArray *cellDataSets,NSArray *headDataArray, NSString *errorStr);
 
-@interface CSMeBusnissManage : NSObject
-+ (CSMeBusnissManage *)sharedInstance;
+@interface CSMeBusinessManage : NSObject
+- (instancetype)init;
 - (void)getMeViewShowDataWithBlock:(getShowDataBlock)block;
 
 @end

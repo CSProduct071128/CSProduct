@@ -1,5 +1,5 @@
 //
-//  CSMeBusnissManage.m
+//  CSMeBusinessManage.m
 //  CSProduct
 //
 //  Created by zhiwei jiang on 2017/11/29.
@@ -8,29 +8,25 @@
 
 typedef void(^completionBlock)(BOOL isFinish,NSString *errorMessage);
 
-#import "CSMeBusnissManage.h"
+#import "CSMeBusinessManage.h"
 #import "CSBaseService.h"
-static CSMeBusnissManage *sharedInstance = nil;
-@interface CSMeBusnissManage ()
+@interface CSMeBusinessManage ()
 
 @property (nonatomic,strong) NSArray *tableViewShowArray;
 
-
 @end
-@implementation CSMeBusnissManage
-#pragma mark - 单例
-+ (CSMeBusnissManage *)sharedInstance {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        if(sharedInstance == nil)
-            sharedInstance = [[CSMeBusnissManage alloc] init];
-    });
-    
-    return sharedInstance;
-}
 
+@implementation CSMeBusinessManage
+
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
 /**
-     获取页面显示数据
+ 获取页面显示数据
  */
 - (void)getMeViewShowDataWithBlock:(getShowDataBlock)block{
     [self tableViewCellDataWithCompletion:^(BOOL isFinish , NSString *errorMsg) {
@@ -43,12 +39,12 @@ static CSMeBusnissManage *sharedInstance = nil;
             block(self.tableViewShowArray,nil,errorMsg);
         }
     }];
-
-
+    
+    
 }
 
 /**
-     cell Sets
+ cell Sets
  */
 - (void)tableViewCellDataWithCompletion:(completionBlock)completion{
     self.tableViewShowArray = @[@"我的基本信息",@"我的公告",@"我的申请"];
@@ -56,7 +52,7 @@ static CSMeBusnissManage *sharedInstance = nil;
 
 
 /**
-     headView dataShow
+ headView dataShow
  */
 - (void)tableViewHeadViewDataWithCompletion:(completionBlock)completion{
     self.tableViewShowArray = @[@"我的基本信息",@"我的公告",@"我的申请"];

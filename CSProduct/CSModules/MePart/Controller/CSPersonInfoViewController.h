@@ -1,5 +1,5 @@
 //
-//  CSMeHeadView.h
+//  CSPersonInfoViewController.h
 //  CSProduct
 //
 //  Created by zhiwei jiang on 2017/11/29.
@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CSMeHeadView : UIView
-- (void)setHeadModel:(id)model;
+@interface CSPersonInfoViewController : BaseViewController
 
 @end

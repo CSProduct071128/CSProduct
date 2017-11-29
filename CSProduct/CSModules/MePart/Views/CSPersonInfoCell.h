@@ -1,5 +1,5 @@
 //
-//  CSMeHeadView.h
+//  CSPersonInfoCell.h
 //  CSProduct
 //
 //  Created by zhiwei jiang on 2017/11/29.
@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface CSMeHeadView : UIView
-- (void)setHeadModel:(id)model;
+#define kCSPersonInfoCellID @"CSPersonInfoCell_ID"
+@interface CSPersonInfoCell : UITableViewCell
+- (void)setModels:(id)model;
 
 @end

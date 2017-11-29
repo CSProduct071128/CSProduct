@@ -1,21 +1,17 @@
 //
-//  MeViewController.m
+//  CSPersonInfoViewController.m
 //  CSProduct
 //
-//  Created by zhiwei jiang on 2017/11/28.
+//  Created by zhiwei jiang on 2017/11/29.
 //  Copyright © 2017年 zhiwei jiang. All rights reserved.
 //
 
-#import "CSMeViewController.h"
-#import "CSMeCell.h"
-#import "CSMeHeadView.h"
-#import "CSMeFootView.h"
-#import "CSMeBusinessManage.h"
 #import "CSPersonInfoViewController.h"
+#import "CSMeHeadView.h"
+#import "CSPersonInfoCell.h"
 
-@interface CSMeViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface CSPersonInfoViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
-    CSMeBusinessManage *busnissManage;
     CSMeHeadView *headView;
 }
 @property (nonatomic,strong) UITableView *tableView;
@@ -23,43 +19,19 @@
 
 @end
 
-@implementation CSMeViewController
+@implementation CSPersonInfoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.tableViewDataArray = [NSArray array];
+    self.title = @"个人信息";
     [self tableView];
-    [self footViewShow];
     [self headViewShow];
-    [self dataLoading];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - data Loading
-- (void)dataLoading{
-    
-    busnissManage  = [[CSMeBusinessManage alloc] init];
-    @weakify(self);
-    [self.view showHUD];
-    [busnissManage getMeViewShowDataWithBlock:^(NSArray *cellDataArray, NSArray *headDataArray, NSString *errorStr) {
-        @strongify(self);
-        [self.view hideHUD];
-        if (errorStr.length) {
-            [self.view makeToast:errorStr];
-        }
-        if (headDataArray.count) {
-            headView;
-        }
-        if (cellDataArray) {
-            self.tableViewDataArray = cellDataArray;
-            [self.tableView reloadData];
-        }
-    }];
 }
 
 #pragma mark - UI Sets
@@ -82,7 +54,7 @@
             make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
         }];
         // 注册cell
-        [_tableView registerClass:[CSMeCell class] forCellReuseIdentifier:kCSMeCell_ID];
+        [_tableView registerClass:[CSPersonInfoCell class] forCellReuseIdentifier:kCSPersonInfoCellID];
         
     }
     return _tableView;
@@ -102,15 +74,15 @@
 };
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 3;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    //    NSDictionary * dictModel = [self.dataArray objectAtIndex:indexPath.section];
-    CSMeCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSMeCell_ID];
-    if (self.tableViewDataArray.count) {
-        [cell setTitleWithStr:self.tableViewDataArray[indexPath.row]];
-    }
+
+    CSPersonInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSPersonInfoCellID];
+//    if (self.tableViewDataArray.count) {
+        [cell setModels:@"这里是cellTitle:"];
+//    }
     return cell;
 }
 
@@ -126,28 +98,10 @@
     return 49.f;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 0) {
-        CSPersonInfoViewController *personInfoVC = [[CSPersonInfoViewController alloc] init];
-        [self.navigationController pushViewController:personInfoVC animated:YES];
-    }
-}
-
 #pragma mark - headViewShow
 - (void)headViewShow{
     headView = [[CSMeHeadView alloc] initWithFrame:CGRectMake(0, 0, CSScreenWidth, CSScreenWidth*2/3.0)];
-    [headView setHeadModel:nil];
     [self.tableView setTableHeaderView:headView];
 }
-
-#pragma mark - footViewShow
-- (void)footViewShow{
-    CSMeFootView *footView = [[CSMeFootView alloc] initWithFrame:CGRectMake(0, 0, CSScreenWidth, 100.f)];
-    footView.outLoginBlock = ^(BOOL isClick) {
-        NSLog(@"点击了退出按钮！！！");
-    };
-    [self.tableView setTableFooterView:footView];
-}
-
 
 @end

@@ -8,6 +8,14 @@
 
 #import "BaseViewController.h"
 
+#define IS_IPHONE4 (([[UIScreen mainScreen] bounds].size.height == 480) ? YES : NO)
+
+#define IS_IPHONE5 (([[UIScreen mainScreen] bounds].size.height == 568) ? YES : NO)
+
+#define IS_IPhone6 (667 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+
+#define IS_IPhone6plus (736 == [[UIScreen mainScreen] bounds].size.height ? YES : NO)
+
 @interface BaseViewController ()
 
 @end
@@ -18,12 +26,58 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    [self customLeftBtn];
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - backBtn!
+- (void)customLeftBtn{
+    UIBarButtonItem *left_fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    left_fixedItem.width = -6;
+    if (IS_IPhone6plus) {
+        left_fixedItem.width = -10;
+    }
+    UIButton *btn = [self buttonWithNavgationGotoBackWithTarget:self sel:@selector(tapBackBtn)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithCustomView:btn];
+    [self.navigationItem setLeftBarButtonItems:@[left_fixedItem,item]];
+#ifdef __IPHONE_11_0
+    if (@available(iOS 11.0, *)){
+        CGFloat fixValue = -5.0f;
+        if (IS_IPhone6plus) {
+            fixValue = -8.0f;
+        }
+        btn.contentHorizontalAlignment =UIControlContentHorizontalAlignmentLeft;
+        [btn setImageEdgeInsets:UIEdgeInsetsMake(0, fixValue *CSScreenWidth /375.0,0,0)];
+    } else {
+        
+    }
+#endif
+}
+
+- (UIButton *)buttonWithNavgationGotoBackWithTarget:(id)target sel:(SEL)sel{
+    UIButton *button = [UIButton new];
+    [button setImage:[UIImage imageNamed:@"zrk_ic_back"] forState:UIControlStateNormal];
+    button.frame = CGRectMake(0, 0, button.currentImage.size.width, button.currentImage.size.height);
+    //    button.frame = CGRectMake(0, 0, 44.f, 44.f);
+    [button addTarget:target action:sel forControlEvents:UIControlEventTouchUpInside];
+    return button;
+}
+
+//点击返回按钮
+-(void)tapBackBtn{
+    [self goBack];
+}
+
+//返回
+-(void)goBack{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 @end
 
