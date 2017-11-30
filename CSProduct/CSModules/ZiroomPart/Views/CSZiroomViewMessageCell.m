@@ -24,6 +24,7 @@
     self.iconImageView = [[UIImageView alloc] init];
     self.iconImageView.layer.cornerRadius = 27.5f;
     self.iconImageView.layer.masksToBounds = YES;
+    self.iconImageView.image= [UIImage imageNamed:@"zrk_user"];
     [self.contentView addSubview:self.iconImageView];
     [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerY.equalTo(self.contentView);

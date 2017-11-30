@@ -8,6 +8,7 @@
 
 #import "CSZiroomHomeHeadView.h"
 #import "CSMenuButton.h"
+#import "CSAnnounceListViewController.h"
 
 #define ImageHeaderHeight 250
 
@@ -160,7 +161,9 @@
 // 公告 点击
 - (void)announcementAction
 {
-    
+    CSAnnounceListViewController *vc = [CSAnnounceListViewController new];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.viewController.navigationController pushViewController:vc animated:YES];
     
 }
 // 黑名单 点击

@@ -63,6 +63,7 @@
 		B2B81E581FCEBE7600E59076 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E4F1FCEBE7500E59076 /* SDCollectionViewCell.m */; };
 		B2B81E591FCEBE7600E59076 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E511FCEBE7500E59076 /* SDCycleScrollView.m */; };
 		B2B81E5A1FCEBE7600E59076 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E531FCEBE7500E59076 /* UIView+SDExtension.m */; };
+		B2B81E5D1FCFFF3C00E59076 /* CSAnnounceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E5C1FCFFF3C00E59076 /* CSAnnounceListViewController.m */; };
 		E32940EE09A6211C87E8B308 /* libPods-CSProductTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */; };
 /* End PBXBuildFile section */
 
@@ -200,6 +201,8 @@
 		B2B81E511FCEBE7500E59076 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDCycleScrollView.m; sourceTree = "<group>"; };
 		B2B81E521FCEBE7500E59076 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDExtension.h"; sourceTree = "<group>"; };
 		B2B81E531FCEBE7500E59076 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
+		B2B81E5B1FCFFF3C00E59076 /* CSAnnounceListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAnnounceListViewController.h; sourceTree = "<group>"; };
+		B2B81E5C1FCFFF3C00E59076 /* CSAnnounceListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAnnounceListViewController.m; sourceTree = "<group>"; };
 		D014FAA323BAF380E61379B5 /* Pods-CSProductTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProductTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSProductTests/Pods-CSProductTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0F2EA4EF2AF7AC2194DF696 /* Pods-CSProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProduct.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSProduct/Pods-CSProduct.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -288,6 +291,8 @@
 				721C81191FCD57BD00AF6E9D /* CSZiroomViewController.m */,
 				728D20B81FCD67D600057177 /* CSZiroomNavController.h */,
 				728D20B91FCD67D600057177 /* CSZiroomNavController.m */,
+				B2B81E5B1FCFFF3C00E59076 /* CSAnnounceListViewController.h */,
+				B2B81E5C1FCFFF3C00E59076 /* CSAnnounceListViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -901,6 +906,7 @@
 				721C81281FCD584B00AF6E9D /* CSMeViewController.m in Sources */,
 				72F12A8E1FCE578000120EC8 /* CSZiroomBusnissManage.m in Sources */,
 				B2B81E411FCEB15500E59076 /* UIView+ViewProperty.m in Sources */,
+				B2B81E5D1FCFFF3C00E59076 /* CSAnnounceListViewController.m in Sources */,
 				72F12A8B1FCE575400120EC8 /* CSZiroomViewMessageCell.m in Sources */,
 				B2B81E551FCEBE7500E59076 /* TAAnimatedDotView.m in Sources */,
 				72F12A9D1FCE8F7400120EC8 /* CSMeFootView.m in Sources */,
