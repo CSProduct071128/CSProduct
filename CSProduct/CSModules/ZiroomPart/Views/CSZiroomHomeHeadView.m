@@ -150,14 +150,14 @@
 - (void)managerAction
 {
     [self.delegate managerAction];
-    
 }
+
 // 组织调整 点击
 - (void)groupChangeAction
 {
     [self.delegate groupChangeAction];
-    
 }
+
 // 公告 点击
 - (void)announcementAction
 {

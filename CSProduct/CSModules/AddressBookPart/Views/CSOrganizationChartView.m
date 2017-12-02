@@ -69,7 +69,7 @@
         return nil;
     }else{
         UIView *speView = [[UIView alloc] init];
-        speView.backgroundColor= [UIColor blackColor];
+        speView.backgroundColor= UIColorFromRGB(0xEEEEEE);
         return speView;
     }
 }
@@ -111,7 +111,7 @@
     if (section == 0) {
         return 0.01f;
     }else{
-        return 50.f;
+        return 24.f;
     }
 }
 
