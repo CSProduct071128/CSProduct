@@ -10,12 +10,13 @@
 #import <Masonry.h>
 #import "CSZiroomViewMessageCell.h"
 #import "CSZiroomHomeHeadView.h"
-
+#import "LoginViewController.h"
+#import "CSAnnounceListViewController.h"
 
 
 static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomViewMessageCellReuseIdentifier";
 
-@interface CSZiroomViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface CSZiroomViewController ()<UITableViewDelegate,UITableViewDataSource,CSZiroomHomeHeadViewDelegate>
 @property (nonatomic ,strong) UITableView *tableView;
 @property (nonatomic, strong) CSZiroomHomeHeadView *headerView;
 @end
@@ -26,7 +27,8 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-     [self loadTableView];
+    [self loadTableView];
+    [self loadData];
 }
 -(void)loadTableView{
     
@@ -51,12 +53,18 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
     if(!_headerView){
         CSZiroomHomeHeadView *header = [[CSZiroomHomeHeadView alloc] init];
         header.viewController = self;
+        header.delegate = self;
         header.frame = CGRectMake(0, 0, SCREEN_WIDTH,500);
         _headerView = header;
     }
     return _headerView;
 }
 
+-(void)loadData{
+    
+    self.headerView.infiniteCarouselView.imageURLStringsGroup = @[@"https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin_zoom/125.jpg",@"https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin_zoom/126.jpg",@"https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin_zoom/127.jpg"];
+    [self.tableView reloadData];
+}
 
 #pragma mark - UITableView delegate and datasource
 
@@ -82,11 +90,55 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
+#pragma mark - HeaderViewDelegate -----
+-(void)announcementAction{
+    
+    CSAnnounceListViewController *vc = [[CSAnnounceListViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)approvalAction {
+     
+}
+
+
+- (void)blackListAction {
+    
+}
+
+
+- (void)checkInAction {
+    
+}
+
+
+- (void)clockInAction {
+    
+}
+
+
+- (void)groupChangeAction {
+    
+}
+
+
+- (void)holidayAction {
+    
+}
+
+
+- (void)managerAction {
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
- 
+
+
+
 @end

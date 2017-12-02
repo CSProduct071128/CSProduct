@@ -8,9 +8,6 @@
 
 #import "CSZiroomHomeHeadView.h"
 #import "CSMenuButton.h"
-#import "CSAnnounceListViewController.h"
-#import "CSPersonManageViewController.h"// 人员管理页面
-#import "CSOrganizationViewController.h"// 组织管理页面
 
 #define ImageHeaderHeight 250
 
@@ -80,9 +77,9 @@
             CSMenuButton *menuButton = [CSMenuButton buttonWithType:UIButtonTypeCustom];
             [headerButtonsView addSubview:menuButton];
             CGFloat buttonHeight = 80;
-            CGFloat buttonWidth = 50;
+            CGFloat buttonWidth = 80;
             CGFloat seperator = (SCREEN_WIDTH - buttonWidth*3) / 4.0;
-            menuButton.frame = CGRectMake(seperator+i%3*(buttonWidth+seperator), 24+i/3*(buttonHeight), buttonWidth, buttonHeight);
+            menuButton.frame = CGRectMake(seperator+i%3*(buttonWidth+seperator), 14+i/3*(buttonHeight), buttonWidth, buttonHeight);
             [menuButton setTitle:dataDic[@"title"] forState:UIControlStateNormal];
             menuButton.titleLabel.font =  [UIFont systemFontOfSize:12.0f];
             [menuButton setTitleColor:UIColorFromRGB(0x444444) forState:UIControlStateNormal];
@@ -94,14 +91,15 @@
 }
 - (SDCycleScrollView *)infiniteCarouselView{
     if (!_infiniteCarouselView) {
-        CGFloat w = CGRectGetWidth(self.bounds);
+        CGFloat w = SCREEN_WIDTH;
         CGRect r = CGRectMake(0, 0, w, ImageHeaderHeight);
         SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:r delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
+        cycleScrollView2.backgroundColor = [UIColor whiteColor];
         cycleScrollView2.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
         cycleScrollView2.showPageControl = NO;
         //        cycleScrollView2.autoScrollTimeInterval = 5;
-        cycleScrollView2.autoScroll = NO;
-        cycleScrollView2.placeholderImage = [UIImage imageNamed:@"zr_placeholder"];
+        cycleScrollView2.autoScroll = YES;
+        cycleScrollView2.placeholderImage = [UIImage imageNamed:@"placeholder"];
         cycleScrollView2.bannerImageViewContentMode = UIViewContentModeScaleAspectFit;
         _infiniteCarouselView = cycleScrollView2;
     }
@@ -134,52 +132,50 @@
 - (void)clockInAction
 {
     
-    
+    [self.delegate clockInAction];
 }
 // 考勤日历 点击
 - (void)checkInAction
 {
-    
+     [self.delegate checkInAction];
     
 }
 // 请假申请 点击
 - (void)holidayAction
 {
-    
+    [self.delegate holidayAction];
     
 }
 // 人员管理 点击
 - (void)managerAction
 {
-    CSPersonManageViewController *vc = [[CSPersonManageViewController alloc] init];
-    [self.viewController.navigationController pushViewController:vc animated:YES];
+    [self.delegate managerAction];
 }
 
 // 组织调整 点击
 - (void)groupChangeAction
 {
-    CSOrganizationViewController *vc = [[CSOrganizationViewController alloc] init];
-    [self.viewController.navigationController pushViewController:vc animated:YES];
+    [self.delegate groupChangeAction];
 }
 
 // 公告 点击
 - (void)announcementAction
 {
-    CSAnnounceListViewController *vc = [CSAnnounceListViewController new];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.viewController.navigationController pushViewController:vc animated:YES];
+    
+    [self.delegate announcementAction];
+    
     
 }
 // 黑名单 点击
 - (void)blackListAction
 {
-    
+    [self.delegate blackListAction];
     
 }
 // 申请审批 点击
 - (void)approvalAction
 {
     
-    
+    [self.delegate approvalAction];
 }
 @end
