@@ -1,30 +1,28 @@
 //
-//  CSAnnounceListViewController.m
+//  CSPositionViewController.m
 //  CSProduct
 //
-//  Created by LiGuoTing on 2017/11/30.
+//  Created by LiGuoTing on 2017/12/2.
 //  Copyright © 2017年 zhiwei jiang. All rights reserved.
 //
 
-#import "CSAnnounceListViewController.h"
-#import <Masonry.h>
-#import "CSZiroomViewMessageCell.h"
-#import "CSZiroomHomeHeadView.h"
+#import "CSPositionViewController.h"
+#import "CSParentmentListTableCell.h"
 
-static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomViewMessageCellReuseIdentifier";
-
-@interface CSAnnounceListViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface CSPositionViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong) UITableView *tableView;
+@property (nonatomic ,strong) NSArray *nameArr;
 @end
 
-@implementation CSAnnounceListViewController
+@implementation CSPositionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"公告管理";
+    self.title = @"职位列表";
     self.view.backgroundColor = [UIColor whiteColor];
     [self loadTableView];
-//    [self setNavItem];
+    [self loadData];
+    // Do any additional setup after loading the view.
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
@@ -43,14 +41,21 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
         [table mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(64, 0, 0, 0));
         }];
-        [table registerClass:[CSZiroomViewMessageCell class] forCellReuseIdentifier:kCSZiroomViewMessageCellReuseIdentifier];
+        [table registerClass:[CSParentmentListTableCell class] forCellReuseIdentifier:[CSParentmentListTableCell cellIdentifier]];
+        
         table.separatorStyle = UITableViewCellSeparatorStyleNone;
         table.delegate = self;
         table.dataSource = self;
         table.backgroundColor = UIColorFromRGB(0xf9f9f9);
         table;
     });
-   
+    
+}
+
+-(void)loadData{
+    
+    self.nameArr = @[@"CEO",@"CTO",@"经理",@"专员"];
+    [self.tableView reloadData];
 }
 #pragma mark - UITableView delegate and datasource
 
@@ -59,42 +64,26 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return self.nameArr.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return  [CSZiroomViewMessageCell getCellHeight];
+    return  [CSParentmentListTableCell cellEstimatedHeight];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    CSZiroomViewMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSZiroomViewMessageCellReuseIdentifier forIndexPath:indexPath];
-    cell.nameLabel.text = @"公告标题";
-    cell.infoLabel.text = @"公告内容摘要";
     
+    CSParentmentListTableCell *cell = [tableView dequeueReusableCellWithIdentifier:[CSParentmentListTableCell cellIdentifier]];
+    cell.cellTitleLabel.text = self.nameArr[indexPath.row];
+    cell.cellImageBtn.hidden = YES;
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-}
--(void)setNavItem{
-    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    rightBtn.frame = CGRectMake(0, 0, 44, 64);
-    [rightBtn setImage:[UIImage imageNamed:@"zrk_ic_good_add_n"] forState:UIControlStateSelected];
-    rightBtn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
-    [rightBtn setTitleColor:UIColorFromRGB(0x444444) forState:UIControlStateNormal];
-    [rightBtn addTarget:self action:@selector(rightBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
-    rightItem.width=64;
-    //    UIBarButtonItem *navigationSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    //    navigationSpace.width = -20 + 6;
-    self.navigationItem.rightBarButtonItem = rightItem;
+    self.cellSelectBlock(self.nameArr[indexPath.row]);
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
--(void)rightBtnClick:(UIButton *)btn{
-    
-    
-}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

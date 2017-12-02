@@ -42,7 +42,10 @@
         make.bottom.equalTo(self.view);
     }];
     [organizationView showDataWithOrgArray:org andPersonArray:person andHeadDataArray:head];
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
