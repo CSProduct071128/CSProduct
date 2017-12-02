@@ -54,6 +54,12 @@
 		72F12AAC1FCECD6F00120EC8 /* CSPersonInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12AAB1FCECD6F00120EC8 /* CSPersonInfoCell.m */; };
 		72F12AAF1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12AAE1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.m */; };
 		72F12AB21FCED39400120EC8 /* baseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72F12AB11FCED39400120EC8 /* baseNavViewController.m */; };
+		72FA2E131FD26B0400532BAC /* CSDataSave.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FA2E121FD26B0400532BAC /* CSDataSave.m */; };
+		72FA2E191FD2767800532BAC /* CSOrganizationChartHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FA2E181FD2767800532BAC /* CSOrganizationChartHeadView.m */; };
+		72FA2E1C1FD2773E00532BAC /* CSOrganizationChartHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FA2E1B1FD2773E00532BAC /* CSOrganizationChartHeadCell.m */; };
+		72FA2E1F1FD2802D00532BAC /* CSOrganizationChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FA2E1E1FD2802D00532BAC /* CSOrganizationChartView.m */; };
+		72FA2E221FD2805500532BAC /* CSOrganizationChartOrgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FA2E211FD2805500532BAC /* CSOrganizationChartOrgCell.m */; };
+		72FA2E251FD2831500532BAC /* CSOrganizationChartPersonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FA2E241FD2831500532BAC /* CSOrganizationChartPersonCell.m */; };
 		B2B81E3E1FCEAEED00E59076 /* CSMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E3D1FCEAEED00E59076 /* CSMenuButton.m */; };
 		B2B81E411FCEB15500E59076 /* UIView+ViewProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E401FCEB15400E59076 /* UIView+ViewProperty.m */; };
 		B2B81E541FCEBE7500E59076 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E471FCEBE7500E59076 /* TAAbstractDotView.m */; };
@@ -182,6 +188,18 @@
 		72F12AAE1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSPersonInfoBusinessManage.m; sourceTree = "<group>"; };
 		72F12AB01FCED39400120EC8 /* baseNavViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = baseNavViewController.h; sourceTree = "<group>"; };
 		72F12AB11FCED39400120EC8 /* baseNavViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = baseNavViewController.m; sourceTree = "<group>"; };
+		72FA2E111FD26B0400532BAC /* CSDataSave.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSDataSave.h; sourceTree = "<group>"; };
+		72FA2E121FD26B0400532BAC /* CSDataSave.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSDataSave.m; sourceTree = "<group>"; };
+		72FA2E171FD2767800532BAC /* CSOrganizationChartHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSOrganizationChartHeadView.h; sourceTree = "<group>"; };
+		72FA2E181FD2767800532BAC /* CSOrganizationChartHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSOrganizationChartHeadView.m; sourceTree = "<group>"; };
+		72FA2E1A1FD2773E00532BAC /* CSOrganizationChartHeadCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSOrganizationChartHeadCell.h; sourceTree = "<group>"; };
+		72FA2E1B1FD2773E00532BAC /* CSOrganizationChartHeadCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSOrganizationChartHeadCell.m; sourceTree = "<group>"; };
+		72FA2E1D1FD2802D00532BAC /* CSOrganizationChartView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSOrganizationChartView.h; sourceTree = "<group>"; };
+		72FA2E1E1FD2802D00532BAC /* CSOrganizationChartView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSOrganizationChartView.m; sourceTree = "<group>"; };
+		72FA2E201FD2805500532BAC /* CSOrganizationChartOrgCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSOrganizationChartOrgCell.h; sourceTree = "<group>"; };
+		72FA2E211FD2805500532BAC /* CSOrganizationChartOrgCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSOrganizationChartOrgCell.m; sourceTree = "<group>"; };
+		72FA2E231FD2831500532BAC /* CSOrganizationChartPersonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSOrganizationChartPersonCell.h; sourceTree = "<group>"; };
+		72FA2E241FD2831500532BAC /* CSOrganizationChartPersonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSOrganizationChartPersonCell.m; sourceTree = "<group>"; };
 		90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CSProductTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B81E3C1FCEAEED00E59076 /* CSMenuButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMenuButton.h; sourceTree = "<group>"; };
 		B2B81E3D1FCEAEED00E59076 /* CSMenuButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMenuButton.m; sourceTree = "<group>"; };
@@ -335,6 +353,16 @@
 		721C811C1FCD57C500AF6E9D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				72FA2E171FD2767800532BAC /* CSOrganizationChartHeadView.h */,
+				72FA2E181FD2767800532BAC /* CSOrganizationChartHeadView.m */,
+				72FA2E1A1FD2773E00532BAC /* CSOrganizationChartHeadCell.h */,
+				72FA2E1B1FD2773E00532BAC /* CSOrganizationChartHeadCell.m */,
+				72FA2E1D1FD2802D00532BAC /* CSOrganizationChartView.h */,
+				72FA2E1E1FD2802D00532BAC /* CSOrganizationChartView.m */,
+				72FA2E201FD2805500532BAC /* CSOrganizationChartOrgCell.h */,
+				72FA2E211FD2805500532BAC /* CSOrganizationChartOrgCell.m */,
+				72FA2E231FD2831500532BAC /* CSOrganizationChartPersonCell.h */,
+				72FA2E241FD2831500532BAC /* CSOrganizationChartPersonCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -514,6 +542,8 @@
 				721A9E041FCAD47A0056435F /* NSDictionary+null.h */,
 				721A9E051FCAD47A0056435F /* NSDictionary+null.m */,
 				7247F5A21FCAB9DB00B0DEAE /* CSDefine.h */,
+				72FA2E111FD26B0400532BAC /* CSDataSave.h */,
+				72FA2E121FD26B0400532BAC /* CSDataSave.m */,
 				B2B81E3F1FCEB15400E59076 /* UIView+ViewProperty.h */,
 				B2B81E401FCEB15400E59076 /* UIView+ViewProperty.m */,
 			);
@@ -876,6 +906,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72FA2E1C1FD2773E00532BAC /* CSOrganizationChartHeadCell.m in Sources */,
 				7247F5961FCAA0E000B0DEAE /* CSNetworkAgent.m in Sources */,
 				72F12A881FCE574000120EC8 /* CSZiroomViewFunctionCell.m in Sources */,
 				7247F5521FCA8A2B00B0DEAE /* ViewController.m in Sources */,
@@ -884,6 +915,7 @@
 				72F12AB21FCED39400120EC8 /* baseNavViewController.m in Sources */,
 				72F12A7F1FCE516F00120EC8 /* WelComeView.m in Sources */,
 				7247F5971FCAA0E000B0DEAE /* CSBaseRequest.m in Sources */,
+				72FA2E221FD2805500532BAC /* CSOrganizationChartOrgCell.m in Sources */,
 				B2B81E5A1FCEBE7600E59076 /* UIView+SDExtension.m in Sources */,
 				B2B81E591FCEBE7600E59076 /* SDCycleScrollView.m in Sources */,
 				728D20B41FCD67A300057177 /* CSMeNavController.m in Sources */,
@@ -893,8 +925,10 @@
 				721C811A1FCD57BD00AF6E9D /* CSZiroomViewController.m in Sources */,
 				B2B81E581FCEBE7600E59076 /* SDCollectionViewCell.m in Sources */,
 				7247F5A01FCAA33100B0DEAE /* CSNetworkLogModel.m in Sources */,
+				72FA2E251FD2831500532BAC /* CSOrganizationChartPersonCell.m in Sources */,
 				72F12A9A1FCE8F5A00120EC8 /* CSMeCell.m in Sources */,
 				7247F5941FCAA0E000B0DEAE /* CSUrlArgumentsFilter.m in Sources */,
+				72FA2E1F1FD2802D00532BAC /* CSOrganizationChartView.m in Sources */,
 				72F12AAF1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.m in Sources */,
 				7247F55D1FCA8A2B00B0DEAE /* main.m in Sources */,
 				7247F54F1FCA8A2A00B0DEAE /* AppDelegate.m in Sources */,
@@ -907,6 +941,8 @@
 				72F12A8E1FCE578000120EC8 /* CSZiroomBusnissManage.m in Sources */,
 				B2B81E411FCEB15500E59076 /* UIView+ViewProperty.m in Sources */,
 				B2B81E601FD29CBC00E59076 /* CSAnnounceListViewController.m in Sources */,
+				72FA2E131FD26B0400532BAC /* CSDataSave.m in Sources */,
+				B2B81E5D1FCFFF3C00E59076 /* CSAnnounceListViewController.m in Sources */,
 				72F12A8B1FCE575400120EC8 /* CSZiroomViewMessageCell.m in Sources */,
 				B2B81E551FCEBE7500E59076 /* TAAnimatedDotView.m in Sources */,
 				72F12A9D1FCE8F7400120EC8 /* CSMeFootView.m in Sources */,
@@ -922,6 +958,7 @@
 				7247F5931FCAA0E000B0DEAE /* CSRequest.m in Sources */,
 				72F12AA61FCE91DB00120EC8 /* BaseViewController.m in Sources */,
 				7247F5AA1FCACEBC00B0DEAE /* CSBaseService.m in Sources */,
+				72FA2E191FD2767800532BAC /* CSOrganizationChartHeadView.m in Sources */,
 				72F12A851FCE570400120EC8 /* CSZiroomHomeHeadView.m in Sources */,
 				B2B81E3E1FCEAEED00E59076 /* CSMenuButton.m in Sources */,
 				72F12AA91FCECCB900120EC8 /* CSPersonInfoViewController.m in Sources */,

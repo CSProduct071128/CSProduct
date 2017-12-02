@@ -145,6 +145,10 @@
     CSMeFootView *footView = [[CSMeFootView alloc] initWithFrame:CGRectMake(0, 0, CSScreenWidth, 100.f)];
     footView.outLoginBlock = ^(BOOL isClick) {
         NSLog(@"点击了退出按钮！！！");
+        CSDataSave *info = [[CSDataSave alloc] init];
+        info.isLogin = NO;
+        [CSDataSave encodeWithModel:info];
+        [LoginViewController loginaWithCtl:self];
     };
     [self.tableView setTableFooterView:footView];
 }
