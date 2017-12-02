@@ -12,7 +12,6 @@
 #import "CSZiroomHomeHeadView.h"
 #import "LoginViewController.h"
 #import "CSAnnounceListViewController.h"
-#import "CSEmpleeJoinController.h"
 #import "CSOrganizationViewController.h"//组织管理页面
 #import "CSPersonManageViewController.h"// 人员管理页面
 
@@ -100,10 +99,7 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 }
 
 - (void)approvalAction {
-    
-    CSEmpleeJoinController *vc = [[CSEmpleeJoinController alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 

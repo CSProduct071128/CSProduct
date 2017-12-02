@@ -34,14 +34,14 @@ static NSString *const kCSCSSelectTableViewCell = @"kCSCSSelectTableViewCellReus
     [self loadData];
     // Do any additional setup after loading the view.
 }
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    self.navigationController.navigationBar.hidden = NO;
-}
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:YES];
-    self.navigationController.navigationBar.hidden = YES;
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:YES];
+//    self.navigationController.navigationBar.hidden = NO;
+//}
+//-(void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:YES];
+//    self.navigationController.navigationBar.hidden = YES;
+//}
 -(void)loadTableView{
     
     self.view.backgroundColor = [UIColor whiteColor];
