@@ -8,7 +8,10 @@
 
 #ifndef CSProduct_CSDefine_h
 #define CSProduct_CSDefine_h
-
+// 登录信息
+#import "CSDataSave.h"
+// 登录页面
+#import "LoginViewController.h"
 //下拉
 #import "MJRefresh.h"
 //控制键盘
@@ -167,6 +170,8 @@
 #define kColorTitleColor UIColorFromRGB(0x444444)
 //详情颜色(灰色)
 #define kColorDetailColor UIColorFromRGB(0x999999)
+//分割线
+#define kColorLineColor UIColorFromRGB(0xEEEEEE)
 
 
 /**_________________字体设置_________________________*/

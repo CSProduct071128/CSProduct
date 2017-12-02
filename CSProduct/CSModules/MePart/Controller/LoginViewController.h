@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : BaseViewController
+@interface LoginViewController : UIViewController
++(void)loginaWithCtl:(UIViewController *)favc;
 
 @end

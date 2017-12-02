@@ -35,6 +35,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    CSDataSave *info = [CSDataSave getLoginInfo];
+    if (!info.isLogin) {
+        [LoginViewController loginaWithCtl:self];
+    }
+}
+
 #pragma mark - backBtn!
 - (void)customLeftBtn{
     UIBarButtonItem *left_fixedItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];

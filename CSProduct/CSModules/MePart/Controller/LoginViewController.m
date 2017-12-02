@@ -17,6 +17,17 @@
 @end
 
 @implementation LoginViewController
+
++(void)loginaWithCtl:(UIViewController *)favc{
+    if (![favc isKindOfClass:[LoginViewController class]]) {
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        /* 获取storyboard的InitialViewController 即根控制器*/
+        LoginViewController *VC= [storyboard instantiateViewControllerWithIdentifier:@"LoginViewCtl"];//(这个过程需要在StoryBoard中设置目标视图的Custom Class和StoryBoard ID)
+        [favc presentViewController:VC animated:YES completion:^{
+        }];
+    }
+}
+
 -(void)awakeFromNib{
     [super awakeFromNib];
 }
@@ -34,8 +45,10 @@
 
 - (void)loginClick:(UIButton *)send{
     NSLog(@"登录按钮！");
+    CSDataSave *info = [[CSDataSave alloc] init];
+    info.isLogin = YES;
+    [CSDataSave encodeWithModel:info];
     [self dismissViewControllerAnimated:YES completion:^{
-        
     }];
 }
 

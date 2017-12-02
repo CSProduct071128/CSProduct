@@ -7,7 +7,7 @@
 //
 
 #import "CSAddressBookViewController.h"
-#import "LoginViewController.h"
+#import "CSOrganizationChartView.h"
 
 @interface CSAddressBookViewController ()
 
@@ -18,17 +18,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor redColor];
+    NSArray *org = @[@"1",@"2",@"3",@"4"];
+    NSArray *person = @[@"q",@"w",@"e",@"r",@"t",@"y",@"z",@"x",@"c",@"v",@"b"];
+    NSArray *head = @[@"北京自如信息科技",@"无线研发组",@"金融与生活服务组",@"组织架构"];
+
+    CSOrganizationChartView *organizationView = [[CSOrganizationChartView alloc] initWithFrame:CGRectZero];
+    [self.view addSubview:organizationView];
     
-    self.view.backgroundColor = [UIColor blueColor];
+    organizationView.selOrigitionBlock = ^(NSInteger number) {
+        NSLog(@"选择了哪个组织？编号是:%ld",number);
+        NSLog(@"选择了%@组织",org[number]);
+    };
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    /* 获取storyboard的InitialViewController 即根控制器*/
-    LoginViewController *VC= [storyboard instantiateViewControllerWithIdentifier:@"LoginViewCtl"];//(这个过程需要在StoryBoard中设置目标视图的Custom Class和StoryBoard ID)
+    organizationView.selPersonBlock = ^(NSInteger number) {
+        NSLog(@"选择了哪个人？编号是:%ld",number);
+        NSLog(@"选择了%@人",person[number]);
+    };
     
-    [self presentViewController:VC animated:YES completion:^{
-        
+    [organizationView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(64.f);
+        make.left.equalTo(self.view);
+        make.right.equalTo(self.view);
+        make.bottom.equalTo(self.view);
     }];
+    [organizationView showDataWithOrgArray:org andPersonArray:person andHeadDataArray:head];
 }
 
 - (void)didReceiveMemoryWarning {
