@@ -27,7 +27,9 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     [self customLeftBtn];
-
+    UIView *barBg = [[UIView alloc] initWithFrame:CGRectMake(0, 0, CSScreenWidth, 64.f)];
+    barBg.backgroundColor = UIColorFromRGBA(0xFFFFFF, 0.1);
+    [self.view addSubview:barBg];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,5 +10,4 @@
 
 @interface baseNavViewController : UINavigationController
 
-
 @end

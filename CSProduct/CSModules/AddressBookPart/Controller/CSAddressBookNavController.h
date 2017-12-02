@@ -6,8 +6,8 @@
 //  Copyright © 2017年 zhiwei jiang. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "baseNavViewController.h"
 
-@interface CSAddressBookNavController : UINavigationController
+@interface CSAddressBookNavController : baseNavViewController
 
 @end

@@ -8,7 +8,7 @@
 
 #import "CSOrganizationChartHeadCell.h"
 
-#define kFontOrganization kCommonRegularFontOfSize(16.f)
+#define kFontOrganization kCommonLightFontOfSize(16.f)
 
 @interface CSOrganizationChartHeadCell()
 

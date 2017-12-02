@@ -37,7 +37,6 @@
         make.centerY.equalTo(self.contentView);
     }];
     
-    
     labContent  = [[UILabel alloc] init];
     labContent.font = kCommonRegularFontOfSize(14.f);
     labContent.textAlignment = NSTextAlignmentLeft;
@@ -50,16 +49,6 @@
         make.height.equalTo(@(16.f));
         make.centerY.equalTo(self.contentView);
     }];
-
-//    UIImageView *rightImage = [[UIImageView alloc] init];
-//    rightImage.image = [UIImage imageNamed:@"zrk_ic_arrow_right"];
-//    [self.contentView addSubview:rightImage];
-//
-//    [rightImage mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.right.equalTo(self.contentView).offset(-16.f);
-//        make.height.width.equalTo(@(18.f));
-//        make.centerY.equalTo(self.contentView);
-//    }];
     
     UIView *line = [[UIView alloc] init];
     line.backgroundColor =UIColorFromRGB(0xEEEEEE);

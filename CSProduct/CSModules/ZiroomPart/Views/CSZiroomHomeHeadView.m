@@ -9,6 +9,8 @@
 #import "CSZiroomHomeHeadView.h"
 #import "CSMenuButton.h"
 #import "CSAnnounceListViewController.h"
+#import "CSPersonManageViewController.h"// 人员管理页面
+#import "CSOrganizationViewController.h"// 组织管理页面
 
 #define ImageHeaderHeight 250
 
@@ -149,15 +151,17 @@
 // 人员管理 点击
 - (void)managerAction
 {
-    
-    
+    CSPersonManageViewController *vc = [[CSPersonManageViewController alloc] init];
+    [self.viewController.navigationController pushViewController:vc animated:YES];
 }
+
 // 组织调整 点击
 - (void)groupChangeAction
 {
-    
-    
+    CSOrganizationViewController *vc = [[CSOrganizationViewController alloc] init];
+    [self.viewController.navigationController pushViewController:vc animated:YES];
 }
+
 // 公告 点击
 - (void)announcementAction
 {
