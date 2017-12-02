@@ -12,6 +12,8 @@
 #import "CSZiroomHomeHeadView.h"
 #import "LoginViewController.h"
 #import "CSAnnounceListViewController.h"
+#import "CSOrganizationViewController.h"//组织管理页面
+#import "CSPersonManageViewController.h"// 人员管理页面
 
 
 static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomViewMessageCellReuseIdentifier";
@@ -94,7 +96,6 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 -(void)announcementAction{
     
     CSAnnounceListViewController *vc = [[CSAnnounceListViewController alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -119,7 +120,8 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 
 
 - (void)groupChangeAction {
-    
+    CSOrganizationViewController *vc = [[CSOrganizationViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
@@ -129,7 +131,8 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 
 
 - (void)managerAction {
-    
+    CSPersonManageViewController *vc = [[CSPersonManageViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

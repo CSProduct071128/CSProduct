@@ -50,7 +50,7 @@
         make.top.equalTo(self.view).offset(64.f+kCSSearchViewHeight);
         make.left.equalTo(self.view);
         make.right.equalTo(self.view);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-49.f);
+        make.bottom.equalTo(self.view.mas_bottom);
     }];
     [organizationView showDataWithOrgArray:org andPersonArray:person andHeadDataArray:head];
 
