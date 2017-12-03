@@ -90,17 +90,5 @@
 //    }];
 //}
 
-//- (void)loginClick:(UIButton *)send{
-//    [CSLoginBusinessManage saveOrganizationConstructionWithParentDepId:@"123" andDepName:@"项目管理部" andtype:1 andCompletion:^(BOOL isFinish, NSString *errorMessage) {
-//
-//    }];
-//}
-
-//- (void)loginClick:(UIButton *)send{
-//    [CSLoginBusinessManage getOrganizationConstructionWithUpParentDepId:@"1" andDepName:@"管理部" andtype:1 andCompletion:^(BOOL isFinish, NSString *errorMessage) {
-//
-//    }];
-//}
-
 
 @end

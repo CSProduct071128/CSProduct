@@ -62,9 +62,9 @@
     }];
 }
 
-- (void) setCellData:(id)model{
-    _labTitle.text = @"组织架构";
-    _labNumber.text = @"4";
+- (void) setCellData:(CSOrganizationListModel *)model{
+    _labTitle.text = [NSString stringWithFormat:@"%@",model.depOneName];
+    _labNumber.text = @"100";
 }
 
 +(CGFloat)getCellHeight{

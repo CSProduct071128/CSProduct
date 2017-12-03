@@ -74,10 +74,10 @@
 
 }
 
-- (void) setCellData:(id)model{
+- (void) setCellData:(CSOrganizationUserListModel *)model{
     [_imageIcon sd_setImageWithURL:[NSURL URLWithString:@"http://img.duoziwang.com/2017/09/152146051949.jpg"] placeholderImage:[UIImage imageNamed:@""]];
-    _labName.text = @"任若凡";
-    _labPosition.text = @"经理";
+    _labName.text = model.name;
+    _labPosition.text = model.role;
 }
 
 +(CGFloat)getCellHeight{

@@ -95,13 +95,13 @@
     if (indexPath.section == 0) {
         CSOrganizationChartOrgCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSOrganizationChartOrgCell];
         if (_showOrgDataArray.count) {
-            [cell setCellData:nil];
+            [cell setCellData:_showOrgDataArray[indexPath.row]];
         }
         return cell;
     }else{
         CSOrganizationChartPersonCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSOrganizationChartPersonCell];
         if (_showPersonDataArray.count) {
-            [cell setCellData:nil];
+            [cell setCellData:_showPersonDataArray[indexPath.row]];
         }
         return cell;
     }
@@ -149,6 +149,9 @@
         _headView = [[CSOrganizationChartHeadView alloc] initWithFrame:CGRectMake(0, 0,CSScreenWidth , kHeadViewHeight)];
         _headView.selectBlock = ^(NSInteger number) {
             NSLog(@"我选择了：%ld",number);
+            if (_selRootMapBlock) {
+                _selRootMapBlock(number);
+            }
         };
         [self.tableView setTableHeaderView:_headView];
     }

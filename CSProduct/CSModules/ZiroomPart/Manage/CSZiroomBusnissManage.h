@@ -10,6 +10,11 @@
 #import "CSBaseService.h"
 
 @interface CSZiroomBusnissManage : NSObject
+/**
+ 打卡接口
+ */
++ (void)signInWithUserID:(NSString *)userId
+           andCompletion:(cscompletionBlock)completion;
 
 //保存公告
 +(void)saveNoticeWithParams:(NSDictionary *)params WithModel:(id)cls  success:(successCallBack)success
