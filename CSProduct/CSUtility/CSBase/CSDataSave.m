@@ -32,6 +32,11 @@
     return model.userId?model.userId:@"";
 }
 
++ (NSString *)getDepID{
+    CSDataSave *model = [self getLoginInfo];
+    return model.depId?model.depId:@"";
+}
+
 - (void)encodeWithCoder:(NSCoder *)coder
 {
     [coder encodeObject:self.userId forKey:@"userId"];

@@ -12,11 +12,17 @@
 #import "CSZiroomHomeHeadView.h"
 #import "CSAnnouncementViewController.h"
 #import "CSPushAnnounceViewController.h"
+#import "CSParentmentListController.h"
+#import "CSZiroomBusnissManage.h"
+#import "CSDataSave.h"
+#import "CSLoginModel.h"
+#import "CSAnounceListModel.h"
 
 static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomViewMessageCellReuseIdentifier";
 
 @interface CSAnnounceListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic ,strong) UITableView *tableView;
+@property (nonatomic ,strong)CSAnounceListModel *model;
 @end
 
 @implementation CSAnnounceListViewController
@@ -27,6 +33,7 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
     self.view.backgroundColor = [UIColor whiteColor];
     [self loadTableView];
     [self addRightBtn];
+    [self loadData];
 }
 //-(void)viewWillAppear:(BOOL)animated{
 //    [super viewWillAppear:YES];
@@ -63,14 +70,30 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
     
     self.navigationItem.rightBarButtonItems  = @[settingBtnItem];
 }
-#pragma mark - UITableView delegate and datasource
 
+-(void)loadData{
+    @weakify(self);
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    [dic setValue:[CSDataSave getUserID] forKey:@"userId"];
+    [dic setValue:[NSNumber numberWithInteger:0] forKey:@"noticeStatus"];
+  
+    [CSZiroomBusnissManage getNoticeListWithParams:dic WithModel:[CSAnounceListModel class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+        @strongify(self);
+        self.model = logicDicData;
+        [self.tableView reloadData];
+    } failure:^(CSBaseRequest *request, NSString *errorMsg) {
+        [self.view makeToast:errorMsg];
+    }];
+    
+}
+
+#pragma mark - UITableView delegate and datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 20;
+    return self.model.list.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -79,13 +102,16 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CSZiroomViewMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSZiroomViewMessageCellReuseIdentifier forIndexPath:indexPath];
-    cell.nameLabel.text = @"公告标题";
-    cell.infoLabel.text = @"公告内容摘要";
+    CSAnounceDetailModel * model = self.model.list[indexPath.row];
+    cell.nameLabel.text = model.noticeTitle;
+    cell.infoLabel.text =  model.noticeDetail;
     
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     CSAnnouncementViewController * vc = [CSAnnouncementViewController new];
+    CSAnounceDetailModel * model = self.model.list[indexPath.row];
+    vc.model = model;
     [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)setNavItem{

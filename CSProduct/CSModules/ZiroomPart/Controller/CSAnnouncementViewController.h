@@ -7,7 +7,11 @@
 //
 
 #import "BaseViewController.h"
+#import "CSAnounceListModel.h"
+
 
 @interface CSAnnouncementViewController : BaseViewController
+
+@property (nonatomic,strong)CSAnounceDetailModel *model;
 
 @end

@@ -92,6 +92,8 @@
 		B2B81E7B1FD3DEA300E59076 /* CSAnnouncementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E7A1FD3DEA300E59076 /* CSAnnouncementViewController.m */; };
 		B2B81E7E1FD3E70B00E59076 /* CSAnnounceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E7D1FD3E70B00E59076 /* CSAnnounceTableViewCell.m */; };
 		B2B81E811FD3F3C400E59076 /* CSPushAnnounceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E801FD3F3C300E59076 /* CSPushAnnounceViewController.m */; };
+		B2B81E841FD42E3900E59076 /* CSAnounceListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E831FD42E3900E59076 /* CSAnounceListModel.m */; };
+		B2B81E871FD433FB00E59076 /* CSAnounceListDetaiModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E861FD433FA00E59076 /* CSAnounceListDetaiModel.m */; };
 		E32940EE09A6211C87E8B308 /* libPods-CSProductTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */; };
 /* End PBXBuildFile section */
 
@@ -288,6 +290,10 @@
 		B2B81E7D1FD3E70B00E59076 /* CSAnnounceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAnnounceTableViewCell.m; sourceTree = "<group>"; };
 		B2B81E7F1FD3F3C300E59076 /* CSPushAnnounceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSPushAnnounceViewController.h; sourceTree = "<group>"; };
 		B2B81E801FD3F3C300E59076 /* CSPushAnnounceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSPushAnnounceViewController.m; sourceTree = "<group>"; };
+		B2B81E821FD42E3900E59076 /* CSAnounceListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAnounceListModel.h; sourceTree = "<group>"; };
+		B2B81E831FD42E3900E59076 /* CSAnounceListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAnounceListModel.m; sourceTree = "<group>"; };
+		B2B81E861FD433FA00E59076 /* CSAnounceListDetaiModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAnounceListDetaiModel.m; sourceTree = "<group>"; };
+		B2B81E881FD4377400E59076 /* CSAnounceListDetaiModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAnounceListDetaiModel.h; sourceTree = "<group>"; };
 		D014FAA323BAF380E61379B5 /* Pods-CSProductTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProductTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSProductTests/Pods-CSProductTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0F2EA4EF2AF7AC2194DF696 /* Pods-CSProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProduct.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSProduct/Pods-CSProduct.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -701,8 +707,12 @@
 		72F12A821FCE561B00120EC8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B2B81E821FD42E3900E59076 /* CSAnounceListModel.h */,
+				B2B81E831FD42E3900E59076 /* CSAnounceListModel.m */,
 				72F12A8F1FCE57B300120EC8 /* CSZiroomHeadViewModel.h */,
 				72F12A901FCE57B300120EC8 /* CSZiroomHeadViewModel.m */,
+				B2B81E881FD4377400E59076 /* CSAnounceListDetaiModel.h */,
+				B2B81E861FD433FA00E59076 /* CSAnounceListDetaiModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1085,6 +1095,7 @@
 				B2B81E7E1FD3E70B00E59076 /* CSAnnounceTableViewCell.m in Sources */,
 				B2B81E7B1FD3DEA300E59076 /* CSAnnouncementViewController.m in Sources */,
 				B2B81E541FCEBE7500E59076 /* TAAbstractDotView.m in Sources */,
+				B2B81E871FD433FB00E59076 /* CSAnounceListDetaiModel.m in Sources */,
 				728D20B71FCD67C300057177 /* CSAddressBookNavController.m in Sources */,
 				7247F5981FCAA0E000B0DEAE /* CSHttpClient.m in Sources */,
 				B2B81E561FCEBE7600E59076 /* TADotView.m in Sources */,
@@ -1101,6 +1112,7 @@
 				72F12A851FCE570400120EC8 /* CSZiroomHomeHeadView.m in Sources */,
 				B2B81E3E1FCEAEED00E59076 /* CSMenuButton.m in Sources */,
 				72FA2E291FD2B18700532BAC /* CSSearchView.m in Sources */,
+				B2B81E841FD42E3900E59076 /* CSAnounceListModel.m in Sources */,
 				72F12AA91FCECCB900120EC8 /* CSPersonInfoViewController.m in Sources */,
 				72F12A971FCE8F1500120EC8 /* CSMeHeadView.m in Sources */,
 				72F12A941FCE5FEA00120EC8 /* LoginViewController.m in Sources */,

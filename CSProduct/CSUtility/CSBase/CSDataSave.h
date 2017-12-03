@@ -36,5 +36,9 @@
      获取用户id
  */
 + (NSString *)getUserID;
+/**
+ 获取用户id
+ */
++ (NSString *)getDepID;
 
 @end

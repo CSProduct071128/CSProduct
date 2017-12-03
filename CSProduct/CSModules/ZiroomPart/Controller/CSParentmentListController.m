@@ -8,6 +8,7 @@
 
 #import "CSParentmentListController.h"
 #import "CSParentmentListTableCell.h"
+#import "CSZiroomBusnissManage.h"
 
 @interface CSParentmentListController ()<UITableViewDelegate,UITableViewDataSource,CSParentmentListTableCellDelegate>
 @property (nonatomic ,strong) UITableView *tableView;
@@ -55,14 +56,13 @@
 -(void)loadData{
     
     self.nameArr = @[@{@"text":@"人力资源部",@"isSelect":@"1"},@{@"text":@"能力发展部",@"isSelect":@"0"},@{@"text":@"运营部",@"isSelect":@"0"},@{@"text":@"系统研发部",@"isSelect":@"1"},@{@"text":@"财务部",@"isSelect":@"0"},@{@"text":@"法务部",@"isSelect":@"0"},@{@"text":@"HRBP",@"isSelect":@"1"}];
+    
     [self.tableView reloadData];
 }
 #pragma mark - UITableView delegate and datasource
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.nameArr.count;
 }

@@ -8,11 +8,17 @@
 
 #import "CSAnnouncementViewController.h"
 #import "CSAnnounceTableViewCell.h"
+#import "CSParentmentListController.h"
+#import "CSZiroomBusnissManage.h"
+#import "CSDataSave.h"
+#import "CSLoginModel.h"
+#import "CSAnounceListDetaiModel.h"
 
 static NSString *const kCSCSAnnounceTableViewCellIdentifi = @"CSAnnounceTableViewCell";
 
 @interface CSAnnouncementViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
+@property (nonatomic,strong) CSAnounceListDetaiModel *model1;
 @end
 
 @implementation CSAnnouncementViewController
@@ -44,7 +50,17 @@ static NSString *const kCSCSAnnounceTableViewCellIdentifi = @"CSAnnounceTableVie
 }
 
 -(void)loadData{
+    @weakify(self);
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    [dic setValue:[CSDataSave getUserID] forKey:@"userId"];
+    [dic setValue:[NSNumber numberWithInteger:self.model.noticeId] forKey:@"noticeId"];
     
+    [CSZiroomBusnissManage getNoticeDetailWithParams:dic WithModel:[CSAnounceListDetaiModel class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+        @strongify(self);
+        self.model1 = logicDicData;
+    } failure:^(CSBaseRequest *request, NSString *errorMsg) {
+        [self.view makeToast:errorMsg];
+    }];
     [self.tableView reloadData];
 }
 
