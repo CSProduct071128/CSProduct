@@ -10,6 +10,8 @@
 #import <Masonry.h>
 #import "CSZiroomViewMessageCell.h"
 #import "CSZiroomHomeHeadView.h"
+#import "CSAnnouncementViewController.h"
+#import "CSPushAnnounceViewController.h"
 
 static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomViewMessageCellReuseIdentifier";
 
@@ -24,16 +26,16 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
     self.title = @"公告管理";
     self.view.backgroundColor = [UIColor whiteColor];
     [self loadTableView];
-//    [self setNavItem];
+    [self addRightBtn];
 }
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    self.navigationController.navigationBar.hidden = NO;
-}
--(void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:YES];
-    self.navigationController.navigationBar.hidden = YES;
-}
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:YES];
+//    self.navigationController.navigationBar.hidden = NO;
+//}
+//-(void)viewWillDisappear:(BOOL)animated{
+//    [super viewWillDisappear:YES];
+//    self.navigationController.navigationBar.hidden = YES;
+//}
 -(void)loadTableView{
     
     self.view.backgroundColor = [UIColor whiteColor];
@@ -50,7 +52,16 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
         table.backgroundColor = UIColorFromRGB(0xf9f9f9);
         table;
     });
-   
+}
+#pragma mark - addRightBtn
+- (void)addRightBtn{
+    UIButton *checkBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [checkBtn addTarget:self action:@selector(rightBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [checkBtn setImage:[UIImage imageNamed:@"zrk_ic_good_add_n"] forState:UIControlStateNormal];
+    [checkBtn sizeToFit];
+    UIBarButtonItem *settingBtnItem = [[UIBarButtonItem alloc] initWithCustomView:checkBtn];
+    
+    self.navigationItem.rightBarButtonItems  = @[settingBtnItem];
 }
 #pragma mark - UITableView delegate and datasource
 
@@ -74,7 +85,8 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    CSAnnouncementViewController * vc = [CSAnnouncementViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)setNavItem{
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -93,7 +105,8 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 
 -(void)rightBtnClick:(UIButton *)btn{
     
-    
+    CSPushAnnounceViewController * vc = [CSPushAnnounceViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
