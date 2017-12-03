@@ -8,6 +8,7 @@
 
 #ifndef CSProduct_CSDefine_h
 #define CSProduct_CSDefine_h
+#import "CSWebRequestSets.h"
 // 登录信息
 #import "CSDataSave.h"
 // 登录页面

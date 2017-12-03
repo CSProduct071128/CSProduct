@@ -122,6 +122,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="WvC-xf-fhy" id="XaY-6H-j2B"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -155,6 +158,9 @@
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="WvC-xf-fhy" id="LvF-hn-jhI"/>
+                                        </connections>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -198,9 +204,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="accountTxt" destination="aEl-YJ-jda" id="KaL-X5-9jo"/>
                         <outlet property="loginBtn" destination="wZQ-NQ-jNI" id="HPP-UV-TZv"/>
-                        <outletCollection property="accountText" destination="aEl-YJ-jda" id="igC-kx-bHZ"/>
-                        <outletCollection property="passWordText" destination="7Ky-BX-95O" id="xAH-7L-Z6j"/>
+                        <outlet property="passwordTxt" destination="7Ky-BX-95O" id="SSX-fq-bph"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKW-n4-wxw" userLabel="First Responder" sceneMemberID="firstResponder"/>

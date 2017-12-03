@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-typedef void(^getShowDataBlock)(NSArray *cellDataSets,NSArray *headDataArray, NSString *errorStr);
+#import "CSPersonInfoModel.h"
+
+typedef void(^getShowDataBlock)(NSArray *cellDataSets,CSPersonInfoModel *model, NSString *errorStr);
 
 @interface CSMeBusinessManage : NSObject
+
 - (instancetype)init;
 - (void)getMeViewShowDataWithBlock:(getShowDataBlock)block;
+
+@property (nonatomic,copy) NSString *userID;
 
 @end

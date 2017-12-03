@@ -11,6 +11,7 @@
 @interface CSDataSave : NSObject
 @property (nonatomic, assign) BOOL isLogin;
 
+@property (nonatomic, copy) NSString *userId;
 @property (nonatomic, copy) NSString *loginName;
 @property (nonatomic, copy) NSString *loginPhone;
 @property (nonatomic, copy) NSString *loginWNumber;

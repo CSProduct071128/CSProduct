@@ -263,7 +263,6 @@ dispatch_async(dispatch_get_main_queue(), block);\
     NSLog(@"==================================================");
     NSLog(@"\r\n Finished Request:  %@ \r\n Request baseUrl:%@  \r\n Request request url:%@ \r\n Request body:%@", NSStringFromClass([request class]),request.baseUrl,request.requestUrl,request.userInfo);
     NSLog(@"Finished Response data : %@", request.responseString);
-    
     NSLog(@"Finished Response error : %@", [request errorMsg]);
     NSLog(@"Request %@ , status code = %ld",
           NSStringFromClass([request class]), (long)request.responseStatusCode);
