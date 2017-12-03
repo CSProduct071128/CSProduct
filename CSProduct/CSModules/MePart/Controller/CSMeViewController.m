@@ -44,15 +44,17 @@
 - (void)dataLoading{
     
     busnissManage  = [[CSMeBusinessManage alloc] init];
+    busnissManage.userID = @"123456";
+    
     @weakify(self);
     [self.view showHUD];
-    [busnissManage getMeViewShowDataWithBlock:^(NSArray *cellDataArray, NSArray *headDataArray, NSString *errorStr) {
+    [busnissManage getMeViewShowDataWithBlock:^(NSArray *cellDataArray, CSPersonInfoModel *model, NSString *errorStr) {
         @strongify(self);
         [self.view hideHUD];
         if (errorStr.length) {
             [self.view makeToast:errorStr];
         }
-        if (headDataArray.count) {
+        if (model) {
             headView;
         }
         if (cellDataArray) {

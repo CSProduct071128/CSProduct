@@ -31,13 +31,12 @@
         [headDic setValuesForKeysWithDictionary:httpHeadFieldDic];
     }
     request.httpHeaderFieldDictionary=headDic;
-    
+//    request.userInfo = httpParamDataDic;
     NSData *data = [self ObjectDataToJSON:httpParamDataDic];
     NSString *paramStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"paramStr:%@",paramStr);
-    
     request.requestBodyBlock = ^NSData *(CSBaseRequest *request) {
-        return    [paramStr dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        return  [paramStr dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     };
     
     [request startWithCompletionBlockWithSuccess:^(CSBaseRequest *request) {
@@ -50,22 +49,73 @@
             return;
         }
         
-        success(dataDict,@"正确",@"出错了");
-
-//        if ([dataDict[@"status"] isEqualToString:@"success"]){
-//            id logicDic =[self logicData:dataDict[@"data"] resolveCls:dataModelCls] ;
-//            success(logicDic,dataDict[@"message"],dataDict[@"code"]);
-//        }else{
-//            success(nil,dataDict[@"message"],dataDict[@"code"]);
-//        }
+        if (dataDict[@"code"] == 0){
+            id logicDic =[self logicData:dataDict[@"data"] resolveCls:dataModelCls] ;
+            success(logicDic,dataDict[@"message"],dataDict[@"code"]);
+        }else{
+            success(nil,dataDict[@"message"],dataDict[@"code"]);
+        }
     } failure:^(CSBaseRequest *request) {
         failure(request, @"请检查网络配置!");
-        
     }];
     
     return request;
     
 }
+
++ (CSWebRequest *)getJsonDataRequestWithDetailRul:(NSString *)httpDetailUrl
+                                             param:(NSDictionary *)httpParamDataDic
+                                            header:(NSDictionary *)httpHeadFieldDic
+                                               cls:(Class)dataModelCls
+                                           success:(successCallBack)success
+                                           failure:(failureCallBack)failure
+{
+    if(![self isNetworkEnabled]){
+        failure(nil, @"请检查网络配置!");
+    }
+    
+    CSWebRequest *request = [[CSWebRequest alloc] init];
+    
+    request.httpDetailUrl = httpDetailUrl;
+    
+    request.method =CSRequestMethodGet;
+    NSMutableDictionary *headDic=[NSMutableDictionary dictionaryWithDictionary:[self getPublicHeadDic]];
+    if (httpHeadFieldDic) {
+        [headDic setValuesForKeysWithDictionary:httpHeadFieldDic];
+    }
+    request.httpHeaderFieldDictionary=headDic;
+	request.userInfo = httpParamDataDic;
+//    NSData *data = [self ObjectDataToJSON:httpParamDataDic];
+//    NSString *paramStr = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+//    NSLog(@"paramStr:%@",paramStr);
+//    request.requestBodyBlock = ^NSData *(CSBaseRequest *request) {
+//        return  [paramStr dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+//    };
+    
+    [request startWithCompletionBlockWithSuccess:^(CSBaseRequest *request) {
+        NSLog(@"result==%@",request.responseString);
+        NSData *responseData = [request.responseString dataUsingEncoding:NSUTF8StringEncoding];
+        
+        NSDictionary *dataDict = [self JsonDataToObject:responseData];
+        if (![dataDict isKindOfClass:[NSDictionary class]]) {
+            success(nil,@"数据格式不正确",nil);
+            return;
+        }
+        
+        if ([dataDict[@"code"] integerValue] == 0){
+            id logicDic =[self logicData:dataDict[@"data"] resolveCls:dataModelCls] ;
+            success(logicDic,dataDict[@"message"],dataDict[@"code"]);
+        }else{
+            success(nil,dataDict[@"message"],dataDict[@"code"]);
+        }
+    } failure:^(CSBaseRequest *request) {
+        failure(request, @"请检查网络配置!");
+    }];
+    
+    return request;
+    
+}
+
 
 
 #pragma mark  基础方法
@@ -98,10 +148,10 @@
     [pubDic setValue:@"1" forKey:@"appType"];
     [pubDic setValue:@"iOS" forKey:@"osType"];
     [pubDic setValue:@"app" forKey:@"Sys"];
-    [pubDic setValue:[[UIDevice currentDevice] systemVersion] forKey:@"osVersion"];
-    [pubDic setValue:[[UIDevice currentDevice] localizedModel] forKey:@"phoneName"];
-    [pubDic setValue:@"application/json" forKey:@"Accept"];
-    [pubDic setValue:[self getRequestId] forKey:@"Request-Id"];
+//    [pubDic setValue:[[UIDevice currentDevice] systemVersion] forKey:@"osVersion"];
+//    [pubDic setValue:[[UIDevice currentDevice] localizedModel] forKey:@"phoneName"];
+//    [pubDic setValue:@"application/json" forKey:@"Accept"];
+//    [pubDic setValue:[self getRequestId] forKey:@"Request-Id"];
     
     return pubDic;
 }

@@ -30,6 +30,7 @@
 
 - (void)encodeWithCoder:(NSCoder *)coder
 {
+    [coder encodeObject:self.userId forKey:@"userId"];
     [coder encodeObject:self.loginName forKey:@"loginName"];
     [coder encodeObject:self.loginPhone forKey:@"loginPhone"];
     [coder encodeObject:self.loginWNumber forKey:@"loginWNumber"];
@@ -43,8 +44,9 @@
 {
     self = [super init];
     if (self) {
-        self.loginName = [coder decodeObjectForKey:@"age"];
-        self.loginPhone = [coder decodeObjectForKey:@"name"];
+        self.userId = [coder decodeObjectForKey:@"userId"];
+        self.loginName = [coder decodeObjectForKey:@"loginName"];
+        self.loginPhone = [coder decodeObjectForKey:@"loginPhone"];
         self.loginWNumber = [coder decodeObjectForKey:@"loginWNumber"];
         self.loginMail = [coder decodeObjectForKey:@"loginMail"];
         self.loginBm = [coder decodeObjectForKey:@"loginBm"];
