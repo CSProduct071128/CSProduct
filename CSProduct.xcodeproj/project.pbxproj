@@ -83,6 +83,9 @@
 		B2B81E721FD2D49300E59076 /* CSParentmentListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E711FD2D49300E59076 /* CSParentmentListTableCell.m */; };
 		B2B81E751FD2D65C00E59076 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E741FD2D65C00E59076 /* UIButton+EnlargeTouchArea.m */; };
 		B2B81E781FD2E13B00E59076 /* CSPositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E771FD2E13B00E59076 /* CSPositionViewController.m */; };
+		B2B81E7B1FD3DEA300E59076 /* CSAnnouncementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E7A1FD3DEA300E59076 /* CSAnnouncementViewController.m */; };
+		B2B81E7E1FD3E70B00E59076 /* CSAnnounceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E7D1FD3E70B00E59076 /* CSAnnounceTableViewCell.m */; };
+		B2B81E811FD3F3C400E59076 /* CSPushAnnounceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E801FD3F3C300E59076 /* CSPushAnnounceViewController.m */; };
 		E32940EE09A6211C87E8B308 /* libPods-CSProductTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */; };
 /* End PBXBuildFile section */
 
@@ -260,6 +263,12 @@
 		B2B81E741FD2D65C00E59076 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
 		B2B81E761FD2E13B00E59076 /* CSPositionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSPositionViewController.h; sourceTree = "<group>"; };
 		B2B81E771FD2E13B00E59076 /* CSPositionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSPositionViewController.m; sourceTree = "<group>"; };
+		B2B81E791FD3DEA300E59076 /* CSAnnouncementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAnnouncementViewController.h; sourceTree = "<group>"; };
+		B2B81E7A1FD3DEA300E59076 /* CSAnnouncementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAnnouncementViewController.m; sourceTree = "<group>"; };
+		B2B81E7C1FD3E70B00E59076 /* CSAnnounceTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAnnounceTableViewCell.h; sourceTree = "<group>"; };
+		B2B81E7D1FD3E70B00E59076 /* CSAnnounceTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAnnounceTableViewCell.m; sourceTree = "<group>"; };
+		B2B81E7F1FD3F3C300E59076 /* CSPushAnnounceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSPushAnnounceViewController.h; sourceTree = "<group>"; };
+		B2B81E801FD3F3C300E59076 /* CSPushAnnounceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSPushAnnounceViewController.m; sourceTree = "<group>"; };
 		D014FAA323BAF380E61379B5 /* Pods-CSProductTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProductTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSProductTests/Pods-CSProductTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0F2EA4EF2AF7AC2194DF696 /* Pods-CSProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProduct.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSProduct/Pods-CSProduct.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -358,8 +367,6 @@
 				B2B81E6E1FD2D07300E59076 /* CSParentmentListController.m */,
 				B2B81E761FD2E13B00E59076 /* CSPositionViewController.h */,
 				B2B81E771FD2E13B00E59076 /* CSPositionViewController.m */,
-				B2B81E5B1FCFFF3C00E59076 /* CSAnnounceListViewController.h */,
-				B2B81E5C1FCFFF3C00E59076 /* CSAnnounceListViewController.m */,
 				72FA2E2A1FD2BDEF00532BAC /* CSPersonManageViewController.h */,
 				72FA2E2B1FD2BDEF00532BAC /* CSPersonManageViewController.m */,
 				72FA2E2D1FD2BE1C00532BAC /* CSOrganizationViewController.h */,
@@ -368,6 +375,10 @@
 				72FA2E311FD2C94900532BAC /* CSOrganizationAddViewController.m */,
 				72FA2E331FD2C96100532BAC /* CSOrganizationSelPersonViewController.h */,
 				72FA2E341FD2C96100532BAC /* CSOrganizationSelPersonViewController.m */,
+				B2B81E791FD3DEA300E59076 /* CSAnnouncementViewController.h */,
+				B2B81E7A1FD3DEA300E59076 /* CSAnnouncementViewController.m */,
+				B2B81E7F1FD3F3C300E59076 /* CSPushAnnounceViewController.h */,
+				B2B81E801FD3F3C300E59076 /* CSPushAnnounceViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -391,6 +402,8 @@
 				B2B81E6B1FD2B4D400E59076 /* CSSelectTableViewCell.m */,
 				B2B81E701FD2D49300E59076 /* CSParentmentListTableCell.h */,
 				B2B81E711FD2D49300E59076 /* CSParentmentListTableCell.m */,
+				B2B81E7C1FD3E70B00E59076 /* CSAnnounceTableViewCell.h */,
+				B2B81E7D1FD3E70B00E59076 /* CSAnnounceTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1001,6 +1014,7 @@
 				7247F5991FCAA0E000B0DEAE /* CSNetManger.m in Sources */,
 				721C811A1FCD57BD00AF6E9D /* CSZiroomViewController.m in Sources */,
 				B2B81E581FCEBE7600E59076 /* SDCollectionViewCell.m in Sources */,
+				B2B81E811FD3F3C400E59076 /* CSPushAnnounceViewController.m in Sources */,
 				B2B81E6C1FD2B4D500E59076 /* CSSelectTableViewCell.m in Sources */,
 				7247F5A01FCAA33100B0DEAE /* CSNetworkLogModel.m in Sources */,
 				72FA2E251FD2831500532BAC /* CSOrganizationChartPersonCell.m in Sources */,
@@ -1033,6 +1047,8 @@
 				72F12AA01FCE8FA800120EC8 /* CSMeBusinessManage.m in Sources */,
 				72FA2E2F1FD2BE1C00532BAC /* CSOrganizationViewController.m in Sources */,
 				7247F5AD1FCACFEE00B0DEAE /* CSWebRequest.m in Sources */,
+				B2B81E7E1FD3E70B00E59076 /* CSAnnounceTableViewCell.m in Sources */,
+				B2B81E7B1FD3DEA300E59076 /* CSAnnouncementViewController.m in Sources */,
 				B2B81E541FCEBE7500E59076 /* TAAbstractDotView.m in Sources */,
 				728D20B71FCD67C300057177 /* CSAddressBookNavController.m in Sources */,
 				7247F5981FCAA0E000B0DEAE /* CSHttpClient.m in Sources */,
