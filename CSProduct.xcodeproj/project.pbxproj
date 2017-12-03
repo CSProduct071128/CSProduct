@@ -77,6 +77,14 @@
 		B2B81E591FCEBE7600E59076 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E511FCEBE7500E59076 /* SDCycleScrollView.m */; };
 		B2B81E5A1FCEBE7600E59076 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E531FCEBE7500E59076 /* UIView+SDExtension.m */; };
 		B2B81E601FD29CBC00E59076 /* CSAnnounceListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E5F1FD29CBC00E59076 /* CSAnnounceListViewController.m */; };
+		B2B81E631FD2A40100E59076 /* CSEmpleeJoinController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E621FD2A40000E59076 /* CSEmpleeJoinController.m */; };
+		B2B81E661FD2A67800E59076 /* CSEmpleeJoinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E651FD2A67800E59076 /* CSEmpleeJoinTableViewCell.m */; };
+		B2B81E691FD2ACD000E59076 /* CSSexTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E681FD2ACD000E59076 /* CSSexTableViewCell.m */; };
+		B2B81E6C1FD2B4D500E59076 /* CSSelectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E6B1FD2B4D400E59076 /* CSSelectTableViewCell.m */; };
+		B2B81E6F1FD2D07400E59076 /* CSParentmentListController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E6E1FD2D07300E59076 /* CSParentmentListController.m */; };
+		B2B81E721FD2D49300E59076 /* CSParentmentListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E711FD2D49300E59076 /* CSParentmentListTableCell.m */; };
+		B2B81E751FD2D65C00E59076 /* UIButton+EnlargeTouchArea.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E741FD2D65C00E59076 /* UIButton+EnlargeTouchArea.m */; };
+		B2B81E781FD2E13B00E59076 /* CSPositionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E771FD2E13B00E59076 /* CSPositionViewController.m */; };
 		E32940EE09A6211C87E8B308 /* libPods-CSProductTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */; };
 /* End PBXBuildFile section */
 
@@ -243,6 +251,22 @@
 		B2B81E531FCEBE7500E59076 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SDExtension.m"; sourceTree = "<group>"; };
 		B2B81E5E1FD29CBC00E59076 /* CSAnnounceListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSAnnounceListViewController.h; sourceTree = "<group>"; };
 		B2B81E5F1FD29CBC00E59076 /* CSAnnounceListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSAnnounceListViewController.m; sourceTree = "<group>"; };
+		B2B81E611FD2A40000E59076 /* CSEmpleeJoinController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSEmpleeJoinController.h; sourceTree = "<group>"; };
+		B2B81E621FD2A40000E59076 /* CSEmpleeJoinController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSEmpleeJoinController.m; sourceTree = "<group>"; };
+		B2B81E641FD2A67800E59076 /* CSEmpleeJoinTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSEmpleeJoinTableViewCell.h; sourceTree = "<group>"; };
+		B2B81E651FD2A67800E59076 /* CSEmpleeJoinTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSEmpleeJoinTableViewCell.m; sourceTree = "<group>"; };
+		B2B81E671FD2ACD000E59076 /* CSSexTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSexTableViewCell.h; sourceTree = "<group>"; };
+		B2B81E681FD2ACD000E59076 /* CSSexTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSexTableViewCell.m; sourceTree = "<group>"; };
+		B2B81E6A1FD2B4D400E59076 /* CSSelectTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSSelectTableViewCell.h; sourceTree = "<group>"; };
+		B2B81E6B1FD2B4D400E59076 /* CSSelectTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSSelectTableViewCell.m; sourceTree = "<group>"; };
+		B2B81E6D1FD2D07300E59076 /* CSParentmentListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSParentmentListController.h; sourceTree = "<group>"; };
+		B2B81E6E1FD2D07300E59076 /* CSParentmentListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSParentmentListController.m; sourceTree = "<group>"; };
+		B2B81E701FD2D49300E59076 /* CSParentmentListTableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSParentmentListTableCell.h; sourceTree = "<group>"; };
+		B2B81E711FD2D49300E59076 /* CSParentmentListTableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSParentmentListTableCell.m; sourceTree = "<group>"; };
+		B2B81E731FD2D65C00E59076 /* UIButton+EnlargeTouchArea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+EnlargeTouchArea.h"; sourceTree = "<group>"; };
+		B2B81E741FD2D65C00E59076 /* UIButton+EnlargeTouchArea.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+EnlargeTouchArea.m"; sourceTree = "<group>"; };
+		B2B81E761FD2E13B00E59076 /* CSPositionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSPositionViewController.h; sourceTree = "<group>"; };
+		B2B81E771FD2E13B00E59076 /* CSPositionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSPositionViewController.m; sourceTree = "<group>"; };
 		D014FAA323BAF380E61379B5 /* Pods-CSProductTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProductTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSProductTests/Pods-CSProductTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F0F2EA4EF2AF7AC2194DF696 /* Pods-CSProduct.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSProduct.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSProduct/Pods-CSProduct.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -278,6 +302,8 @@
 			isa = PBXGroup;
 			children = (
 				721C81101FCD51AC00AF6E9D /* CSToast */,
+				B2B81E731FD2D65C00E59076 /* UIButton+EnlargeTouchArea.h */,
+				B2B81E741FD2D65C00E59076 /* UIButton+EnlargeTouchArea.m */,
 			);
 			path = CSCommonControls;
 			sourceTree = "<group>";
@@ -333,6 +359,14 @@
 				721C81191FCD57BD00AF6E9D /* CSZiroomViewController.m */,
 				728D20B81FCD67D600057177 /* CSZiroomNavController.h */,
 				728D20B91FCD67D600057177 /* CSZiroomNavController.m */,
+				B2B81E611FD2A40000E59076 /* CSEmpleeJoinController.h */,
+				B2B81E621FD2A40000E59076 /* CSEmpleeJoinController.m */,
+				B2B81E6D1FD2D07300E59076 /* CSParentmentListController.h */,
+				B2B81E6E1FD2D07300E59076 /* CSParentmentListController.m */,
+				B2B81E761FD2E13B00E59076 /* CSPositionViewController.h */,
+				B2B81E771FD2E13B00E59076 /* CSPositionViewController.m */,
+				B2B81E5B1FCFFF3C00E59076 /* CSAnnounceListViewController.h */,
+				B2B81E5C1FCFFF3C00E59076 /* CSAnnounceListViewController.m */,
 				72FA2E2A1FD2BDEF00532BAC /* CSPersonManageViewController.h */,
 				72FA2E2B1FD2BDEF00532BAC /* CSPersonManageViewController.m */,
 				72FA2E2D1FD2BE1C00532BAC /* CSOrganizationViewController.h */,
@@ -356,6 +390,14 @@
 				72F12A8A1FCE575400120EC8 /* CSZiroomViewMessageCell.m */,
 				B2B81E3C1FCEAEED00E59076 /* CSMenuButton.h */,
 				B2B81E3D1FCEAEED00E59076 /* CSMenuButton.m */,
+				B2B81E641FD2A67800E59076 /* CSEmpleeJoinTableViewCell.h */,
+				B2B81E651FD2A67800E59076 /* CSEmpleeJoinTableViewCell.m */,
+				B2B81E671FD2ACD000E59076 /* CSSexTableViewCell.h */,
+				B2B81E681FD2ACD000E59076 /* CSSexTableViewCell.m */,
+				B2B81E6A1FD2B4D400E59076 /* CSSelectTableViewCell.h */,
+				B2B81E6B1FD2B4D400E59076 /* CSSelectTableViewCell.m */,
+				B2B81E701FD2D49300E59076 /* CSParentmentListTableCell.h */,
+				B2B81E711FD2D49300E59076 /* CSParentmentListTableCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -963,6 +1005,7 @@
 				72FA2E221FD2805500532BAC /* CSOrganizationChartOrgCell.m in Sources */,
 				B2B81E5A1FCEBE7600E59076 /* UIView+SDExtension.m in Sources */,
 				B2B81E591FCEBE7600E59076 /* SDCycleScrollView.m in Sources */,
+				B2B81E691FD2ACD000E59076 /* CSSexTableViewCell.m in Sources */,
 				728D20B41FCD67A300057177 /* CSMeNavController.m in Sources */,
 				72F12AA31FCE8FCA00120EC8 /* CSMeHeadViewModel.m in Sources */,
 				72F12A911FCE57B300120EC8 /* CSZiroomHeadViewModel.m in Sources */,
@@ -970,6 +1013,7 @@
 				7247F5991FCAA0E000B0DEAE /* CSNetManger.m in Sources */,
 				721C811A1FCD57BD00AF6E9D /* CSZiroomViewController.m in Sources */,
 				B2B81E581FCEBE7600E59076 /* SDCollectionViewCell.m in Sources */,
+				B2B81E6C1FD2B4D500E59076 /* CSSelectTableViewCell.m in Sources */,
 				7247F5A01FCAA33100B0DEAE /* CSNetworkLogModel.m in Sources */,
 				72FA2E251FD2831500532BAC /* CSOrganizationChartPersonCell.m in Sources */,
 				72F12A9A1FCE8F5A00120EC8 /* CSMeCell.m in Sources */,
@@ -983,11 +1027,14 @@
 				7247F5951FCAA0E000B0DEAE /* CSNetWorkConfig.m in Sources */,
 				721C81251FCD583700AF6E9D /* CSAddressBookViewController.m in Sources */,
 				72F12AAC1FCECD6F00120EC8 /* CSPersonInfoCell.m in Sources */,
+				B2B81E631FD2A40100E59076 /* CSEmpleeJoinController.m in Sources */,
 				B2B81E571FCEBE7600E59076 /* TAPageControl.m in Sources */,
 				721A9E061FCAD47A0056435F /* NSDictionary+null.m in Sources */,
 				721C81281FCD584B00AF6E9D /* CSMeViewController.m in Sources */,
+				B2B81E721FD2D49300E59076 /* CSParentmentListTableCell.m in Sources */,
 				72F12A8E1FCE578000120EC8 /* CSZiroomBusnissManage.m in Sources */,
 				B2B81E411FCEB15500E59076 /* UIView+ViewProperty.m in Sources */,
+				B2B81E661FD2A67800E59076 /* CSEmpleeJoinTableViewCell.m in Sources */,
 				B2B81E601FD29CBC00E59076 /* CSAnnounceListViewController.m in Sources */,
 				72FA2E131FD26B0400532BAC /* CSDataSave.m in Sources */,
 				72F12A8B1FCE575400120EC8 /* CSZiroomViewMessageCell.m in Sources */,
@@ -1004,6 +1051,8 @@
 				B2B81E561FCEBE7600E59076 /* TADotView.m in Sources */,
 				722D3CAC1FD3AB0E0053B192 /* CSLoginBusinessManage.m in Sources */,
 				721C812B1FCD666200AF6E9D /* rootTabBarController.m in Sources */,
+				B2B81E751FD2D65C00E59076 /* UIButton+EnlargeTouchArea.m in Sources */,
+				B2B81E781FD2E13B00E59076 /* CSPositionViewController.m in Sources */,
 				7247F5931FCAA0E000B0DEAE /* CSRequest.m in Sources */,
 				72F12AA61FCE91DB00120EC8 /* BaseViewController.m in Sources */,
 				7247F5AA1FCACEBC00B0DEAE /* CSBaseService.m in Sources */,
@@ -1015,6 +1064,7 @@
 				72F12AA91FCECCB900120EC8 /* CSPersonInfoViewController.m in Sources */,
 				72F12A971FCE8F1500120EC8 /* CSMeHeadView.m in Sources */,
 				72F12A941FCE5FEA00120EC8 /* LoginViewController.m in Sources */,
+				B2B81E6F1FD2D07400E59076 /* CSParentmentListController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

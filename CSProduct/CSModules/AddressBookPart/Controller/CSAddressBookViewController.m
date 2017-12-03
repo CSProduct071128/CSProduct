@@ -49,7 +49,10 @@
         make.bottom.equalTo(self.view.mas_bottom).offset(-49.f);
     }];
     [organizationView showDataWithOrgArray:org andPersonArray:person andHeadDataArray:head];
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

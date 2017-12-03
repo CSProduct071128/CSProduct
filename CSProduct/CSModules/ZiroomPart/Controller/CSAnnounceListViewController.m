@@ -24,6 +24,7 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
     self.title = @"公告管理";
     self.view.backgroundColor = [UIColor whiteColor];
     [self loadTableView];
+//    [self setNavItem];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
@@ -40,7 +41,7 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
         UITableView *table = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         [self.view addSubview:table];
         [table mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
+            make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(64, 0, 0, 0));
         }];
         [table registerClass:[CSZiroomViewMessageCell class] forCellReuseIdentifier:kCSZiroomViewMessageCellReuseIdentifier];
         table.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -75,7 +76,25 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
 }
+-(void)setNavItem{
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    rightBtn.frame = CGRectMake(0, 0, 44, 64);
+    [rightBtn setImage:[UIImage imageNamed:@"zrk_ic_good_add_n"] forState:UIControlStateSelected];
+    rightBtn.titleLabel.font = [UIFont systemFontOfSize:14.0f];
+    [rightBtn setTitleColor:UIColorFromRGB(0x444444) forState:UIControlStateNormal];
+    [rightBtn addTarget:self action:@selector(rightBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    rightItem.width=64;
+    //    UIBarButtonItem *navigationSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    //    navigationSpace.width = -20 + 6;
+    self.navigationItem.rightBarButtonItem = rightItem;
+}
 
+-(void)rightBtnClick:(UIButton *)btn{
+    
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

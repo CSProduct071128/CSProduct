@@ -15,7 +15,6 @@
 #import "CSOrganizationViewController.h"//组织管理页面
 #import "CSPersonManageViewController.h"// 人员管理页面
 
-
 static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomViewMessageCellReuseIdentifier";
 
 @interface CSZiroomViewController ()<UITableViewDelegate,UITableViewDataSource,CSZiroomHomeHeadViewDelegate>
@@ -100,7 +99,7 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 }
 
 - (void)approvalAction {
-     
+
 }
 
 

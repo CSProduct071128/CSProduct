@@ -9,6 +9,7 @@
 #import "CSPersonManageViewController.h"
 #import "CSOrganizationChartView.h"
 #import "CSSearchView.h"
+#import "CSEmpleeJoinController.h"
 
 @interface CSPersonManageViewController () <UISearchBarDelegate,CSSearchViewDelegate>
 {
@@ -73,6 +74,9 @@
 }
 
 - (void)checkBtnClick:(UIButton *)send{
+    
+    CSEmpleeJoinController *vc = [[CSEmpleeJoinController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
     NSLog(@"添加");
 }
 #pragma mark - delegate
