@@ -16,6 +16,10 @@
 		721C812B1FCD666200AF6E9D /* rootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721C812A1FCD666200AF6E9D /* rootTabBarController.m */; };
 		722D3CAC1FD3AB0E0053B192 /* CSLoginBusinessManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 722D3CAB1FD3AB0E0053B192 /* CSLoginBusinessManage.m */; };
 		722D3CAF1FD3C6EB0053B192 /* CSPersonInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 722D3CAE1FD3C6EB0053B192 /* CSPersonInfoModel.m */; };
+		722D3CB21FD3EB7E0053B192 /* CSOrganizationAddOriNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 722D3CB11FD3EB7E0053B192 /* CSOrganizationAddOriNameCell.m */; };
+		722D3CB51FD3EB920053B192 /* CSOrganizationAddOriTipsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 722D3CB41FD3EB920053B192 /* CSOrganizationAddOriTipsCell.m */; };
+		722D3CB81FD3EBA50053B192 /* CSOrganizationAddSelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 722D3CB71FD3EBA50053B192 /* CSOrganizationAddSelCell.m */; };
+		722D3CBB1FD410170053B192 /* CSLoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 722D3CBA1FD410170053B192 /* CSLoginModel.m */; };
 		7247F54F1FCA8A2A00B0DEAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F54E1FCA8A2A00B0DEAE /* AppDelegate.m */; };
 		7247F5521FCA8A2B00B0DEAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7247F5511FCA8A2B00B0DEAE /* ViewController.m */; };
 		7247F5551FCA8A2B00B0DEAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7247F5531FCA8A2B00B0DEAE /* Main.storyboard */; };
@@ -126,6 +130,14 @@
 		722D3CAB1FD3AB0E0053B192 /* CSLoginBusinessManage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSLoginBusinessManage.m; sourceTree = "<group>"; };
 		722D3CAD1FD3C6EB0053B192 /* CSPersonInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSPersonInfoModel.h; sourceTree = "<group>"; };
 		722D3CAE1FD3C6EB0053B192 /* CSPersonInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSPersonInfoModel.m; sourceTree = "<group>"; };
+		722D3CB01FD3EB7E0053B192 /* CSOrganizationAddOriNameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSOrganizationAddOriNameCell.h; sourceTree = "<group>"; };
+		722D3CB11FD3EB7E0053B192 /* CSOrganizationAddOriNameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSOrganizationAddOriNameCell.m; sourceTree = "<group>"; };
+		722D3CB31FD3EB920053B192 /* CSOrganizationAddOriTipsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSOrganizationAddOriTipsCell.h; sourceTree = "<group>"; };
+		722D3CB41FD3EB920053B192 /* CSOrganizationAddOriTipsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSOrganizationAddOriTipsCell.m; sourceTree = "<group>"; };
+		722D3CB61FD3EBA50053B192 /* CSOrganizationAddSelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSOrganizationAddSelCell.h; sourceTree = "<group>"; };
+		722D3CB71FD3EBA50053B192 /* CSOrganizationAddSelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSOrganizationAddSelCell.m; sourceTree = "<group>"; };
+		722D3CB91FD410170053B192 /* CSLoginModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSLoginModel.h; sourceTree = "<group>"; };
+		722D3CBA1FD410170053B192 /* CSLoginModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSLoginModel.m; sourceTree = "<group>"; };
 		7247F54A1FCA8A2A00B0DEAE /* CSProduct.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSProduct.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7247F54D1FCA8A2A00B0DEAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7247F54E1FCA8A2A00B0DEAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -365,8 +377,6 @@
 				B2B81E6E1FD2D07300E59076 /* CSParentmentListController.m */,
 				B2B81E761FD2E13B00E59076 /* CSPositionViewController.h */,
 				B2B81E771FD2E13B00E59076 /* CSPositionViewController.m */,
-				B2B81E5B1FCFFF3C00E59076 /* CSAnnounceListViewController.h */,
-				B2B81E5C1FCFFF3C00E59076 /* CSAnnounceListViewController.m */,
 				72FA2E2A1FD2BDEF00532BAC /* CSPersonManageViewController.h */,
 				72FA2E2B1FD2BDEF00532BAC /* CSPersonManageViewController.m */,
 				72FA2E2D1FD2BE1C00532BAC /* CSOrganizationViewController.h */,
@@ -398,6 +408,12 @@
 				B2B81E6B1FD2B4D400E59076 /* CSSelectTableViewCell.m */,
 				B2B81E701FD2D49300E59076 /* CSParentmentListTableCell.h */,
 				B2B81E711FD2D49300E59076 /* CSParentmentListTableCell.m */,
+				722D3CB01FD3EB7E0053B192 /* CSOrganizationAddOriNameCell.h */,
+				722D3CB11FD3EB7E0053B192 /* CSOrganizationAddOriNameCell.m */,
+				722D3CB31FD3EB920053B192 /* CSOrganizationAddOriTipsCell.h */,
+				722D3CB41FD3EB920053B192 /* CSOrganizationAddOriTipsCell.m */,
+				722D3CB61FD3EBA50053B192 /* CSOrganizationAddSelCell.h */,
+				722D3CB71FD3EBA50053B192 /* CSOrganizationAddSelCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -654,6 +670,8 @@
 				72F12AA21FCE8FCA00120EC8 /* CSMeHeadViewModel.m */,
 				722D3CAD1FD3C6EB0053B192 /* CSPersonInfoModel.h */,
 				722D3CAE1FD3C6EB0053B192 /* CSPersonInfoModel.m */,
+				722D3CB91FD410170053B192 /* CSLoginModel.h */,
+				722D3CBA1FD410170053B192 /* CSLoginModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1018,7 +1036,9 @@
 				72FA2E251FD2831500532BAC /* CSOrganizationChartPersonCell.m in Sources */,
 				72F12A9A1FCE8F5A00120EC8 /* CSMeCell.m in Sources */,
 				72FA2E2C1FD2BDEF00532BAC /* CSPersonManageViewController.m in Sources */,
+				722D3CB21FD3EB7E0053B192 /* CSOrganizationAddOriNameCell.m in Sources */,
 				7247F5941FCAA0E000B0DEAE /* CSUrlArgumentsFilter.m in Sources */,
+				722D3CB51FD3EB920053B192 /* CSOrganizationAddOriTipsCell.m in Sources */,
 				72FA2E1F1FD2802D00532BAC /* CSOrganizationChartView.m in Sources */,
 				72F12AAF1FCECDAE00120EC8 /* CSPersonInfoBusinessManage.m in Sources */,
 				72FA2E321FD2C94900532BAC /* CSOrganizationAddViewController.m in Sources */,
@@ -1044,6 +1064,7 @@
 				728D20BA1FCD67D600057177 /* CSZiroomNavController.m in Sources */,
 				72F12AA01FCE8FA800120EC8 /* CSMeBusinessManage.m in Sources */,
 				72FA2E2F1FD2BE1C00532BAC /* CSOrganizationViewController.m in Sources */,
+				722D3CBB1FD410170053B192 /* CSLoginModel.m in Sources */,
 				7247F5AD1FCACFEE00B0DEAE /* CSWebRequest.m in Sources */,
 				B2B81E541FCEBE7500E59076 /* TAAbstractDotView.m in Sources */,
 				728D20B71FCD67C300057177 /* CSAddressBookNavController.m in Sources */,
@@ -1056,6 +1077,7 @@
 				7247F5931FCAA0E000B0DEAE /* CSRequest.m in Sources */,
 				72F12AA61FCE91DB00120EC8 /* BaseViewController.m in Sources */,
 				7247F5AA1FCACEBC00B0DEAE /* CSBaseService.m in Sources */,
+				722D3CB81FD3EBA50053B192 /* CSOrganizationAddSelCell.m in Sources */,
 				722D3CAF1FD3C6EB0053B192 /* CSPersonInfoModel.m in Sources */,
 				72FA2E191FD2767800532BAC /* CSOrganizationChartHeadView.m in Sources */,
 				72F12A851FCE570400120EC8 /* CSZiroomHomeHeadView.m in Sources */,

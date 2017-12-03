@@ -21,17 +21,54 @@
 + (void)saveUserInfoWithUserName:(NSString *)username
                      andPassword:(NSString *)password
                          andName:(NSString *)name
-                          andSex:(NSInteger)sex
+                          andSex:(NSString *)sex
                    andCardNumber:(NSString *)cardNumber
                         andPhone:(NSString *)phone
                       andAddress:(NSString *)address
                    andDepartment:(NSString *)departmnet
                          andRole:(NSString *)role
+                       andPicUrl:(NSString *)picUrl
                    andCompletion:(cscompletionBlock)completion;
 
 /**
  获取用户列表
  */
 + (void)getUserInfoListWithType:(NSInteger)type andCompletion:(cscompletionBlock)completion;
+
+/**
+ 用户 加入/接触 黑名单
+ */
++ (void)setUserLocationblackListWithType:(NSInteger)type
+                               andUserID:(NSString *)userId
+                           andCompletion:(cscompletionBlock)completion;
+
+/**
+ 获取黑名单列表
+ */
++ (void)getblackListWithUserID:(NSString *)userId
+                 andCompletion:(cscompletionBlock)completion;
+
+/**
+ 打卡接口
+ */
++ (void)signInWithUserID:(NSString *)userId
+           andCompletion:(cscompletionBlock)completion;
+
+
+/**
+ 保存组织结构
+ */
++ (void)saveOrganizationConstructionWithParentDepId:(NSString *)parentDepId
+                                         andDepName:(NSString *)depName
+                                            andtype:(NSInteger)type
+                                      andCompletion:(cscompletionBlock)completion;
+
+/**
+ 获取组织结构
+ */
++ (void)getOrganizationConstructionWithUpParentDepId:(NSString *)parentDepId
+                                          andDepName:(NSString *)depName
+                                             andtype:(NSInteger)type
+                                       andCompletion:(cscompletionBlock)completion;
 
 @end

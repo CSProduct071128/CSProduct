@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CSPersonInfoViewController : BaseViewController
+@property (nonatomic,copy) NSString *personId;
 
 @end

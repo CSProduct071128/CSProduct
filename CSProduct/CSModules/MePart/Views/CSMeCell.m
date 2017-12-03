@@ -53,7 +53,7 @@
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.contentView);
         make.height.equalTo(@(0.5f));
-        make.bottom.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView.mas_bottom);
     }];
 
 }

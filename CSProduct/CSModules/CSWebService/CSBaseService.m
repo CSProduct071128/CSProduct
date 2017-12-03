@@ -10,7 +10,7 @@
 #import "NSDictionary+null.h"
 
 @implementation CSBaseService
-+ (CSWebRequest *)postJsonDataRequestWithDetailRul:(NSString *)httpDetailUrl
++ (CSWebRequest *)postJsonDataRequestWithDetailUrl:(NSString *)httpDetailUrl
                                              param:(NSDictionary *)httpParamDataDic
                                             header:(NSDictionary *)httpHeadFieldDic
                                                cls:(Class)dataModelCls
@@ -63,7 +63,7 @@
     
 }
 
-+ (CSWebRequest *)getJsonDataRequestWithDetailRul:(NSString *)httpDetailUrl
++ (CSWebRequest *)getJsonDataRequestWithDetailUrl:(NSString *)httpDetailUrl
                                              param:(NSDictionary *)httpParamDataDic
                                             header:(NSDictionary *)httpHeadFieldDic
                                                cls:(Class)dataModelCls

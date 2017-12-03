@@ -57,16 +57,15 @@
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.contentView);
         make.height.equalTo(@(0.5f));
-        make.bottom.equalTo(self.contentView);
+        make.bottom.equalTo(self.contentView.mas_bottom);
     }];
     
 }
 
-- (void)setModels:(id)model{
+- (void)setTitle:(NSString *)title andContent:(NSString *)content{
     
-    labTitle.text = model;
-    labContent.text = @"移动开发部门，系统研发部";
-
+    labTitle.text = title;
+    labContent.text = content;
 }
 
 

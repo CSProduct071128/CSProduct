@@ -61,7 +61,7 @@
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     [dict setValue:userid forKey:@"userId"];
     
-    [CSBaseService getJsonDataRequestWithDetailRul:kURL_UserInfo_get param:dict header:nil cls:[CSPersonInfoModel class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+    [CSBaseService getJsonDataRequestWithDetailUrl:kURL_UserInfo_get param:dict header:nil cls:[CSPersonInfoModel class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
         if (logicDicData && [logicDicData isKindOfClass:[CSPersonInfoModel class]]) {
             completion(YES,nil);
         }else{

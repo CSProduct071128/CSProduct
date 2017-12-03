@@ -70,5 +70,37 @@
 //    }];
 //}
 
+// //
+//- (void)loginClick:(UIButton *)send{
+//    [CSLoginBusinessManage setUserLocationblackListWithType:(1) andUserID:@"123" andCompletion:^(BOOL isFinish, NSString *errorMessage) {
+//
+//    }];
+//}
+
+//
+//- (void)loginClick:(UIButton *)send{
+//    [CSLoginBusinessManage getblackListWithUserID:@"123456" andCompletion:^(BOOL isFinish, NSString *errorMessage) {
+//
+//    }];
+//}
+
+//- (void)loginClick:(UIButton *)send{
+//    [CSLoginBusinessManage signInWithUserID:@"123456" andCompletion:^(BOOL isFinish, NSString *errorMessage) {
+//
+//    }];
+//}
+
+//- (void)loginClick:(UIButton *)send{
+//    [CSLoginBusinessManage saveOrganizationConstructionWithParentDepId:@"123" andDepName:@"项目管理部" andtype:1 andCompletion:^(BOOL isFinish, NSString *errorMessage) {
+//
+//    }];
+//}
+
+//- (void)loginClick:(UIButton *)send{
+//    [CSLoginBusinessManage getOrganizationConstructionWithUpParentDepId:@"1" andDepName:@"管理部" andtype:1 andCompletion:^(BOOL isFinish, NSString *errorMessage) {
+//
+//    }];
+//}
+
 
 @end

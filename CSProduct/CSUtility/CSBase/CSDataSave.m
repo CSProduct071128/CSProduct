@@ -27,6 +27,10 @@
     return lInfo;
 }
 
++ (NSString *)getUserID{
+    CSDataSave *model = [self getLoginInfo];
+    return model.userId?model.userId:@"";
+}
 
 - (void)encodeWithCoder:(NSCoder *)coder
 {

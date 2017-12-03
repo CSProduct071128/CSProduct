@@ -9,13 +9,17 @@
 #import "CSPersonInfoViewController.h"
 #import "CSMeHeadView.h"
 #import "CSPersonInfoCell.h"
+#import "CSBaseService.h"
+
+#define kShowContentCZ (self.tableViewDataArray.count-self.titleArray.count)
 
 @interface CSPersonInfoViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     CSMeHeadView *headView;
 }
 @property (nonatomic,strong) UITableView *tableView;
-@property (nonatomic,strong) NSArray *tableViewDataArray;
+@property (nonatomic,strong) NSArray *titleArray;
+@property (nonatomic,strong) NSMutableArray *tableViewDataArray;
 
 @end
 
@@ -25,8 +29,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"个人信息";
+    self.tableViewDataArray = [NSMutableArray arrayWithCapacity:0];
+    self.titleArray = @[@"所属部门:",@"职位:",@"工号:",@"企业邮箱:",@"联系方式:"];
     [self tableView];
     [self headViewShow];
+    [self tableViewHeadViewDataWithUserId:_personId completion:^(BOOL isFinish, NSString *errorMessage) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,15 +83,17 @@
 };
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return self.titleArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
 
     CSPersonInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSPersonInfoCellID];
-//    if (self.tableViewDataArray.count) {
-        [cell setModels:@"这里是cellTitle:"];
-//    }
+    if (self.tableViewDataArray.count) {
+        [cell setTitle:self.titleArray[indexPath.row] andContent:self.tableViewDataArray[indexPath.row+kShowContentCZ]];
+    }else{
+        [cell setTitle:self.titleArray[indexPath.row] andContent:@""];
+    }
     return cell;
 }
 
@@ -100,8 +111,39 @@
 
 #pragma mark - headViewShow
 - (void)headViewShow{
-    headView = [[CSMeHeadView alloc] initWithFrame:CGRectMake(0, 0, CSScreenWidth, CSScreenWidth*2/3.0)];
-    [self.tableView setTableHeaderView:headView];
+    if (!headView) {
+        headView = [[CSMeHeadView alloc] initWithFrame:CGRectMake(0, 0, CSScreenWidth, CSScreenWidth*2/3.0)];
+        [self.tableView setTableHeaderView:headView];
+    }
+    [headView setName:[self.tableViewDataArray firstObject] andImage:nil];
 }
 
+- (void)tableViewHeadViewDataWithUserId:(NSString *)userid completion:(cscompletionBlock)completion{
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:userid forKey:@"userId"];
+    
+    [CSBaseService getJsonDataRequestWithDetailUrl:kURL_UserInfo_get param:dict header:nil cls:[CSPersonInfoModel class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+        if (logicDicData && [logicDicData isKindOfClass:[CSPersonInfoModel class]]) {
+            [self dataFormWithModel:(CSPersonInfoModel *)logicDicData] ;
+            [self headViewShow];
+        }else{
+            [self.view makeToast:msg?msg:kRequestErrorMessage];
+        }
+    } failure:^(CSBaseRequest *request, NSString *errorMsg) {
+        [self.view makeToast:errorMsg?errorMsg:kRequestErrorMessage];
+//        completion(NO,errorMsg?errorMsg:kRequestErrorMessage);
+    }];
+}
+
+- (void) dataFormWithModel:(CSPersonInfoModel *)model{
+    [self.tableViewDataArray addObject:model.name?model.name:@""];
+    [self.tableViewDataArray addObject:model.picUrl?model.picUrl:@""];
+    [self.tableViewDataArray addObject:model.departmnet?model.departmnet:@""];
+    [self.tableViewDataArray addObject:model.role?model.role:@""];
+    [self.tableViewDataArray addObject:model.cardNumber?model.cardNumber:@""];
+    [self.tableViewDataArray addObject:model.cardNumber?model.cardNumber:@""];
+    [self.tableViewDataArray addObject:model.phoneNumber?model.phoneNumber:@""];
+    [self.tableView reloadData];
+}
 @end

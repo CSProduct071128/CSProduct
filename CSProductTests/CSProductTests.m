@@ -69,7 +69,7 @@
     /**
          每个测试用例开头用test即可
      */
-    [CSBaseService postJsonDataRequestWithDetailRul:@"adat/sk/101110101.html" param:nil header:nil cls:[NSDictionary class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+    [CSBaseService postJsonDataRequestWithDetailUrl:@"adat/sk/101110101.html" param:nil header:nil cls:[NSDictionary class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
         NOTIFY
         XCTAssertNotNil(logicDicData, @"出错了");
         NSLog(@"正确：%@",logicDicData);

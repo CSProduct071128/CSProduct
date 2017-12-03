@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSPersonInfoModel.h"
 
 @interface CSMeHeadView : UIView
-- (void)setHeadModel:(id)model;
+- (void)setHeadModel:(CSPersonInfoModel *)model;
+
+- (void)setName:(NSString *)name andImage:(NSString *)url;
 
 @end

@@ -29,14 +29,14 @@ typedef void(^failureCallBack)(CSBaseRequest *request, NSString *errorMsg);
  @param successblock
  @param failureblock
  */
-+ (CSWebRequest *)postJsonDataRequestWithDetailRul:(NSString *)httpDetailUrl
++ (CSWebRequest *)postJsonDataRequestWithDetailUrl:(NSString *)httpDetailUrl
                                              param:(NSDictionary *)httpParamDataDic
                                             header:(NSDictionary *)httpHeadFieldDic
                                                cls:(Class)dataModelCls
                                            success:(successCallBack)successblock
                                            failure:(failureCallBack)failureblock;
 
-+ (CSWebRequest *)getJsonDataRequestWithDetailRul:(NSString *)httpDetailUrl
++ (CSWebRequest *)getJsonDataRequestWithDetailUrl:(NSString *)httpDetailUrl
                                             param:(NSDictionary *)httpParamDataDic
                                            header:(NSDictionary *)httpHeadFieldDic
                                               cls:(Class)dataModelCls

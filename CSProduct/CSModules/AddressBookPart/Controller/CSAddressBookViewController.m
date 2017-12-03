@@ -9,6 +9,7 @@
 #import "CSAddressBookViewController.h"
 #import "CSOrganizationChartView.h"
 #import "CSSearchView.h"
+#import "CSLoginBusinessManage.h"
 
 @interface CSAddressBookViewController ()<UISearchBarDelegate,CSSearchViewDelegate>
 {
@@ -20,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self get];
+    
     CSSearchView *se = [[CSSearchView alloc] initWithFrame:CGRectMake(0, 20, CSScreenWidth, kCSSearchViewHeight)];
     se.delegate = self;
     se.searchPlaceholder=@"北京自如";
@@ -52,7 +55,12 @@
     
 }
 
+- (void)get{
+        [CSLoginBusinessManage getOrganizationConstructionWithUpParentDepId:@"1" andDepName:@"后台" andtype:1 andCompletion:^(BOOL isFinish, NSString *errorMessage) {
+    
+        }];
 
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

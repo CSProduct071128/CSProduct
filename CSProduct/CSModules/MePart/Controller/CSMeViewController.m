@@ -17,6 +17,7 @@
 {
     CSMeBusinessManage *busnissManage;
     CSMeHeadView *headView;
+    CSPersonInfoModel *selfInfoModel;
 }
 @property (nonatomic,strong) UITableView *tableView;
 @property (nonatomic,strong) NSArray *tableViewDataArray;
@@ -30,8 +31,8 @@
     // Do any additional setup after loading the view.
     self.tableViewDataArray = [NSArray array];
     [self tableView];
+    [self headViewShowWithModel:nil];
     [self footViewShow];
-    [self headViewShow];
     [self dataLoading];
 }
 
@@ -44,7 +45,7 @@
 - (void)dataLoading{
     
     busnissManage  = [[CSMeBusinessManage alloc] init];
-    busnissManage.userID = @"123456";
+    busnissManage.userID = [CSDataSave getUserID];
     
     @weakify(self);
     [self.view showHUD];
@@ -55,7 +56,8 @@
             [self.view makeToast:errorStr];
         }
         if (model) {
-            headView;
+            selfInfoModel = model;
+            [self headViewShowWithModel:model];
         }
         if (cellDataArray) {
             self.tableViewDataArray = cellDataArray;
@@ -131,14 +133,16 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.row == 0) {
         CSPersonInfoViewController *personInfoVC = [[CSPersonInfoViewController alloc] init];
+        personInfoVC.personId = [CSDataSave getUserID];
         [self.navigationController pushViewController:personInfoVC animated:YES];
     }
 }
 
 #pragma mark - headViewShow
-- (void)headViewShow{
+- (void)headViewShowWithModel:(CSPersonInfoModel *)model{
+    
     headView = [[CSMeHeadView alloc] initWithFrame:CGRectMake(0, 0, CSScreenWidth, CSScreenWidth*2/3.0)];
-    [headView setHeadModel:nil];
+    [headView setHeadModel:model];
     [self.tableView setTableHeaderView:headView];
 }
 

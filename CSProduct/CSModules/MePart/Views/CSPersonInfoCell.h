@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #define kCSPersonInfoCellID @"CSPersonInfoCell_ID"
 @interface CSPersonInfoCell : UITableViewCell
-- (void)setModels:(id)model;
+
+- (void)setTitle:(NSString *)title andContent:(NSString *)content;
 
 @end

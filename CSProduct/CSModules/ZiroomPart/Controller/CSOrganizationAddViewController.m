@@ -8,8 +8,13 @@
 
 #import "CSOrganizationAddViewController.h"
 #import "CSOrganizationSelPersonViewController.h"// 人员选择
+#import "CSOrganizationAddOriNameCell.h"
+#import "CSOrganizationAddOriTipsCell.h"
+#import "CSOrganizationAddSelCell.h"
 
-@interface CSOrganizationAddViewController ()
+@interface CSOrganizationAddViewController () <UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic , strong) UITableView *tableView;
 
 @end
 
@@ -20,7 +25,7 @@
     // Do any additional setup after loading the view.
     self.title = @"新增组织";
     [self addRightBtn];
-
+    [self tableView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,8 +46,103 @@
 
 - (void)checkBtnClick:(UIButton *)send{
     NSLog(@"添加");
-    CSOrganizationSelPersonViewController *vc = [[CSOrganizationSelPersonViewController alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+}
+
+#pragma mark - uitableView
+-(UITableView *)tableView{
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        _tableView.backgroundView = nil;
+        _tableView.backgroundColor =[UIColor whiteColor];
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+        _tableView.bounces = NO;
+        [self.view addSubview:_tableView];
+        
+        [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(64, 0, 0, 0));
+        }];
+        // 注册cell
+        [_tableView registerClass:[CSOrganizationAddOriNameCell class] forCellReuseIdentifier:kCSOrganizationAddOriNameCell];
+        [_tableView registerClass:[CSOrganizationAddOriTipsCell class] forCellReuseIdentifier:kCSOrganizationAddOriTipsCell];
+        [_tableView registerClass:[CSOrganizationAddSelCell class] forCellReuseIdentifier:kCSOrganizationAddSelCell];
+        
+    }
+    return _tableView;
+}
+
+#pragma mark - tableview Delegate !
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return nil;
+    }else{
+        UIView *speView = [[UIView alloc] init];
+        speView.backgroundColor= UIColorFromRGB(0xEEEEEE);
+        return speView;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return nil;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 4;
+};
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0) {
+        CSOrganizationAddOriNameCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSOrganizationAddOriNameCell];
+        return cell;
+    }else if (indexPath.section == 1){
+        CSOrganizationAddSelCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSOrganizationAddSelCell];
+        [cell setTitle:@"上级组织：" andContent:@"无无无"];
+        return cell;
+
+    }else if (indexPath.section == 2){
+        CSOrganizationAddOriTipsCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSOrganizationAddOriTipsCell];
+        return cell;
+        
+    }else{
+        CSOrganizationAddSelCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSOrganizationAddSelCell];
+        [cell setTitle:@"组织成员：" andContent:@"哈哈哈哈或或或或或或或或或或"];
+        return cell;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return 0.01f;
+    }else{
+        return 24.f;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.001;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 2) {
+        return 200;
+    }else{
+        return 49.f;
+    }
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 1) {
+        
+    }else if (indexPath.section == 3){
+        CSOrganizationSelPersonViewController *vc = [[CSOrganizationSelPersonViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 @end
