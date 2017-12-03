@@ -9,57 +9,117 @@
 #import "CSAddressBookViewController.h"
 #import "CSOrganizationChartView.h"
 #import "CSSearchView.h"
-#import "CSLoginBusinessManage.h"
+#import "CSOrganizationBusiness.h"
 
 @interface CSAddressBookViewController ()<UISearchBarDelegate,CSSearchViewDelegate>
 {
     UISearchBar *_searchBar;
+    CSOrganizationChartView *organizationView;
 }
+@property (nonatomic,strong) NSMutableArray *showTitleArray;
+@property (nonatomic,strong) NSArray *oriArray;
+@property (nonatomic,strong) NSArray *perArray;
+@property (nonatomic,strong) CSOrganizationModel *infoModel;
+
 @end
 
 @implementation CSAddressBookViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self get];
-    
+    self.showTitleArray = [NSMutableArray arrayWithCapacity:0];
+    // 获取组织结构
+    NSString *depid = _infoModel.depRootId?_infoModel.depRootId:@"0";
+    NSString *depName = _infoModel.depRootName?_infoModel.depRootName:@"";
+    NSString *depType = _infoModel.type?_infoModel.type:@"0";
+    [self getgetOrganizationWithDepId:depid DepName:depName andType:depType];
+
     CSSearchView *se = [[CSSearchView alloc] initWithFrame:CGRectMake(0, 20, CSScreenWidth, kCSSearchViewHeight)];
     se.delegate = self;
     se.searchPlaceholder=@"北京自如";
     [self.view addSubview:se];
-    
-    NSArray *org = @[@"1",@"2",@"3",@"4"];
-    NSArray *person = @[@"q",@"w",@"e",@"r",@"t",@"y",@"z",@"x",@"c",@"v",@"b"];
-    NSArray *head = @[@"北京自如信息科技",@"无线研发组",@"金融与生活服务组",@"组织架构"];
-
-    CSOrganizationChartView *organizationView = [[CSOrganizationChartView alloc] initWithFrame:CGRectZero];
-    [self.view addSubview:organizationView];
-    
-    organizationView.selOrigitionBlock = ^(NSInteger number) {
-        NSLog(@"选择了哪个组织？编号是:%ld",number);
-        NSLog(@"选择了%@组织",org[number]);
-    };
-    
-    organizationView.selPersonBlock = ^(NSInteger number) {
-        NSLog(@"选择了哪个人？编号是:%ld",number);
-        NSLog(@"选择了%@人",person[number]);
-    };
-    
-    [organizationView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(64.f);
-        make.left.equalTo(self.view);
-        make.right.equalTo(self.view);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-49.f);
-    }];
-    [organizationView showDataWithOrgArray:org andPersonArray:person andHeadDataArray:head];
-    
 }
 
-- (void)get{
-        [CSLoginBusinessManage getOrganizationConstructionWithUpParentDepId:@"1" andDepName:@"后台" andtype:1 andCompletion:^(BOOL isFinish, NSString *errorMessage) {
+#pragma mark -
+- (void)getgetOrganizationWithDepId:(NSString *)depId DepName:(NSString *)depName andType:(NSString *)type{
     
-        }];
+    [CSOrganizationBusiness getOrganizationConstructionWithUpParentDepId:depId andDepName:depName andtype:type andCompletion:^(BOOL isFinish,NSString *errorMessage,NSArray *oriArray,NSArray *perArray,CSOrganizationModel *model) {
+        if (isFinish) {
+            self.perArray = [NSArray arrayWithArray:perArray];
+            self.oriArray = [NSArray arrayWithArray:oriArray];
+            self.infoModel = model;
+            [self showOrganizationView];
+        }else{
+            [self.view makeToast:errorMessage];
+        }
+    }];
+}
 
+/**
+ 展示组织用户页面
+ */
+- (void) showOrganizationView{
+    CSOrganizationModel *addModel = self.infoModel;
+    [self.showTitleArray addObject:addModel];
+    
+    [self showOrganView];
+}
+
+/**
+ 展示组织view
+ */
+- (void)showOrganView{
+    if (!organizationView) {
+        organizationView = [[CSOrganizationChartView alloc] initWithFrame:CGRectZero];
+        [self.view addSubview:organizationView];
+        
+        
+        organizationView.selRootMapBlock = ^(NSInteger number) {
+            NSLog(@"选择了哪个根组织？编号是:%ld",number);
+            [self showUpOriWithNumber:number];
+        };
+        
+        organizationView.selOrigitionBlock = ^(NSInteger number) {
+            NSLog(@"选择了哪个组织？编号是:%ld",number);
+            [self showNextOriWithNumber:number];
+        };
+        
+        organizationView.selPersonBlock = ^(NSInteger number) {
+            NSLog(@"选择了哪个人？编号是:%ld",number);
+        };
+        
+        [organizationView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.view).offset(64.f);
+            make.left.equalTo(self.view);
+            make.right.equalTo(self.view);
+            make.bottom.equalTo(self.view.mas_bottom);
+        }];
+    }
+    
+    [organizationView showDataWithOrgArray:self.oriArray andPersonArray:self.perArray andHeadDataArray:self.showTitleArray];
+}
+
+- (void) showUpOriWithNumber:(NSInteger )number{
+    // 缓存所有根目录数据
+    NSArray *ccArray = [[NSArray alloc] initWithArray:_showTitleArray];
+    //清除显示根目录数据
+    [_showTitleArray removeAllObjects];
+    // 重新匹配缓存数据
+    for (int max = 0; max <= number; max++) {
+        [_showTitleArray addObject:ccArray[max]];
+    }
+    // 增加之前
+    CSOrganizationModel *selModel = _showTitleArray[number];
+    // 用完最后一个就删掉，请求回来会重新加入一个
+    [_showTitleArray removeLastObject];
+    
+    [self getgetOrganizationWithDepId:selModel.depRootId DepName:selModel.depRootName andType:selModel.type];
+}
+
+- (void) showNextOriWithNumber:(NSInteger )number{
+    // 增加显示下一级
+    CSOrganizationListModel *selModel = _infoModel.depOneList[number];
+    [self getgetOrganizationWithDepId:_infoModel.depRootId DepName:selModel.depOneName andType:selModel.type];
 }
 
 - (void)didReceiveMemoryWarning {

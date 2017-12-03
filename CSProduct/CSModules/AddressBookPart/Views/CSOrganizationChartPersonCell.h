@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSOrganizationModel.h"
+
 #define kCSOrganizationChartPersonCell @"CSOrganizationChartPersonCell_id"
 
 @interface CSOrganizationChartPersonCell : UITableViewCell
 
-- (void) setCellData:(id)model;
+- (void) setCellData:(CSOrganizationUserListModel *)model;
+
 +(CGFloat)getCellHeight;
 @end

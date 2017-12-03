@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CSBaseService.h"
 
 @interface CSZiroomBusnissManage : NSObject
+/**
+ 打卡接口
+ */
++ (void)signInWithUserID:(NSString *)userId
+           andCompletion:(cscompletionBlock)completion;
 
 @end

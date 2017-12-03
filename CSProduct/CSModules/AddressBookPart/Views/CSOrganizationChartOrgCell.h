@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSOrganizationModel.h"
 #define kCSOrganizationChartOrgCell @"CSOrganizationChartOrgCell_id"
 
 @interface CSOrganizationChartOrgCell : UITableViewCell
-- (void) setCellData:(id)model;
+
+- (void) setCellData:(CSOrganizationListModel *)model;
 /**
  获取cell高度
  */
