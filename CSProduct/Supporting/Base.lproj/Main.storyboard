@@ -92,11 +92,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="afa-Q4-sz6">
-                                <rect key="frame" x="87.5" y="83.5" width="200" height="200"/>
-                                <color key="backgroundColor" red="0.8666666666666667" green="0.49058702256944442" blue="0.33623589409722221" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="127.5" y="123.5" width="120" height="120"/>
+                                <color key="backgroundColor" red="0.89520701026950633" green="0.91026865891393671" blue="0.8840775128943279" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="3SF-x9-1i4"/>
-                                    <constraint firstAttribute="height" constant="200" id="6I7-Ne-CZZ"/>
+                                    <constraint firstAttribute="width" constant="120" id="3SF-x9-1i4"/>
+                                    <constraint firstAttribute="height" constant="120" id="6I7-Ne-CZZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -105,7 +105,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vdw-Rt-wO4">
-                                <rect key="frame" x="0.0" y="308.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="287.5" width="375" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3aK-bA-UE8">
                                         <rect key="frame" x="16" y="0.0" width="100" height="44"/>
@@ -141,7 +141,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qh8-hh-V7h">
-                                <rect key="frame" x="0.0" y="372.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="351.5" width="375" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密    码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABd-x7-OcP">
                                         <rect key="frame" x="16" y="0.0" width="100" height="44"/>
@@ -176,7 +176,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZQ-NQ-jNI">
-                                <rect key="frame" x="87.5" y="496.5" width="200" height="49"/>
+                                <rect key="frame" x="87.5" y="475.5" width="200" height="49"/>
                                 <color key="backgroundColor" red="0.32796220794469938" green="0.64232000962394653" blue="0.95321989059448242" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="Ich-UO-osy"/>
@@ -194,7 +194,7 @@
                             <constraint firstItem="afa-Q4-sz6" firstAttribute="centerY" secondItem="WvC-xf-fhy" secondAttribute="centerY" constant="-150" id="0Yz-Va-a48"/>
                             <constraint firstItem="Vdw-Rt-wO4" firstAttribute="leading" secondItem="WvC-xf-fhy" secondAttribute="leading" id="1vn-4N-ry4"/>
                             <constraint firstItem="qh8-hh-V7h" firstAttribute="top" secondItem="Vdw-Rt-wO4" secondAttribute="bottom" constant="20" id="AqF-0w-kuf"/>
-                            <constraint firstItem="Vdw-Rt-wO4" firstAttribute="top" secondItem="afa-Q4-sz6" secondAttribute="bottom" constant="25" id="M9a-9N-Whu"/>
+                            <constraint firstItem="Vdw-Rt-wO4" firstAttribute="top" secondItem="afa-Q4-sz6" secondAttribute="bottom" constant="44" id="M9a-9N-Whu"/>
                             <constraint firstItem="afa-Q4-sz6" firstAttribute="centerX" secondItem="WvC-xf-fhy" secondAttribute="centerX" id="QSA-s9-FBc"/>
                             <constraint firstItem="qh8-hh-V7h" firstAttribute="leading" secondItem="WvC-xf-fhy" secondAttribute="leading" id="bRJ-U2-OZ9"/>
                             <constraint firstItem="wZQ-NQ-jNI" firstAttribute="centerX" secondItem="WvC-xf-fhy" secondAttribute="centerX" id="hka-Sb-HVW"/>
