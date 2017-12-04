@@ -14,4 +14,6 @@
 
 @property (nonatomic,strong)CSAnounceDetailModel *model;
 
+@property (nonatomic,assign) NSInteger noticeId;
+
 @end

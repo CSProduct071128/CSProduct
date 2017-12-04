@@ -12,9 +12,5 @@
 
 @property (nonatomic,strong) UILabel *titleLable;
 @property (nonatomic,strong) UILabel *contentLabel;
-@property (nonatomic,strong) UIView *imgContentView;
-@property (nonatomic,strong) UILabel *hasReadLabel;
-
-@property (nonatomic,strong) UIView *lineView;
 
 @end

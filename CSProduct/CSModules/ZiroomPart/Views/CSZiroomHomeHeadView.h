@@ -12,6 +12,8 @@
 
 @protocol CSZiroomHomeHeadViewDelegate <NSObject>
 
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index;
+
 -(void)clockInAction;
 -(void)checkInAction;
 -(void)holidayAction;

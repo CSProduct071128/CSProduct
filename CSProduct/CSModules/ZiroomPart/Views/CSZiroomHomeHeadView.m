@@ -43,7 +43,6 @@
         make.left.right.bottom.equalTo(headerView);
     }];
     
-    
     NSArray * buttons = @[
                               @{@"title":@"打卡",
                                 @"image":@"ic_check_in",
@@ -87,7 +86,6 @@
             menuButton.backgroundColor = [UIColor whiteColor];
             [menuButton addTarget:self action:NSSelectorFromString(dataDic[@"actionMethod"]) forControlEvents:UIControlEventTouchUpInside];
     }
-    
 }
 - (SDCycleScrollView *)infiniteCarouselView{
     if (!_infiniteCarouselView) {
@@ -95,9 +93,9 @@
         CGRect r = CGRectMake(0, 0, w, ImageHeaderHeight);
         SDCycleScrollView *cycleScrollView2 = [SDCycleScrollView cycleScrollViewWithFrame:r delegate:self placeholderImage:[UIImage imageNamed:@"placeholder"]];
         cycleScrollView2.backgroundColor = [UIColor whiteColor];
-        cycleScrollView2.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
-        cycleScrollView2.showPageControl = NO;
-        //        cycleScrollView2.autoScrollTimeInterval = 5;
+        cycleScrollView2.showPageControl = YES;
+        cycleScrollView2.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;
+        cycleScrollView2.autoScrollTimeInterval = 5;
         cycleScrollView2.autoScroll = YES;
         cycleScrollView2.placeholderImage = [UIImage imageNamed:@"placeholder"];
         cycleScrollView2.bannerImageViewContentMode = UIViewContentModeScaleAspectFit;
@@ -109,7 +107,7 @@
 /** 点击图片回调 */
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
     
-    
+    [self.delegate cycleScrollView:cycleScrollView didSelectItemAtIndex:index];
 }
 
 /** 图片滚动回调 */

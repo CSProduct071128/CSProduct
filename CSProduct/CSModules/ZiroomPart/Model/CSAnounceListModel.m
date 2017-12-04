@@ -9,8 +9,16 @@
 #import "CSAnounceListModel.h"
 
 @implementation CSAnounceDetailModel
++ (BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
 
 @end
 @implementation CSAnounceListModel
++ (BOOL)propertyIsOptional:(NSString*)propertyName
+{
+    return YES;
+}
 
 @end

@@ -73,6 +73,10 @@
 		72FA2E2F1FD2BE1C00532BAC /* CSOrganizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FA2E2E1FD2BE1C00532BAC /* CSOrganizationViewController.m */; };
 		72FA2E321FD2C94900532BAC /* CSOrganizationAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FA2E311FD2C94900532BAC /* CSOrganizationAddViewController.m */; };
 		72FA2E351FD2C96100532BAC /* CSOrganizationSelPersonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FA2E341FD2C96100532BAC /* CSOrganizationSelPersonViewController.m */; };
+		B26D46191FD4F699003E8804 /* CSBannerListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B26D46181FD4F699003E8804 /* CSBannerListModel.m */; };
+		B26D461C1FD4FEF6003E8804 /* CSAnImgTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B26D461B1FD4FEF6003E8804 /* CSAnImgTableViewCell.m */; };
+		B26D46201FD5287A003E8804 /* CSCashHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B26D461F1FD5287A003E8804 /* CSCashHandler.m */; };
+		B26D46231FD55254003E8804 /* CSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B26D46221FD55254003E8804 /* CSWebViewController.m */; };
 		B2B81E3E1FCEAEED00E59076 /* CSMenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E3D1FCEAEED00E59076 /* CSMenuButton.m */; };
 		B2B81E411FCEB15500E59076 /* UIView+ViewProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E401FCEB15400E59076 /* UIView+ViewProperty.m */; };
 		B2B81E541FCEBE7500E59076 /* TAAbstractDotView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B81E471FCEBE7500E59076 /* TAAbstractDotView.m */; };
@@ -254,6 +258,14 @@
 		72FA2E331FD2C96100532BAC /* CSOrganizationSelPersonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSOrganizationSelPersonViewController.h; sourceTree = "<group>"; };
 		72FA2E341FD2C96100532BAC /* CSOrganizationSelPersonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSOrganizationSelPersonViewController.m; sourceTree = "<group>"; };
 		90F43AD344B86D7E573A9ECF /* libPods-CSProductTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CSProductTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B26D46171FD4F699003E8804 /* CSBannerListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSBannerListModel.h; sourceTree = "<group>"; };
+		B26D46181FD4F699003E8804 /* CSBannerListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSBannerListModel.m; sourceTree = "<group>"; };
+		B26D461A1FD4FEF6003E8804 /* CSAnImgTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSAnImgTableViewCell.h; sourceTree = "<group>"; };
+		B26D461B1FD4FEF6003E8804 /* CSAnImgTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSAnImgTableViewCell.m; sourceTree = "<group>"; };
+		B26D461E1FD5287A003E8804 /* CSCashHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSCashHandler.h; sourceTree = "<group>"; };
+		B26D461F1FD5287A003E8804 /* CSCashHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSCashHandler.m; sourceTree = "<group>"; };
+		B26D46211FD55254003E8804 /* CSWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSWebViewController.h; sourceTree = "<group>"; };
+		B26D46221FD55254003E8804 /* CSWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSWebViewController.m; sourceTree = "<group>"; };
 		B2B81E3C1FCEAEED00E59076 /* CSMenuButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSMenuButton.h; sourceTree = "<group>"; };
 		B2B81E3D1FCEAEED00E59076 /* CSMenuButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CSMenuButton.m; sourceTree = "<group>"; };
 		B2B81E3F1FCEB15400E59076 /* UIView+ViewProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+ViewProperty.h"; sourceTree = "<group>"; };
@@ -410,6 +422,8 @@
 				B2B81E7A1FD3DEA300E59076 /* CSAnnouncementViewController.m */,
 				B2B81E7F1FD3F3C300E59076 /* CSPushAnnounceViewController.h */,
 				B2B81E801FD3F3C300E59076 /* CSPushAnnounceViewController.m */,
+				B26D46211FD55254003E8804 /* CSWebViewController.h */,
+				B26D46221FD55254003E8804 /* CSWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -441,6 +455,8 @@
 				722D3CB71FD3EBA50053B192 /* CSOrganizationAddSelCell.m */,
 				B2B81E7C1FD3E70B00E59076 /* CSAnnounceTableViewCell.h */,
 				B2B81E7D1FD3E70B00E59076 /* CSAnnounceTableViewCell.m */,
+				B26D461A1FD4FEF6003E8804 /* CSAnImgTableViewCell.h */,
+				B26D461B1FD4FEF6003E8804 /* CSAnImgTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -672,6 +688,7 @@
 		7247F5A61FCACE3000B0DEAE /* CSModules */ = {
 			isa = PBXGroup;
 			children = (
+				B26D461D1FD5284A003E8804 /* CSCash */,
 				721C81131FCD574100AF6E9D /* MePart */,
 				721C81121FCD570B00AF6E9D /* AddressBookPart */,
 				721C81111FCD56F300AF6E9D /* ZiroomPart */,
@@ -723,6 +740,8 @@
 				72F12A901FCE57B300120EC8 /* CSZiroomHeadViewModel.m */,
 				B2B81E881FD4377400E59076 /* CSAnounceListDetaiModel.h */,
 				B2B81E861FD433FA00E59076 /* CSAnounceListDetaiModel.m */,
+				B26D46171FD4F699003E8804 /* CSBannerListModel.h */,
+				B26D46181FD4F699003E8804 /* CSBannerListModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -734,6 +753,15 @@
 				72FA2E281FD2B18700532BAC /* CSSearchView.m */,
 			);
 			path = CSSearchView;
+			sourceTree = "<group>";
+		};
+		B26D461D1FD5284A003E8804 /* CSCash */ = {
+			isa = PBXGroup;
+			children = (
+				B26D461E1FD5287A003E8804 /* CSCashHandler.h */,
+				B26D461F1FD5287A003E8804 /* CSCashHandler.m */,
+			);
+			path = CSCash;
 			sourceTree = "<group>";
 		};
 		B2B81E2A1FCE8C5A00E59076 /* CSOthers */ = {
@@ -1100,6 +1128,7 @@
 				721C810F1FCD4C7900AF6E9D /* UIView+ZRToast.m in Sources */,
 				728D20BA1FCD67D600057177 /* CSZiroomNavController.m in Sources */,
 				72F12AA01FCE8FA800120EC8 /* CSMeBusinessManage.m in Sources */,
+				B26D461C1FD4FEF6003E8804 /* CSAnImgTableViewCell.m in Sources */,
 				72FA2E2F1FD2BE1C00532BAC /* CSOrganizationViewController.m in Sources */,
 				722D3CBB1FD410170053B192 /* CSLoginModel.m in Sources */,
 				7247F5AD1FCACFEE00B0DEAE /* CSWebRequest.m in Sources */,
@@ -1115,8 +1144,10 @@
 				721C812B1FCD666200AF6E9D /* rootTabBarController.m in Sources */,
 				B2B81E751FD2D65C00E59076 /* UIButton+EnlargeTouchArea.m in Sources */,
 				B2B81E781FD2E13B00E59076 /* CSPositionViewController.m in Sources */,
+				B26D46231FD55254003E8804 /* CSWebViewController.m in Sources */,
 				7247F5931FCAA0E000B0DEAE /* CSRequest.m in Sources */,
 				72F12AA61FCE91DB00120EC8 /* BaseViewController.m in Sources */,
+				B26D46191FD4F699003E8804 /* CSBannerListModel.m in Sources */,
 				7247F5AA1FCACEBC00B0DEAE /* CSBaseService.m in Sources */,
 				722D3CB81FD3EBA50053B192 /* CSOrganizationAddSelCell.m in Sources */,
 				722D3CAF1FD3C6EB0053B192 /* CSPersonInfoModel.m in Sources */,
@@ -1125,6 +1156,7 @@
 				B2B81E3E1FCEAEED00E59076 /* CSMenuButton.m in Sources */,
 				72FA2E291FD2B18700532BAC /* CSSearchView.m in Sources */,
 				B2B81E841FD42E3900E59076 /* CSAnounceListModel.m in Sources */,
+				B26D46201FD5287A003E8804 /* CSCashHandler.m in Sources */,
 				72F12AA91FCECCB900120EC8 /* CSPersonInfoViewController.m in Sources */,
 				72F12A971FCE8F1500120EC8 /* CSMeHeadView.m in Sources */,
 				72F12A941FCE5FEA00120EC8 /* LoginViewController.m in Sources */,
