@@ -11,6 +11,7 @@
 #import "CSSearchView.h"
 #import "CSOrganizationAddViewController.h" //添加新组织页面
 #import "CSOrganizationBusiness.h"
+#import "CSPersonInfoViewController.h" // 个人信息页面
 
 @interface CSOrganizationViewController ()
 {
@@ -92,8 +93,7 @@
     if (!organizationView) {
         organizationView = [[CSOrganizationChartView alloc] initWithFrame:CGRectZero];
         [self.view addSubview:organizationView];
-        
-        
+
         organizationView.selRootMapBlock = ^(NSInteger number) {
             NSLog(@"选择了哪个根组织？编号是:%ld",number);
             [self showUpOriWithNumber:number];
@@ -106,6 +106,10 @@
         
         organizationView.selPersonBlock = ^(NSInteger number) {
             NSLog(@"选择了哪个人？编号是:%ld",number);
+            CSOrganizationUserListModel *model = self.perArray[number];
+            CSPersonInfoViewController *vc = [[CSPersonInfoViewController alloc] init];
+            vc.personId = model.userId;
+            [self.navigationController pushViewController:vc animated:YES];
         };
         
         [organizationView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -116,7 +120,7 @@
         }];
     }
     
-    [organizationView showDataWithOrgArray:self.oriArray andPersonArray:self.perArray andHeadDataArray:self.showTitleArray];
+    [organizationView showDataWithOrgArray:self.oriArray andPersonArray:nil andHeadDataArray:self.showTitleArray];
 }
 
 - (void) showUpOriWithNumber:(NSInteger )number{

@@ -10,6 +10,7 @@
 #import "CSOrganizationChartView.h"
 #import "CSSearchView.h"
 #import "CSOrganizationBusiness.h"
+#import "CSPersonInfoViewController.h" // 个人信息页面
 
 @interface CSAddressBookViewController ()<UISearchBarDelegate,CSSearchViewDelegate>
 {
@@ -86,6 +87,10 @@
         
         organizationView.selPersonBlock = ^(NSInteger number) {
             NSLog(@"选择了哪个人？编号是:%ld",number);
+            CSOrganizationUserListModel *model = self.perArray[number];
+            CSPersonInfoViewController *vc = [[CSPersonInfoViewController alloc] init];
+            vc.personId = model.userId;
+            [self.navigationController pushViewController:vc animated:YES];
         };
         
         [organizationView mas_makeConstraints:^(MASConstraintMaker *make) {
