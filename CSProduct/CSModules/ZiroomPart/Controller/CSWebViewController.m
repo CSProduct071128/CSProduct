@@ -18,17 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    CGRect bounds = [[UIScreen mainScreen]applicationFrame];
+ 
+  
+}
+
+-(void)setWebWithUrl:(NSString *)url{
+    
+    CGRect bounds = CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_WIDTH-64);
     UIWebView* webView = [[UIWebView alloc]initWithFrame:bounds];
     webView.delegate = self;
     webView.scalesPageToFit = YES;//自动对页面进行缩放以适应屏幕
     webView.detectsPhoneNumbers = YES;//自动检测网页上的电话号码，单击可以拨打
     [self.view addSubview:webView];
     self.webView = webView;
-  
-}
-
--(void)setWebWithUrl:(NSString *)url{
     NSURL *nsurl = [NSURL URLWithString:url];//创建URL
     NSURLRequest* request = [NSURLRequest requestWithURL:nsurl];//创建NSURLRequest
     [_webView loadRequest:request];//加载

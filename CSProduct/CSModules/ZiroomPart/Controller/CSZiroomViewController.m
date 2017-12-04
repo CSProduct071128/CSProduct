@@ -134,7 +134,7 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 -(void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
     CSBannerModel *imgModel = self.model.bannerList[index];
     if(imgModel.type == 1){
-        CSWebViewController *web = [CSWebViewController new];
+        CSWebViewController *web = [[CSWebViewController alloc] init];
         [web setWebWithUrl:imgModel.url];
         [self.navigationController pushViewController:web animated:YES];
     }
@@ -153,6 +153,8 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 
 - (void)approvalAction {
 
+    
+    
 }
 
 
@@ -167,7 +169,10 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 
 
 - (void)clockInAction {
-    
+    [self.view showHUD];
+    sleep(0.6);
+    [self.view hideHUD];
+    [self.view makeToast:@"打卡成功"];
 }
 
 

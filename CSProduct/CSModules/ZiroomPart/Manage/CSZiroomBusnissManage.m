@@ -9,12 +9,12 @@
 #import "CSZiroomBusnissManage.h"
 #import <sys/utsname.h>
 
-static NSString *const bannerListUrl = @"http://10.30.27.16:8080/rest/user/getBanner";
-static NSString *const saveNoticeUrl = @"http://10.30.27.16:8080/rest/notice/saveNotice";
-static NSString *const noticeListUrl = @"http://10.30.27.16:8080/rest/notice/getNoticeList";
-static NSString *const noticeDetailUrl = @"http://10.30.27.16:8080/rest/notice/getNoticeDetail";
-static NSString *const departmentListUrl = @"http://10.30.27.16:8080/rest/emp/getEmpList";
-static NSString *const errorLogUrl = @"http://10.30.27.16:8080/rest/log/saveErrorLog";
+static NSString *const bannerListUrl = @"rest/user/getBanner";
+static NSString *const saveNoticeUrl = @"rest/notice/saveNotice";
+static NSString *const noticeListUrl = @"rest/notice/getNoticeList";
+static NSString *const noticeDetailUrl = @"rest/notice/getNoticeDetail";
+static NSString *const departmentListUrl = @"rest/emp/getEmpList";
+static NSString *const errorLogUrl = @"rest/log/saveErrorLog";
 
 #define XcodeAppVersion [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
