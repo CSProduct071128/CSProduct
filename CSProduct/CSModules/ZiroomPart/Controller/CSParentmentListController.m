@@ -10,6 +10,7 @@
 #import "CSParentmentListTableCell.h"
 #import "CSZiroomBusnissManage.h"
 
+
 @interface CSParentmentListController ()<UITableViewDelegate,UITableViewDataSource,CSParentmentListTableCellDelegate>
 @property (nonatomic ,strong) UITableView *tableView;
 @property (nonatomic ,strong) NSArray *nameArr;
@@ -21,6 +22,7 @@
     [super viewDidLoad];
     self.title = @"部门列表";
     self.view.backgroundColor = [UIColor whiteColor];
+    [self addRightBtn];
     [self loadTableView];
     [self loadData];
     // Do any additional setup after loading the view.
@@ -33,6 +35,26 @@
 //    [super viewWillDisappear:YES];
 //    self.navigationController.navigationBar.hidden = YES;
 //}
+
+#pragma mark - addRightBtn
+- (void)addRightBtn{
+    UIButton *checkBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [checkBtn addTarget:self action:@selector(getitClick:) forControlEvents:UIControlEventTouchUpInside];
+    [checkBtn setImage:[UIImage imageNamed:@"select_ic"] forState:UIControlStateNormal];
+    [checkBtn sizeToFit];
+    UIBarButtonItem *settingBtnItem = [[UIBarButtonItem alloc] initWithCustomView:checkBtn];
+    
+    self.navigationItem.rightBarButtonItems  = @[settingBtnItem];
+}
+
+- (void)getitClick:(UIButton *)sendBtn{
+    if (_SelectParentmentListBlock) {
+        _SelectParentmentListBlock(self.nameArr);
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 -(void)loadTableView{
     
     self.view.backgroundColor = [UIColor whiteColor];
@@ -55,7 +77,7 @@
 
 -(void)loadData{
     
-    self.nameArr = @[@{@"text":@"人力资源部",@"isSelect":@"1"},@{@"text":@"能力发展部",@"isSelect":@"0"},@{@"text":@"运营部",@"isSelect":@"0"},@{@"text":@"系统研发部",@"isSelect":@"1"},@{@"text":@"财务部",@"isSelect":@"0"},@{@"text":@"法务部",@"isSelect":@"0"},@{@"text":@"HRBP",@"isSelect":@"1"}];
+    self.nameArr = @[@{@"text":@"人力资源部",@"isSelect":@"0"},@{@"text":@"能力发展部",@"isSelect":@"0"},@{@"text":@"运营部",@"isSelect":@"0"},@{@"text":@"系统研发部",@"isSelect":@"0"},@{@"text":@"财务部",@"isSelect":@"0"},@{@"text":@"法务部",@"isSelect":@"0"},@{@"text":@"HRBP",@"isSelect":@"0"}];
     
     [self.tableView reloadData];
 }
@@ -91,9 +113,25 @@
 
 #pragma mark - delegate ------
 -(void)csParentmentSelectCellValueChanged:(CSParentmentListTableCell *)cell indexPath:(NSIndexPath *)indexPath value:(BOOL)value{
+    NSMutableDictionary *selDict = [NSMutableDictionary dictionaryWithDictionary:self.nameArr[indexPath.row]];
+    NSMutableArray *arr = [NSMutableArray array];
+    for (int p = 0; p < self.nameArr.count ; p++) {
+        if (indexPath.row == p) {
+            if ([[selDict objectForKey:@"isSelect"] integerValue]==0) {
+                [selDict setValue:@"1" forKey:@"isSelect"];
+            }else{
+                [selDict setValue:@"0" forKey:@"isSelect"];
+            }
+            [arr addObject:selDict];
+        }else{
+            [arr addObject:self.nameArr[p]];
+        }
+    }
     
-    
+    self.nameArr = [NSArray arrayWithArray:arr];
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

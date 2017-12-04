@@ -18,6 +18,7 @@
     CSOrganizationChartView *organizationView;
 }
 @property (nonatomic,strong) NSMutableArray *showTitleArray;
+@property (nonatomic,strong) NSMutableArray *showTitleStrArray;
 @property (nonatomic,strong) NSArray *oriArray;
 @property (nonatomic,strong) NSArray *perArray;
 @property (nonatomic,strong) CSOrganizationModel *infoModel;
@@ -31,6 +32,7 @@
     // Do any additional setup after loading the view.
     self.title = @"组织管理";
     self.showTitleArray = [NSMutableArray arrayWithCapacity:0];
+    self.showTitleStrArray = [NSMutableArray arrayWithCapacity:0];
     [self addRightBtn];
     // 获取组织结构
     NSString *depid = _infoModel.depRootId?_infoModel.depRootId:@"0";
@@ -58,6 +60,7 @@
 - (void)checkBtnClick:(UIButton *)send{
     NSLog(@"添加");
     CSOrganizationAddViewController *vc = [[CSOrganizationAddViewController alloc] init];
+    vc.infoModel = self.infoModel;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -82,7 +85,10 @@
 - (void) showOrganizationView{
     CSOrganizationModel *addModel = self.infoModel;
     [self.showTitleArray addObject:addModel];
-    
+    if (_showTitleStrArray.count==0) {
+        [_showTitleStrArray addObject:addModel.depRootName];
+    }
+
     [self showOrganView];
 }
 
@@ -90,21 +96,26 @@
      展示组织view
  */
 - (void)showOrganView{
+    @weakify(self);
+
     if (!organizationView) {
         organizationView = [[CSOrganizationChartView alloc] initWithFrame:CGRectZero];
         [self.view addSubview:organizationView];
 
         organizationView.selRootMapBlock = ^(NSInteger number) {
+            @strongify(self);
             NSLog(@"选择了哪个根组织？编号是:%ld",number);
             [self showUpOriWithNumber:number];
         };
         
         organizationView.selOrigitionBlock = ^(NSInteger number) {
+            @strongify(self);
             NSLog(@"选择了哪个组织？编号是:%ld",number);
             [self showNextOriWithNumber:number];
         };
         
         organizationView.selPersonBlock = ^(NSInteger number) {
+            @strongify(self);
             NSLog(@"选择了哪个人？编号是:%ld",number);
             CSOrganizationUserListModel *model = self.perArray[number];
             CSPersonInfoViewController *vc = [[CSPersonInfoViewController alloc] init];
@@ -120,10 +131,14 @@
         }];
     }
     
-    [organizationView showDataWithOrgArray:self.oriArray andPersonArray:nil andHeadDataArray:self.showTitleArray];
+    [organizationView showDataWithOrgArray:self.oriArray andPersonArray:nil andHeadDataArray:self.showTitleStrArray];
 }
 
 - (void) showUpOriWithNumber:(NSInteger )number{
+    for (NSInteger ll = _showTitleStrArray.count; ll>number+1; ll--) {
+        [_showTitleStrArray removeLastObject];
+    }
+
     // 缓存所有根目录数据
     NSArray *ccArray = [[NSArray alloc] initWithArray:_showTitleArray];
     //清除显示根目录数据
@@ -143,6 +158,8 @@
 - (void) showNextOriWithNumber:(NSInteger )number{
     // 增加显示下一级
     CSOrganizationListModel *selModel = _infoModel.depOneList[number];
+    [_showTitleStrArray addObject:selModel.depOneName];
+    
     [self getgetOrganizationWithDepId:_infoModel.depRootId DepName:selModel.depOneName andType:selModel.type];
 }
 @end

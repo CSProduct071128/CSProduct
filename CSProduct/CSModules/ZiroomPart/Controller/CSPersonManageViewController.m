@@ -86,37 +86,41 @@
  展示组织view
  */
 - (void)showOrganView{
+    @weakify(self);
     if (!organizationView) {
         organizationView = [[CSOrganizationChartView alloc] initWithFrame:CGRectZero];
         [self.view addSubview:organizationView];
-        
         organizationView.selRootMapBlock = ^(NSInteger number) {
+            @strongify(self);
             NSLog(@"选择了哪个根组织？编号是:%ld",number);
             [self showUpOriWithNumber:number];
         };
         
         organizationView.selOrigitionBlock = ^(NSInteger number) {
+            @strongify(self);
             NSLog(@"选择了哪个组织？编号是:%ld",number);
             [self showNextOriWithNumber:number];
         };
         
         organizationView.selPersonBlock = ^(NSInteger number) {
+            @strongify(self);
             NSLog(@"选择了哪个人？编号是:%ld",number);
             CSOrganizationUserListModel *model = self.perArray[number];
-            CSPersonInfoViewController *vc = [[CSPersonInfoViewController alloc] init];
-            vc.personId = model.userId;
+            CSEmpleeJoinController *vc = [[CSEmpleeJoinController alloc] init];
+            vc.isNewPerson = NO;
+            vc.userid = model.userId;
             [self.navigationController pushViewController:vc animated:YES];
         };
         
         [organizationView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.view).offset(64.f);
+            make.top.equalTo(self.view).offset(44.f);
             make.left.equalTo(self.view);
             make.right.equalTo(self.view);
             make.bottom.equalTo(self.view.mas_bottom);
         }];
     }
     
-    [organizationView showDataWithOrgArray:self.oriArray andPersonArray:self.perArray andHeadDataArray:self.showTitleArray];
+    [organizationView showDataWithOrgArray:nil andPersonArray:self.perArray andHeadDataArray:nil];
 }
 
 - (void) showUpOriWithNumber:(NSInteger )number{
@@ -144,6 +148,7 @@
 
 - (void)checkBtnClick:(UIButton *)send{
     CSEmpleeJoinController *vc = [[CSEmpleeJoinController alloc] init];
+    vc.isNewPerson = YES;
     [self.navigationController pushViewController:vc animated:YES];
     NSLog(@"添加");
 }

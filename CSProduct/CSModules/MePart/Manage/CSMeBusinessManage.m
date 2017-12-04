@@ -64,6 +64,7 @@
 
     [CSBaseService getJsonDataRequestWithDetailUrl:kURL_UserInfo_get param:dict header:nil cls:[CSPersonInfoModel class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
         if (logicDicData && [logicDicData isKindOfClass:[CSPersonInfoModel class]]) {
+            _showModel = (CSPersonInfoModel *)logicDicData;
             completion(YES,nil);
         }else{
             completion(NO,msg?msg:kRequestErrorMessage);
