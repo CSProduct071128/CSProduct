@@ -49,14 +49,12 @@
 }
 
 - (void)setHeadModel:(CSPersonInfoModel *)model{
-    imageHeadIcon.image = [UIImage imageNamed:@"zrk_ic_arrow_right"];
-//    [imageHeadIcon sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@""]];
+    [imageHeadIcon sd_setImageWithURL:[NSURL URLWithString:model.picUrl] placeholderImage:[UIImage imageNamed:@""]];
     labNickName.text = model.name;
 }
 
 - (void)setName:(NSString *)name andImage:(NSString *)url{
-    imageHeadIcon.image = [UIImage imageNamed:url];
-    //    [imageHeadIcon sd_setImageWithURL:[NSURL URLWithString:@""] placeholderImage:[UIImage imageNamed:@""]];
+	[imageHeadIcon sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@""]];
     labNickName.text = name;
 }
 
