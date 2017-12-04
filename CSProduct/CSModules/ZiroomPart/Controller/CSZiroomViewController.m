@@ -14,12 +14,21 @@
 #import "CSAnnounceListViewController.h"
 #import "CSOrganizationViewController.h"//组织管理页面
 #import "CSPersonManageViewController.h"// 人员管理页面
+#import "CSZiroomBusnissManage.h"
+#import "CSDataSave.h"
+#import "CSLoginModel.h"
+#import "CSBannerListModel.h"
+#import "CSAnounceListModel.h"
+#import "CSAnnouncementViewController.h"
+#import "CSWebViewController.h"
 
 static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomViewMessageCellReuseIdentifier";
 
 @interface CSZiroomViewController ()<UITableViewDelegate,UITableViewDataSource,CSZiroomHomeHeadViewDelegate>
 @property (nonatomic ,strong) UITableView *tableView;
 @property (nonatomic, strong) CSZiroomHomeHeadView *headerView;
+@property (nonatomic, strong) CSBannerListModel * model;
+@property (nonatomic, strong) CSAnounceListModel * anounceListModel;
 @end
 
 @implementation CSZiroomViewController
@@ -63,8 +72,32 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 
 -(void)loadData{
     
-    self.headerView.infiniteCarouselView.imageURLStringsGroup = @[@"https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin_zoom/125.jpg",@"https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin_zoom/126.jpg",@"https://ss1.bdstatic.com/kvoZeXSm1A5BphGlnYG/skin_zoom/127.jpg"];
-    [self.tableView reloadData];
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    [dic setValue:[CSDataSave getUserID] forKey:@"userId"];
+    @weakify(self);
+    [CSZiroomBusnissManage getBannerListWithParams:dic WithModel:[CSBannerListModel class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+        @strongify(self);
+        self.model = logicDicData;
+        NSMutableArray *imgArr = [NSMutableArray arrayWithCapacity:0];
+        for(CSBannerModel *imgModel in self.model.bannerList){
+            [imgArr addObject:imgModel.pic];
+        }
+        self.headerView.infiniteCarouselView.imageURLStringsGroup = imgArr;
+        [self.tableView reloadData];
+    } failure:^(CSBaseRequest *request, NSString *errorMsg) {
+        [self.view makeToast:errorMsg];
+    }];
+    
+    NSMutableDictionary *dic2 = [[NSMutableDictionary alloc] init];
+    [dic2 setValue:[CSDataSave getUserID] forKey:@"userId"];
+    [dic2 setValue:[NSNumber numberWithInteger:2] forKey:@"noticeStatus"];
+    [CSZiroomBusnissManage getNoticeListWithParams:dic2 WithModel:[CSAnounceListModel class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+        @strongify(self);
+        self.anounceListModel = logicDicData;
+        [self.tableView reloadData];
+    } failure:^(CSBaseRequest *request, NSString *errorMsg) {
+        [self.view makeToast:errorMsg];
+    }];
 }
 
 #pragma mark - UITableView delegate and datasource
@@ -74,7 +107,7 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    return self.anounceListModel.list.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -83,15 +116,35 @@ static NSString *const kCSZiroomViewMessageCellReuseIdentifier = @"kCSZiroomView
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CSZiroomViewMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSZiroomViewMessageCellReuseIdentifier forIndexPath:indexPath];
-    cell.nameLabel.text = @"公告标题";
-    cell.infoLabel.text = @"公告内容摘要";
+    CSAnounceDetailModel * model = self.anounceListModel.list[indexPath.row];
+    cell.nameLabel.text = model.noticeTitle
+    ;
+    cell.infoLabel.text = model.noticeDetail;
     
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    CSAnounceDetailModel * model = self.anounceListModel.list[indexPath.row];
+    CSAnnouncementViewController * vc = [CSAnnouncementViewController new];
+    vc.model = model;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark - HeaderViewDelegate -----
+
+-(void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index{
+    CSBannerModel *imgModel = self.model.bannerList[index];
+    if(imgModel.type == 1){
+        CSWebViewController *web = [CSWebViewController new];
+        [web setWebWithUrl:imgModel.url];
+        [self.navigationController pushViewController:web animated:YES];
+    }
+    if(imgModel.type == 2){
+        CSAnnouncementViewController * vc = [CSAnnouncementViewController new];
+        vc.noticeId = imgModel.noticeId;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+}
+
 -(void)announcementAction{
     
     CSAnnounceListViewController *vc = [[CSAnnounceListViewController alloc] init];

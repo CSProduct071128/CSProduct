@@ -17,6 +17,7 @@
 @property (nonatomic,assign) long time;
 @property (nonatomic,assign) NSInteger noticeId;
 @property (nonatomic,copy) NSString *noticeTitle;
+@property (nonatomic,copy) NSString *pic;
 
 @end
 

@@ -44,37 +44,12 @@
         make.top.equalTo(self.titleLable.mas_bottom).with.offset(20);
         make.left.equalTo(self.contentView).offset(18);
         make.right.equalTo(self.contentView).offset(-18);
+        make.bottom.equalTo(self.contentView);
     }];
     
     
-    self.imgContentView = [[UIView alloc] init];
-    [self.contentView addSubview:self.imgContentView];
-    [self.imgContentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.contentView);
-        make.top.equalTo(self.contentLabel.mas_bottom).offset(40);
-        make.height.equalTo(@(imgWidth*2/3*3+12*2));
-    }];
+
     
-    self.hasReadLabel = [[UILabel alloc] init];
-    self.hasReadLabel.font = [UIFont systemFontOfSize:16.f];
-    self.hasReadLabel.numberOfLines = 0;
-    self.hasReadLabel.textColor = UIColorFromRGB(0x666666);
-    [self.contentView addSubview:self.hasReadLabel];
-    [self.hasReadLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self.contentView).with.offset(-40);
-        make.left.equalTo(self.contentView).offset(18);
-        make.right.equalTo(self.contentLabel).offset(-18);
-    }];
- 
-    _lineView=[[UIView alloc] init];
-    _lineView.backgroundColor=UIColorFromRGB(0xeeeeee);
-    [self.contentView addSubview:_lineView];
-    [_lineView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.contentView);
-        make.right.equalTo(self.contentView);
-        make.bottom.equalTo(self.hasReadLabel.mas_top).with.offset(-20);
-        make.height.mas_equalTo(0.5);
-    }];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

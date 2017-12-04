@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "CSCashHandler.h"
+#import "CSZiroomBusnissManage.h"
+
 
 @interface AppDelegate ()
 
@@ -16,12 +19,51 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    //初始化崩溃搜集方法
+    [self initExceptionMethods];
+    
     [NSThread sleepForTimeInterval:2];
     
     return YES;
 }
 
+-(void)initExceptionMethods{
+    
+#pragma mark -- 崩溃日志
+    [CSCashHandler setDefaultHandler];
+    // 发送崩溃日志
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *dataPath = [path stringByAppendingPathComponent:@"Exception.txt"];
+//    NSData *data = [NSData dataWithContentsOfFile:dataPath];
+//    if (data != nil) {
+//        [self sendExceptionLogWithData:data path:dataPath];
+//    }
+    
+    NSError *error ;
+    NSString *data = [NSString stringWithContentsOfFile:dataPath encoding:NSUTF8StringEncoding error:&error];
+    if (data != nil) {
+        [self sendExceptionLogWithData:data path:dataPath];
+    }
+}
+#pragma mark -- 发送崩溃日志
+- (void)sendExceptionLogWithData:(NSString *)data path:(NSString *)path {
+    
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+    [dic setValue:[NSNumber numberWithInteger:2] forKey:@"appType"];
+    NSArray *arr = [data componentsSeparatedByString:@"\n"];
+    NSInteger errorTime = [arr[1] integerValue];
+    [dic setValue:[NSNumber numberWithInteger:errorTime] forKey:@"errorTime"];
+    
+    [CSZiroomBusnissManage saveErrorLogWithParams:dic WithModel:[NSDictionary class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+        // 删除文件
+        NSFileManager *fileManger = [NSFileManager defaultManager];
+        [fileManger removeItemAtPath:path error:nil];
+    } failure:^(CSBaseRequest *request, NSString *errorMsg) {
+        
+    }];
+    
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

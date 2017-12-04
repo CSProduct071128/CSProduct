@@ -15,7 +15,9 @@
  */
 + (void)signInWithUserID:(NSString *)userId
            andCompletion:(cscompletionBlock)completion;
-
+//获取banner图片
++(void)getBannerListWithParams:(NSDictionary *)params WithModel:(id)cls  success:(successCallBack)success
+                       failure:(failureCallBack)failure;
 //保存公告
 +(void)saveNoticeWithParams:(NSDictionary *)params WithModel:(id)cls  success:(successCallBack)success
                  failure:(failureCallBack)failure;
@@ -28,4 +30,9 @@
 //获取部门列表
 +(void)getDepartmentListWithParams:(NSDictionary *)params WithModel:(id)cls  success:(successCallBack)success
                            failure:(failureCallBack)failure;
+//上传崩溃日志
++(void)saveErrorLogWithParams:(NSDictionary *)params WithModel:(id)cls  success:(successCallBack)success
+                      failure:(failureCallBack)failure;
+
++(int)getTimestampFromSystem;
 @end
