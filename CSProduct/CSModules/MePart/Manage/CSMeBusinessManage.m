@@ -59,10 +59,12 @@
 - (void)tableViewHeadViewDataWithUserId:(NSString *)userid completion:(cscompletionBlock)completion{
 
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
-    [dict setValue:userid forKey:@"userId"];
-    
+    [dict setValue:[CSDataSave getUserID] forKey:@"userId"];
+    [dict setValue:userid forKey:@"otherUserId"];
+
     [CSBaseService getJsonDataRequestWithDetailUrl:kURL_UserInfo_get param:dict header:nil cls:[CSPersonInfoModel class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
         if (logicDicData && [logicDicData isKindOfClass:[CSPersonInfoModel class]]) {
+            _showModel = (CSPersonInfoModel *)logicDicData;
             completion(YES,nil);
         }else{
             completion(NO,msg?msg:kRequestErrorMessage);

@@ -54,7 +54,7 @@
     [dict setValue:@(type) forKey:@"type"];
     
     [CSBaseService getJsonDataRequestWithDetailUrl:kURL_saveDep param:dict header:nil cls:[NSDictionary class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
-        if (logicDicData && [logicDicData isKindOfClass:[NSDictionary class]]) {
+        if ([logicDicData integerValue] == 0) {
             completion(YES,nil);
         }else{
             completion(NO,msg?msg:kRequestErrorMessage);

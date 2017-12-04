@@ -11,10 +11,14 @@
 #import "CSOrganizationAddOriNameCell.h"
 #import "CSOrganizationAddOriTipsCell.h"
 #import "CSOrganizationAddSelCell.h"
+#import "CSOrganizationBusiness.h"
+#import "CSParentmentListController.h"
 
 @interface CSOrganizationAddViewController () <UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic , strong) UITableView *tableView;
+
+@property (nonatomic , copy) NSString *parentmentStr;
 
 @end
 
@@ -24,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"新增组织";
+    _parentmentStr = @"请选择上级部门";
     [self addRightBtn];
     [self tableView];
 }
@@ -46,6 +51,7 @@
 
 - (void)checkBtnClick:(UIButton *)send{
     NSLog(@"添加");
+    [self request];
 }
 
 #pragma mark - uitableView
@@ -102,7 +108,7 @@
         return cell;
     }else if (indexPath.section == 1){
         CSOrganizationAddSelCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSOrganizationAddSelCell];
-        [cell setTitle:@"上级组织：" andContent:@"无无无"];
+        [cell setTitle:@"上级组织：" andContent:_parentmentStr];
         return cell;
 
     }else if (indexPath.section == 2){
@@ -111,7 +117,7 @@
         
     }else{
         CSOrganizationAddSelCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSOrganizationAddSelCell];
-        [cell setTitle:@"组织成员：" andContent:@"哈哈哈哈或或或或或或或或或或"];
+        [cell setTitle:@"组织成员：" andContent:@"请选择组织人员"];
         return cell;
     }
 }
@@ -138,11 +144,37 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 1) {
-        
+        CSParentmentListController  * vc = [CSParentmentListController new];
+        vc.SelectParentmentListBlock = ^(NSArray *SelectParentmentList) {
+            NSLog(@"选择的部门有：%@",SelectParentmentList);
+            _parentmentStr = @"";
+            for (int i=0; i < SelectParentmentList.count ; i++) {
+                NSDictionary *sel = SelectParentmentList[i];
+                if ([[sel objectForKey:@"isSelect"] integerValue]==1) {
+                    if (_parentmentStr.length) {
+                        _parentmentStr = [NSString stringWithFormat:@"%@、%@",_parentmentStr,[sel objectForKey:@"text"]];
+                    }else{
+                        _parentmentStr = [NSString stringWithFormat:@"%@",[sel objectForKey:@"text"]];
+                    }
+                }
+            }
+            [self.tableView reloadData];
+        };
+        [self.navigationController pushViewController:vc animated:YES];
+
     }else if (indexPath.section == 3){
         CSOrganizationSelPersonViewController *vc = [[CSOrganizationSelPersonViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
 
+#pragma mark - request add ori
+- (void)request{
+    [CSOrganizationBusiness saveOrganizationConstructionWithParentDepId:_infoModel.depRootId andDepName:@"开发组009" andtype:[_infoModel.type integerValue] andCompletion:^(BOOL isFinish, NSString *errorMessage) {
+        if (isFinish) {
+            [self.view makeToast:@"保存成功"];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
+}
 @end

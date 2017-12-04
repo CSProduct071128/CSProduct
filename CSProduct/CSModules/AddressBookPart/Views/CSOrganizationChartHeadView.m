@@ -96,8 +96,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     CSOrganizationChartHeadCell *cell = [tableView dequeueReusableCellWithIdentifier:kCSOrganizationChartHeadCell];
     if (_showDataArray.count) {
-        CSOrganizationModel *model = _showDataArray[indexPath.section];
-        [cell setTitleShow:model.depRootName];
+        [cell setTitleShow:_showDataArray[indexPath.section]];
     }
     return cell;
 }
@@ -116,9 +115,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (_showDataArray.count) {
-        
-        CSOrganizationModel *model = _showDataArray[indexPath.section];
-        return [CSOrganizationChartHeadCell getTitleHeightWithStr:model.depRootName];
+        return [CSOrganizationChartHeadCell getTitleHeightWithStr:_showDataArray[indexPath.row]];
     }else{
         return 0.01;
     }

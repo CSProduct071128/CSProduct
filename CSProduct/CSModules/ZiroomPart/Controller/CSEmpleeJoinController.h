@@ -10,4 +10,8 @@
 
 @interface CSEmpleeJoinController : BaseViewController
 
+@property (nonatomic,assign) BOOL isNewPerson; // 是否添加新人
+
+@property (nonatomic,copy) NSString *userid;
+
 @end

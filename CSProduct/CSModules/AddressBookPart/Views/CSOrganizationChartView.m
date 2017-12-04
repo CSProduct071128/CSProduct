@@ -110,8 +110,10 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 0) {
         return 0.01f;
-    }else{
+    }else if(self.showOrgDataArray.count && self.showPersonDataArray.count){
         return 24.f;
+    }else{
+        return 0.01f;
     }
 }
 
@@ -146,11 +148,13 @@
 #pragma mark - headviewAdd
 - (void)setHeadViewShow{
     if (!_headView) {
+        @weakify(self);
         _headView = [[CSOrganizationChartHeadView alloc] initWithFrame:CGRectMake(0, 0,CSScreenWidth , kHeadViewHeight)];
         _headView.selectBlock = ^(NSInteger number) {
+            @strongify(self);
             NSLog(@"我选择了：%ld",number);
-            if (_selRootMapBlock) {
-                _selRootMapBlock(number);
+            if (self.selRootMapBlock) {
+                self.selRootMapBlock(number);
             }
         };
         [self.tableView setTableHeaderView:_headView];

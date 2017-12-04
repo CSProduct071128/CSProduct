@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CSOrganizationModel.h"
 
 @interface CSOrganizationAddViewController : BaseViewController
+
+@property (nonatomic,strong) CSOrganizationModel *infoModel;
 
 @end

@@ -167,6 +167,9 @@
 
 -(void)chooseTypeAreaDown{
     CSParentmentListController * vc = [CSParentmentListController new];
+    vc.SelectParentmentListBlock = ^(NSArray *SelectParentmentList) {
+        NSLog(@"选择的部门有：%@",SelectParentmentList);
+    };
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (void)didReceiveMemoryWarning {

@@ -11,7 +11,7 @@
 @implementation CSWebRequest
 
 - (NSString *)baseUrl{
-    return @"http://10.30.27.16:8080/";
+    return @"http://10.16.9.163:8081/";
 }
 - (NSString *)requestUrl{
     return _httpDetailUrl;

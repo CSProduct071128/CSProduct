@@ -9,7 +9,7 @@
 #import "baseNavViewController.h"
 #import "rootTabBarController.h"
 #import "CSZiroomViewController.h"
-#import "CSAddressBookNavController.h"
+#import "CSAddressBookViewController.h"
 #import "CSMeViewController.h"
 
 @interface baseNavViewController ()
@@ -50,7 +50,7 @@
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated{
     [super popViewControllerAnimated:animated];
     UIViewController *resultVC = [self getCurrentVC];
-    if ([resultVC isKindOfClass:[CSZiroomViewController class]]||[resultVC isKindOfClass:[CSAddressBookNavController class]]||[resultVC isKindOfClass:[CSMeViewController class]]) {
+    if ([resultVC isKindOfClass:[CSZiroomViewController class]]||[resultVC isKindOfClass:[CSAddressBookViewController class]]||[resultVC isKindOfClass:[CSMeViewController class]]) {
         self.navigationBar.hidden  = YES;
         UITabBarController *tabBarCtl =  (UITabBarController *)[self getCurrentCtl];
         tabBarCtl.tabBar.hidden = NO;

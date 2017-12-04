@@ -14,7 +14,7 @@
 @interface CSOrganizationUserListModel : JSONModel
 @property (nonatomic,copy) NSString *role;//职位
 @property (nonatomic,copy) NSString *name;//名子
-//@property (nonatomic,copy) NSString *type;//
+@property (nonatomic,copy) NSString *userId;//
 
 @end
 

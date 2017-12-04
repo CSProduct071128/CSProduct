@@ -12,6 +12,8 @@
 #import "CSSelectTableViewCell.h"
 #import "CSParentmentListController.h"
 #import "CSPositionViewController.h"
+#import "CSBaseService.h"
+#import "CSPersonInfoModel.h"
 
 static NSString *const kCSEmpleeJoinTableViewCellReuseIdentifier = @"kCSEmpleeJoinTableViewCellReuseIdentifier";
 static NSString *const kCSCSSexTableViewCellReuseIdentifier = @"kCSCSSexTableViewCellReuseIdentifier";
@@ -21,6 +23,8 @@ static NSString *const kCSCSSelectTableViewCell = @"kCSCSSelectTableViewCellReus
 @property (nonatomic ,strong) UITableView *tableView;
 @property (nonatomic ,strong) NSArray *nameArr;
 @property (nonatomic ,strong) NSMutableArray *valueArr;
+@property (nonatomic ,strong) CSPersonInfoModel *personModel;
+
 
 @end
 
@@ -28,20 +32,22 @@ static NSString *const kCSCSSelectTableViewCell = @"kCSCSSelectTableViewCellReus
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"办理人员入职";
+    if (_isNewPerson) {
+        self.title = @"办理人员入职";
+    }else{
+        self.title = @"人员调整";
+    }
     self.view.backgroundColor = [UIColor whiteColor];
     [self loadTableView];
     [self loadData];
     // Do any additional setup after loading the view.
+    [self addRightBtn];
+    // 调整人员增加请求个人信息接口
+    if (!_isNewPerson) {
+        [self getInfoRequest];
+    }
 }
-//-(void)viewWillAppear:(BOOL)animated{
-//    [super viewWillAppear:YES];
-//    self.navigationController.navigationBar.hidden = NO;
-//}
-//-(void)viewWillDisappear:(BOOL)animated{
-//    [super viewWillDisappear:YES];
-//    self.navigationController.navigationBar.hidden = YES;
-//}
+
 -(void)loadTableView{
     
     self.view.backgroundColor = [UIColor whiteColor];
@@ -133,6 +139,9 @@ static NSString *const kCSCSSelectTableViewCell = @"kCSCSSelectTableViewCellReus
     @weakify(self);
     if(indexPath.row == 5){
          CSParentmentListController  * vc = [CSParentmentListController new];
+        vc.SelectParentmentListBlock = ^(NSArray *SelectParentmentList) {
+            NSLog(@"选择的部门有：%@",SelectParentmentList);
+        };
         [self.navigationController pushViewController:vc animated:YES];
     }
     if(indexPath.row == 6){
@@ -160,5 +169,58 @@ static NSString *const kCSCSSelectTableViewCell = @"kCSCSSelectTableViewCellReus
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)getInfoRequest{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    [dict setValue:[CSDataSave getUserID] forKey:@"userId"];
+    [dict setValue:_userid forKey:@"otherUserId"];
+    
+    [CSBaseService getJsonDataRequestWithDetailUrl:kURL_UserInfo_get param:dict header:nil cls:[CSPersonInfoModel class] success:^(id logicDicData, NSString *msg, NSString *logiccode) {
+        if (logicDicData && [logicDicData isKindOfClass:[CSPersonInfoModel class]]) {
+            _personModel = (CSPersonInfoModel *)logicDicData;
+            NSString *sexStr = @"0";
+            if ([_personModel.sex isEqualToString:@"女"]) {
+                sexStr = @"1";
+            }
+            self.valueArr = [NSMutableArray arrayWithArray:@[
+                                                             _personModel.userName?_personModel.userName:@""
+                                                             ,sexStr,
+                                                             _personModel.cardNumber?_personModel.cardNumber:@"",
+                                                             _personModel.phoneNumber?_personModel.phoneNumber:@"",
+                                                             _personModel.address?_personModel.address:@""
+                                                             ,_personModel.departmnet?_personModel.departmnet:@""
+                                                             ,_personModel.role?_personModel.role:@""]];
+            
+            
+            [self.tableView reloadData];
+        }else{
+            [self.view makeToast:msg?msg:kRequestErrorMessage];
+        }
+    } failure:^(CSBaseRequest *request, NSString *errorMsg) {
+        [self.view makeToast:errorMsg?errorMsg:kRequestErrorMessage];
+    }];
+}
+
+#pragma mark - addRightBtn
+- (void)addRightBtn{
+    UIButton *checkBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [checkBtn addTarget:self action:@selector(checkBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [checkBtn setImage:[UIImage imageNamed:@"select_ic"] forState:UIControlStateNormal];
+    [checkBtn sizeToFit];
+    UIBarButtonItem *settingBtnItem = [[UIBarButtonItem alloc] initWithCustomView:checkBtn];
+    
+    self.navigationItem.rightBarButtonItems  = @[settingBtnItem];
+}
+
+- (void)checkBtnClick:(UIButton *)send{
+    NSLog(@"添加");
+    NSString *tipStr = @"添加人员信息成功！";
+    if (!_isNewPerson) {
+        tipStr = @"修改人员信息成功！";
+    }
+    [self.view makeToast:tipStr];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 @end
